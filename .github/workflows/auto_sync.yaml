@@ -1,0 +1,32 @@
+name: Auto-Sync Evidence
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Update Evidence Index
+        run: |
+          echo "# Evidence Index - $(date)" > EVIDENCE_INDEX.md
+          echo "## Files" >> EVIDENCE_INDEX.md
+          ls -la *.pdf *.md 2>/dev/null | awk '{print "- "$9}' >> EVIDENCE_INDEX.md
+          echo "## Last Sync: $(date)" >> EVIDENCE_INDEX.md
+          
+      - name: Commit Index Updates
+        run: |
+          git config --local user.email "auto-sync@github.com"
+          git config --local user.name "Auto-Sync Bot"
+          git add .
+          git commit -m "Auto-update evidence index - $(date '+%Y-%m-%d %H:%M:%S')" || exit 0
+          
+      - name: Push Changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
