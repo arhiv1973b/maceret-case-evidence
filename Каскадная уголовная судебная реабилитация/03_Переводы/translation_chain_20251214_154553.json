@@ -1,0 +1,55 @@
+{
+  "translation_chain_summary": {
+    "total_steps": 4,
+    "source_language": "ron",
+    "final_language": "ron",
+    "original_length": 124,
+    "final_length": 124,
+    "distortion_detected": false,
+    "quantum_protection": true
+  },
+  "step_by_step_results": [
+    {
+      "step": 1,
+      "source_lang": "ron",
+      "target_lang": "eng",
+      "confidence": 0.8587247569599998,
+      "quantum_hash": "73df1de5b93578b5302a08cce425da6067ad6e31dc797e9a5937e084b872a364",
+      "text_length": 107
+    },
+    {
+      "step": 2,
+      "source_lang": "eng",
+      "target_lang": "rus",
+      "confidence": 0.8762497519999999,
+      "quantum_hash": "ed149963e9cecc3edb2bd9b18d71ff5134694739db3e304341e8a14fd3c7a39a",
+      "text_length": 104
+    },
+    {
+      "step": 3,
+      "source_lang": "rus",
+      "target_lang": "eng",
+      "confidence": 0.8762497519999999,
+      "quantum_hash": "be8b9148c0192b3f7b083411568a5eb7f21f4b6a3da118043e9b0887f8a29df5",
+      "text_length": 107
+    },
+    {
+      "step": 4,
+      "source_lang": "eng",
+      "target_lang": "ron",
+      "confidence": 0.8762497519999999,
+      "quantum_hash": "b5c09917b4f741f35dd598d723ea662cf733555c9164a8e33f80aad096d33f84",
+      "text_length": 124
+    }
+  ],
+  "auth_markers_used": [
+    "A©tor",
+    "A©t0r"
+  ],
+  "processing_timestamp": "2025-12-14T15:45:53.233665",
+  "final_assessment": {
+    "integrity_preserved": true,
+    "average_confidence": 0.8718685032399999,
+    "quantum_verified": false
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "generation_summary": {
+    "timestamp": "2025-12-14T15:50:10.893841",
+    "total_extracts": 2,
+    "case_applicant": "Василенко",
+    "quantum_protected": true
+  },
+  "extracts_details": [
+    {
+      "title": "Жалоба в Европейский суд по правам человека",
+      "recipient": "Европейский суд по правам человека",
+      "urgency": "НИЗКАЯ",
+      "violations_count": 1,
+      "quantum_signature": "524fa54b756813a6bb472620abede2d9c25ee4272651d9cd563432152a139474"
+    },
+    {
+      "title": "Сообщение в Комитет ООН против пыток",
+      "recipient": "Комитет ООН против пыток",
+      "urgency": "НИЗКАЯ",
+      "violations_count": 1,
+      "quantum_signature": "1d47d45a71632370ae0ee421a410179a014bf51ecd8032328fd68ea1c4a0ee53"
+    }
+  ],
+  "legal_basis_used": [
+    "бесчеловечных или унижающих достоинство видов обращения",
+    "Конвенция о защите прав человека и основных свобод",
+    "Конвенция против пыток и других жестоких",
+    "Протоколы к Конвенции"
+  ],
+  "violations_detected": [
+    "prohibition_of_arbitrary_arrest"
+  ]
+}
