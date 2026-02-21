@@ -1,0 +1,43 @@
+{
+  "registry_name": "MACERET_CASE_EVIDENCE",
+  "created": "2026-02-21",
+  "version": "v2026-02-21",
+  "description": "Legal evidence for Maceret Alexei torture case",
+  "files": {
+    "total_apostilles": 90,
+    "total_legal_docs": 4,
+    "docker_image": "ghcr.io/arhiv1973b/maceret-case-evidence"
+  },
+  "evidence": {
+    "torture_case": {
+      "apostille": "7H2Q3790FZEI5",
+      "case_number": "1-568/98",
+      "date": "13.10.1998",
+      "crime": "TORTURE",
+      "signatory": "Miron Aliona"
+    },
+    "false_conviction": {
+      "apostille": "CK5O133ZKLJE8",
+      "case_number": "1-42/09",
+      "date": "25.10.2021",
+      "crime": "FALSE_CONVICTION",
+      "signatory": "Iordan Iurie"
+    },
+    "victim_murder": {
+      "apostille": "CO2S9BA3JX6H1",
+      "date": "01.04.2022",
+      "crime": "MURDER_COVER_UP",
+      "signatory": "Trandafilova Maria"
+    }
+  },
+  "legal_articles": [
+    "Art. 3 ECHR",
+    "Art. 6 ECHR",
+    "Rome Statute Art. 7",
+    "Rome Statute Art. 8"
+  ],
+  "integrity": {
+    "method": "SHA-256 digest",
+    "status": "pending_build"
+  }
+}
