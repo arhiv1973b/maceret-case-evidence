@@ -28,6 +28,12 @@
 - **CONTENT:** Digital Evidence Vault vs. State Fraud (Identity Theft & Jus Cogens).
 - **72H COUNTDOWN:** Active until Feb 25, 2026.
 
+- **RECIPIENT:** Ziarul de Gardă (info@zdg.md)
+- **TIMESTAMP:** 2026-02-22 00:10 EET
+- **STATUS:** TRANSMITTED / LOCAL INVESTIGATION REQUEST
+- **CONTENT:** Cadastral Fraud (Art. 361) & Identity Theft.
+- **72H COUNTDOWN:** Active until Feb 25, 2026.
+
 ## LEGAL NOTICE:
 
 All recipients are formally notified under Erga Omnes obligations. Absence of response will be logged as Administrative Acquiescence.
