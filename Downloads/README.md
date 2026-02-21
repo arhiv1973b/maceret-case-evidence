@@ -1,5 +1,9 @@
 # MACERET CASE EVIDENCE
 
+**⚠️ READ FIRST: [Official Notice to UN Special Rapporteur Dire Tladi](NOTICE_TLADI.md)**
+
+![QR Notice](QR_NOTICE_TLADI.png)
+
 Legal evidence container for Maceret Alexei case.
 
 ## Status
