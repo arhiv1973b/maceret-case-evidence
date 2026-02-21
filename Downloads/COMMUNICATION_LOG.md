@@ -57,6 +57,12 @@ All primary strategic targets (Global, Diplomatic, and Local) have been formally
 - **RELEVANCE:** Key apostilles related to torture and discrimination cases were falsified
 - **STATUS:** Previously reported via private channels before public GitHub deployment
 
+- **UPDATE:** 2026-02-22 02:00 EET
+- **STATUS:** PRESS ALERT DEPLOYED
+- **CONTENT:** Physical assault (Yuri Lupea), Power sabotage (11% falsified apostilles), Cyber intrusion documented
+- **CHANNEL:** GitHub repository update (Public link)
+- **ALL PREVIOUS RECIPIENTS NOTIFIED VIA REPOSITORY LINK**
+
 ## LEGAL NOTICE:
 
 All recipients are formally notified under Erga Omnes obligations. Absence of response will be logged as Administrative Acquiescence.
