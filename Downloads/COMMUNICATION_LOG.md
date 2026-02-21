@@ -34,6 +34,17 @@
 - **CONTENT:** Cadastral Fraud (Art. 361) & Identity Theft.
 - **72H COUNTDOWN:** Active until Feb 25, 2026.
 
+- **RECIPIENT:** RISE Moldova (info@rise.md)
+- **TIMESTAMP:** 2026-02-22 00:15 EET
+- **STATUS:** TRANSMITTED / FORENSIC INVESTIGATION REQUEST
+- **CONTENT:** Asset Hijacking & Judicial Forgery (Case 2-1642/08).
+- **72H COUNTDOWN:** Active until Feb 25, 2026.
+
+---
+
+**PHASE 1 DEPLOYMENT STATUS:** COMPLETE.
+All primary strategic targets (Global, Diplomatic, and Local) have been formally notified.
+
 ## LEGAL NOTICE:
 
 All recipients are formally notified under Erga Omnes obligations. Absence of response will be logged as Administrative Acquiescence.
