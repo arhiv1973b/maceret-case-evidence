@@ -6,6 +6,14 @@
 
 Legal evidence container for Maceret Alexei case.
 
+## Evidence Hierarchy
+
+| Level        | Proof                    | Legal Effect                    |
+| ------------ | ------------------------ | ------------------------------- |
+| **Global**   | Nota Trump / UN          | UN Charter Art. 103 Activation  |
+| **Regional** | ECHR / Brussels          | Art. 3 & 6 Convention Ultimatum |
+| **Forensic** | 246 OCR files / Art. 361 | Mathematical Fraud Proof        |
+
 ## Status
 
 **I группа инвалидности** (Group I disability) - critical for Art. 3 ECHR vulnerability assessment.
