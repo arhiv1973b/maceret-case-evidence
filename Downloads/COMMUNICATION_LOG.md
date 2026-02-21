@@ -22,6 +22,12 @@
 - **CONTENT:** Evidence of State Fraud & Jus Cogens Violations.
 - **72H COUNTDOWN:** Active until Feb 24, 2026.
 
+- **RECIPIENT:** CNN (tips@cnn.com)
+- **TIMESTAMP:** 2026-02-22 00:05 EET
+- **STATUS:** TRANSMITTED / MEDIA DEPOSITION
+- **CONTENT:** Digital Evidence Vault vs. State Fraud (Identity Theft & Jus Cogens).
+- **72H COUNTDOWN:** Active until Feb 25, 2026.
+
 ## LEGAL NOTICE:
 
 All recipients are formally notified under Erga Omnes obligations. Absence of response will be logged as Administrative Acquiescence.
