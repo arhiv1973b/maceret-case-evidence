@@ -77,6 +77,7 @@ Compare SHA-256 digest with `/integrity-hashes/registry.json`.
 
 - **PRESIDENTIAL_MEMO_USA_2024.pdf:** Nota Verbale to President Trump (45th), referencing UN Charter Article 103 and Erga Omnes obligations
 - **PRESIDENTIAL_MEMO_GEURO_PROTOCOL_3.pdf:** Diplomatic protocol document establishing A©tor status
+- **WHITE_HOUSE_CONFIRMATION_2025.pdf:** Receipt of communication (29.11.2025) verified by White House Administration
 - **Onomastic Evidence:** Linguistic expertise by L. Vieru confirming "Maceret/Maciret" identity fraud
 - **Passport Reference:** AP0269423
 
