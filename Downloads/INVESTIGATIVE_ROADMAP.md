@@ -1,3 +1,9 @@
+# ⚠️ ALERT: PHYSICAL ASSAULT & DATA TAMPERING DETECTED (FEB 2026)
+
+See SECURITY_INCIDENT_REPORT.md for details.
+
+---
+
 # INVESTIGATIVE ROADMAP: CASE-MACHERET-1997-2026
 
 **For:** UN Special Rapporteur on Jus Cogens (Dire Tladi) & OHCHR Investigative Team
