@@ -73,4 +73,11 @@ Compare SHA-256 digest with `/integrity-hashes/registry.json`.
 
 - **Marcel Gutan:** marcelgutan@gmail.com (recusal granted 18.05.2021)
 
+## 🇺🇸 Presidential Memoranda (Anchored to UN Charter Art. 103)
+
+- **PRESIDENTIAL_MEMO_USA_2024.pdf:** Nota Verbale to President Trump (45th), referencing UN Charter Article 103 and Erga Omnes obligations
+- **PRESIDENTIAL_MEMO_GEURO_PROTOCOL_3.pdf:** Diplomatic protocol document establishing A©tor status
+- **Onomastic Evidence:** Linguistic expertise by L. Vieru confirming "Maceret/Maciret" identity fraud
+- **Passport Reference:** AP0269423
+
 Generated: 2026-02-21
