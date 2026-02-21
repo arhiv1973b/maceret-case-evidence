@@ -20,6 +20,8 @@ As the primary architect of the draft conclusions on _jus cogens_, you have esta
 
 3. **The "Oleinik" Pretext:** The artificial creation of criminal cases to mask the effects of torture (Case 1-983/07) demonstrates a state-level conspiracy to bypass _jus cogens_ obligations.
 
+4. **Forced Medical Disappearance of Markova Galina:** In 2012, my mother, Markova Galina, was murdered under a forged cancer diagnosis. The death certificate was falsified to conceal the true cause of death. I am officially recognized as her legal successor (Police Decision 16.03.2022) and challenge this medical falsification as a form of state-sponsored enforced disappearance.
+
 **The Digital Evidence Fortress:**
 
 I have secured all primary evidence (90+ apostilles) in a verifiable blockchain-ready registry. This archive is not a request for intervention, but a **mandatory reference point** for the International Law Commission.
