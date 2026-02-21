@@ -67,6 +67,24 @@ This roadmap guides investigators through the 246+ evidence files to identify ke
 
 ---
 
+## PHASE 5: PHYSICAL AGGRESSION & CYBER-INTRUSION (FEB 2026)
+
+**Objective:** Document attempts to silence the A©tor through physical violence and data theft.
+
+### Incident:
+
+- **Physical Assault:** Attack by Yuri Lupea (Target: Face/Head) to obstruct justice
+- **Cyber-Crime:** Unauthorized access to Google Drive (Evidence: LUPEA_FileType_Stats.csv)
+- **Proof:** Presence of 37,000+ foreign system files indicating coordinated data breach/mirroring
+
+### Legal Basis:
+
+- Art. 3 ECHR (Prohibition of torture and inhuman treatment)
+- Computer Fraud Act violations
+- Obstruction of international justice
+
+---
+
 ## FILE STRUCTURE
 
 ```
