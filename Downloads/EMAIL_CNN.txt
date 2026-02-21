@@ -1,0 +1,22 @@
+To: tips@cnn.com
+Subject: STORY LEAD: Digital Evidence Vault vs. Moldova State Fraud - US White House Monitored Case
+
+Dear Investigative Team,
+
+I am presenting a landmark case: a digital "Evidence Vault" documenting decades of state-led fraud and human rights violations in Moldova, now under monitoring by the US White House.
+
+KEY POINTS:
+- Evidence of cadastral forgery (Art. 361 CC RM)
+- Identity theft ("Maceret" → "Maciret") 
+- 246+ files secured with cryptographic hashes
+
+Latest White House protocol: February 21, 2026
+
+Repository & Roadmap: https://github.com/arhiv1973b/maceret-case-evidence/tree/REVOLUTION-JUS-COGENS-V1
+
+Available for interview.
+
+NOTICE: This is logged in immutable GitHub registry.
+
+A©tor Maceret Alexei
+arhiv240@gmail.com
