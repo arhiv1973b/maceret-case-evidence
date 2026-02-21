@@ -58,6 +58,22 @@
 - **System hides**: Pages 2+ contain real content but no text layer
 - **OCR reveals**: True nature of crimes
 
+## Additional Apostilles with Maceret Cases
+
+- 5GTUD58SJQ5N6 - Guzun Corneliu (judge)
+- 7FYS428VLM4F4 - Munteanu Dorin
+- 8I2N14CVELIQ5 - Guzun Corneliu
+- 9OVS71FRKM4S3 - Stela Pinzaru
+- 9T3M953ZBUHO4 - Guzun Corneliu
+- BO2TCZ6WHSFG4 - Curov Igor
+- FN5P1X6ZIP6R3 - Melinteanu Iurie
+- HS5N558YBNEK3 - Gheorghe Nicolaescu
+
+## GitHub Repository
+
+Branch: `evidence-complete-2026`
+URL: https://github.com/arhiv1973b/maceret-case-evidence
+
 ---
 
 Generated: 2026-02-21
