@@ -51,6 +51,12 @@ All primary strategic targets (Global, Diplomatic, and Local) have been formally
 - **NATIONAL STATUS:** PENDING (ZdG, RISE Moldova).
 - **OBSERVATION:** Local silence contrasts with rapid international acknowledgement.
 
+- **PRIOR NOTIFICATION (THURSDAY):** 2026-02-19/20
+- **CONTENT:** Private correspondence to contacts regarding electricity cutoff during Apostille registration preparation
+- **KEY FINDING:** 11% of apostilles discovered as unsigned but issued as "legally" certified
+- **RELEVANCE:** Key apostilles related to torture and discrimination cases were falsified
+- **STATUS:** Previously reported via private channels before public GitHub deployment
+
 ## LEGAL NOTICE:
 
 All recipients are formally notified under Erga Omnes obligations. Absence of response will be logged as Administrative Acquiescence.

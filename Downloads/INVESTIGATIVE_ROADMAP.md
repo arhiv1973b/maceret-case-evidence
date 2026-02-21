@@ -74,8 +74,14 @@ This roadmap guides investigators through the 246+ evidence files to identify ke
 ### Incident:
 
 - **Physical Assault:** Attack by Yuri Lupea (Target: Face/Head) to obstruct justice
-- **Cyber-Crime:** Unauthorized access to Google Drive (Evidence: LUPEA_FileType_Stats.csv)
+- **Cyber-Crime:** Unauthorized access to personal Google Drive (Evidence: LUPEA_FileType_Stats.csv)
 - **Proof:** Presence of 37,000+ foreign system files indicating coordinated data breach/mirroring
+
+### Prior Threat (Thursday):
+
+- **Electricity Cutoff:** Power disconnected during Apostille registration preparation
+- **Discovery:** 11% of apostilles found to be unsigned but issued as "legally" certified
+- **Affected Cases:** Key apostilles related to torture and discrimination documentation
 
 ### Legal Basis:
 
