@@ -16,6 +16,12 @@
 - **CONTENT:** Notification of Jus Cogens Violations & Case Deposition.
 - **72H COUNTDOWN:** Active until Feb 24, 2026.
 
+- **RECIPIENT:** US Embassy Chisinau (ChisinauProtocol@state.gov)
+- **TIMESTAMP:** 2026-02-21 23:59 EET
+- **STATUS:** TRANSMITTED / DIPLOMATIC DEPOSITION
+- **CONTENT:** Evidence of State Fraud & Jus Cogens Violations.
+- **72H COUNTDOWN:** Active until Feb 24, 2026.
+
 ## LEGAL NOTICE:
 
 All recipients are formally notified under Erga Omnes obligations. Absence of response will be logged as Administrative Acquiescence.
