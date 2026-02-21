@@ -39,7 +39,9 @@
 
 1.  **UN Charter Art. 103:** This deposition overrides any domestic judicial acts of the Republic of Moldova that conflict with Jus Cogens norms.
 2.  **Dire Tladi Protocol:** Formally notified to the UN Special Rapporteur as a primary example of peremptory norm violation.
-3.  **White House Notification:** Received and logged on 29.11.2025.
+3.  **White House Notification:**
+    - Received and logged on **29.11.2025**
+    - **21.02.2026** - "STRENGTH & PEACE" protocol confirmation from The White House
 
 **Digital Evidence Vault:** [https://github.com/arhiv1973b/maceret-case-evidence](https://github.com/arhiv1973b/maceret-case-evidence)  
 **Verification:** All primary evidence is sealed with SHA-256 cryptographic hashes in `registry.json`.
