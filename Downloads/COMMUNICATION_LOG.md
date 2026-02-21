@@ -10,6 +10,12 @@
 - **CONTENT:** Digital Evidence Vault vs. State Fraud (Jus Cogens Precedent)
 - **72H COUNTDOWN:** Active until Feb 24, 2026.
 
+- **RECIPIENT:** UN OHCHR / Special Rapporteur Dire Tladi (cp@ohchr.org)
+- **TIMESTAMP:** 2026-02-21 23:55 EET
+- **STATUS:** TRANSMITTED / FORMAL DEPOSITION
+- **CONTENT:** Notification of Jus Cogens Violations & Case Deposition.
+- **72H COUNTDOWN:** Active until Feb 24, 2026.
+
 ## LEGAL NOTICE:
 
 All recipients are formally notified under Erga Omnes obligations. Absence of response will be logged as Administrative Acquiescence.
