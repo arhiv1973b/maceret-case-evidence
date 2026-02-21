@@ -52,4 +52,21 @@ Compare SHA-256 digest with `/integrity-hashes/registry.json`.
 - **Registry:** https://arhiv1973b.github.io/maceret-case-evidence/
 - **Repository:** https://github.com/arhiv1973b/maceret-case-evidence
 
+## 📞 Communication Protocol (Officially Notified)
+
+### United Nations (OHCHR)
+
+- **Complaints Secretariat:** cp@ohchr.org (confirmed by letter 05.08.2020)
+- **Jus Cogens Special Rapporteur (Dire Tladi):** ohchr-petitions@un.org (marked "For attention of Special Rapporteur on Jus Cogens")
+- **UN Moldova Mission:** registry.md@undp.org
+
+### United States
+
+- **US Embassy Chisinau:** ChisinauProtocol@state.gov
+- **White House:** whitehouse.gov/contact
+
+### Legal Recusal
+
+- **Marcel Gutan:** marcelgutan@gmail.com (recusal granted 18.05.2021)
+
 Generated: 2026-02-21
