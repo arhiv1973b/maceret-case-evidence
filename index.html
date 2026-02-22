@@ -866,18 +866,17 @@
 
       // Role switching
       function showRole(role) {
-        document
-          .querySelectorAll(".role-tab")
-          .forEach((t) => t.classList.remove("active"));
-        document
-          .querySelectorAll(".role-panel")
-          .forEach((p) => p.classList.remove("active"));
-        event.target.classList.add("active");
-        document.getElementById(role).classList.add("active");
+        document.querySelectorAll('.role-tab').forEach(function(t) { t.classList.remove('active'); });
+        document.querySelectorAll('.role-panel').forEach(function(p) { p.classList.remove('active'); });
+        var tab = event.target;
+        tab.classList.add('active');
+        var panel = document.getElementById(role);
+        panel.classList.add('active');
 
-        if (role === "network") {
-          initNetwork();
+        if (role === 'network') {
+          setTimeout(initNetwork, 100);
         }
+      }
       }
 
       // Accordion
