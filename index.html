@@ -852,6 +852,132 @@
         </div>
       </div>
 
+      <!-- ECHR Legal Framework -->
+      <div
+        id="echrBanner"
+        style="
+          background: linear-gradient(135deg, #1a0a2e 0%, #0a1628 100%);
+          border: 2px solid #00ccff;
+          padding: 20px;
+          margin-bottom: 30px;
+          border-radius: 10px;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+          "
+        >
+          <div>
+            <h3 style="color: #00ccff; margin: 0">⚖️ ECHR ПРАВОВАЯ ОСНОВА</h3>
+            <p
+              style="color: var(--text-dim); margin: 5px 0 0 0; font-size: 12px"
+            >
+              Статьи 3, 6, 8 Европейской конвенции
+            </p>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: center">
+            <span id="echrStatus" style="color: #00ccff; font-weight: bold"
+              >● АКТИВЕН</span
+            >
+            <button
+              class="btn"
+              onclick="showECHRViolations()"
+              style="background: #00ccff; color: var(--bg-dark)"
+            >
+              Показать нарушения
+            </button>
+          </div>
+        </div>
+
+        <!-- ECHR Articles -->
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+          "
+        >
+          <div
+            style="
+              background: var(--bg-dark);
+              padding: 12px;
+              border-radius: 8px;
+              border-left: 3px solid #ff3366;
+            "
+          >
+            <h4 style="color: #ff3366; margin: 0 0 8px 0">Статья 3 ECHR</h4>
+            <p style="font-size: 11px; color: var(--text-dim); margin: 0">
+              Запрет пыток и бесчеловечного обращения
+            </p>
+            <div
+              id="art3Count"
+              style="
+                font-size: 24px;
+                font-weight: bold;
+                color: #ff3366;
+                margin-top: 5px;
+              "
+            >
+              0
+            </div>
+          </div>
+          <div
+            style="
+              background: var(--bg-dark);
+              padding: 12px;
+              border-radius: 8px;
+              border-left: 3px solid #ffaa00;
+            "
+          >
+            <h4 style="color: #ffaa00; margin: 0 0 8px 0">Статья 6 ECHR</h4>
+            <p style="font-size: 11px; color: var(--text-dim); margin: 0">
+              Право на справедливый суд
+            </p>
+            <div
+              id="art6Count"
+              style="
+                font-size: 24px;
+                font-weight: bold;
+                color: #ffaa00;
+                margin-top: 5px;
+              "
+            >
+              0
+            </div>
+          </div>
+          <div
+            style="
+              background: var(--bg-dark);
+              padding: 12px;
+              border-radius: 8px;
+              border-left: 3px solid #00ff88;
+            "
+          >
+            <h4 style="color: #00ff88; margin: 0 0 8px 0">Статья 8 ECHR</h4>
+            <p style="font-size: 11px; color: var(--text-dim); margin: 0">
+              Право на уважение частной жизни
+            </p>
+            <div
+              id="art8Count"
+              style="
+                font-size: 24px;
+                font-weight: bold;
+                color: #00ff88;
+                margin-top: 5px;
+              "
+            >
+              0
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Stats -->
       <div class="stats-grid">
         <div class="stat-card">
@@ -2524,6 +2650,37 @@
 
         result.reason = "Соответствует Статье 5";
         return result;
+      }
+
+      // ECHR Functions
+      var echrViolations = {
+        art3: 1, // Torture/inhuman treatment - related to medical evidence
+        art6: 13, // Unfair trial - falsified apostilles
+        art8: 1, // Privacy - data manipulation
+      };
+
+      function showECHRViolations() {
+        document.getElementById("art3Count").innerHTML = echrViolations.art3;
+        document.getElementById("art6Count").innerHTML = echrViolations.art6;
+        document.getElementById("art8Count").innerHTML = echrViolations.art8;
+
+        alert(
+          "⚖️ ECHR НАРУШЕНИЯ\n\n" +
+            "Статья 3 (Запрет пыток): " +
+            echrViolations.art3 +
+            " фактов\n" +
+            "  - Незаконное лишение свободы\n" +
+            "  - Бесчеловечное обращение\n\n" +
+            "Статья 6 (Справедливый суд): " +
+            echrViolations.art6 +
+            " фактов\n" +
+            "  - Фальсификация апостилей\n" +
+            "  - Нарушение права на защиту\n\n" +
+            "Статья 8 (Частная жизнь): " +
+            echrViolations.art8 +
+            " фактов\n" +
+            "  - Манипуляция персональными данными",
+        );
       }
 
       // Role switching
