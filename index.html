@@ -27,76 +27,166 @@
         color: #ff0000;
         font-weight: bold;
         border: 1px solid #ff0000;
-        padding: 10px;
+        padding: 15px;
         margin: 20px 0;
+        font-size: 14px;
       }
       .file-list {
         list-style: none;
         padding: 0;
       }
       .file-list li {
-        margin: 10px 0;
+        margin: 15px 0;
         background: #1a1a1a;
-        padding: 10px;
+        padding: 15px;
         border-left: 5px solid #00ff00;
       }
       a {
         color: #00ff00;
         text-decoration: none;
         border-bottom: 1px dashed #00ff00;
+        font-weight: bold;
       }
       a:hover {
         background: #00ff00;
         color: #000;
       }
-      .status-verified {
+      .stats {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0;
+        border: 1px solid #00ff00;
+        padding: 15px;
+      }
+      .stat-box {
+        text-align: center;
+      }
+      .stat-number {
+        font-size: 32px;
+        font-weight: bold;
+      }
+      .fraud {
+        color: #ff0000;
+      }
+      .verified {
         color: #00ff00;
       }
-      .status-fraud {
-        color: #ff0000;
+      .btn {
+        display: inline-block;
+        background: #003300;
+        color: #00ff00;
+        padding: 10px 20px;
+        border: 1px solid #00ff00;
+        margin: 10px 5px 10px 0;
+        text-decoration: none;
+      }
+      .btn:hover {
+        background: #00ff00;
+        color: #000;
+      }
+      blockquote {
+        border-left: 3px solid #00ff00;
+        padding-left: 15px;
+        margin: 20px 0;
+        color: #88ff88;
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <h1>A©tor Maceret: Jus Cogens Integrity Report</h1>
+      <h1>A©tor Maceret: Jus Cogens</h1>
       <p><strong>Case ID:</strong> CASE-MACHERET-1997-2026</p>
-      <p><strong>Status:</strong> Forensic Audit in Progress</p>
+      <p><strong>Status:</strong> 🔴 FORENSIC AUDIT COMPLETE</p>
 
-      <div class="alert">
-        🚨 НАРУШЕНИЕ ГААГСКОЙ КОНВЕНЦИИ: Статья 5<br />
-        Отсутствие ФАМИЛИИ и должности подписанта в поле 3<br />
-        13 из 90 апостилей (14%) - НЕДЕЙСТВИТЕЛЬНЫ
+      <div class="stats">
+        <div class="stat-box">
+          <div class="stat-number">90</div>
+          <div>Total Apostilles</div>
+        </div>
+        <div class="stat-box fraud">
+          <div class="stat-number">13</div>
+          <div>Fraudulent (14%)</div>
+        </div>
+        <div class="stat-box verified">
+          <div class="stat-number">77</div>
+          <div>Verified</div>
+        </div>
       </div>
 
-      <h3>📚 Основные документы:</h3>
+      <div class="alert">
+        🚨 НАРУШЕНИЕ ГААГСКОЙ КОНВЕНЦИИ: Статья 5<br /><br />
+        <strong>ОТСУТСТВИЕ ФАМИЛИИ ДОЛЖНОСТНОГО ЛИЦА</strong> в поле 3
+        апостиля<br />
+        = НЕДЕЙСТВИТЕЛЬНЫЙ ДОКУМЕНТ (VOID)
+      </div>
+
+      <h3>📋 ОСНОВНЫЕ ОТЧЁТЫ:</h3>
       <ul class="file-list">
         <li>
           📄
-          <a href="APOSTILLE_FRAUD_REPORT.md"
-            >ОТЧЕТ О ФАЛЬСИФИКАЦИИ АПОСТИЛЕЙ</a
-          >
-          — Юридический разбор подлога.
+          <a
+            href="https://github.com/arhiv1973b/maceret-case-evidence/blob/html-site/APOSTILLE_FRAUD_REPORT.md"
+            target="_blank"
+            >ОТЧЁТ О ФАЛЬСИФИКАЦИИ АПОСТИЛЕЙ</a
+          ><br />
+          — Полный юридический разбор нарушений
         </li>
         <li>
-          📄 <a href="TECHNICAL_INTEGRITY_REPORT.md">ТЕХНИЧЕСКИЙ АУДИТ</a> —
-          Байт-в-байт верификация (SHA-256).
-        </li>
-        <li>
-          📂 <a href="Gov_Apostilles_PNG/">ВИЗУАЛЬНЫЙ АРХИВ (PNG)</a> — Сличение
-          подписей 11 ключевых документов.
+          📄
+          <a
+            href="https://github.com/arhiv1973b/maceret-case-evidence/blob/html-site/TECHNICAL_INTEGRITY_REPORT.md"
+            target="_blank"
+            >ТЕХНИЧЕСКИЙ АУДИТ</a
+          ><br />
+          — Байт-в-байт верификация файлов
         </li>
       </ul>
 
+      <h3>📂 ВИЗУАЛЬНЫЕ АРХИВЫ:</h3>
+      <ul class="file-list">
+        <li>
+          🖼️
+          <a
+            href="https://github.com/arhiv1973b/maceret-case-evidence/tree/html-site/Verified_Apostilles_PNG"
+            target="_blank"
+            >Verified_Apostilles_PNG</a
+          >
+          — 90 верифицированных апостилей
+        </li>
+        <li>
+          🖼️
+          <a
+            href="https://github.com/arhiv1973b/maceret-case-evidence/tree/html-site/Gov_Apostilles_PNG"
+            target="_blank"
+            >Gov_Apostilles_PNG</a
+          >
+          — 11 апостилей с госпортала
+        </li>
+      </ul>
+
+      <h3>📥 СКАЧАТЬ ВСЕ ФАЙЛЫ:</h3>
+      <a
+        href="https://github.com/arhiv1973b/maceret-case-evidence/archive/refs/heads/html-site.zip"
+        class="btn"
+        >📦 Скачать ZIP</a
+      >
+      <a
+        href="https://github.com/arhiv1973b/maceret-case-evidence"
+        target="_blank"
+        class="btn"
+        >🐙 GitHub Репозиторий</a
+      >
+
       <h3>⚖️ Правовой Нейропротокол:</h3>
       <blockquote>
-        "Все нормы Jus Cogens должны соблюдаться Erga Omnes. Любое техническое
-        искажение реестра является актом саботажа против международного
-        правопорядка."
+        "Все нормы Jus Cogens должны соблюдаться Erga Omnes.<br />
+        Любое техническое искажение реестра является актом саботажа<br />
+        против международного правопорядка."
       </blockquote>
 
-      <p style="text-align: right; margin-top: 50px">
-        Semnat: A©tor Maceret Alexei
+      <p style="text-align: right; margin-top: 50px; color: #888888">
+        Signed: A©tor Maceret Alexei<br />
+        Date: 2026-02-22
       </p>
     </div>
   </body>
