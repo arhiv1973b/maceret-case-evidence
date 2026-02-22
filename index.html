@@ -1335,6 +1335,13 @@
             >
               Применить
             </button>
+            <button
+              class="btn"
+              onclick="applyViennaFilter()"
+              style="background: #ff3366; color: white; margin-left: 5px"
+            >
+              ⚠️ ФИЛЬТР VOID
+            </button>
           </div>
         </div>
 
@@ -1491,6 +1498,133 @@
             <strong style="color: #00ccff">ЕКПЧ</strong> →
             <strong>Национальное право</strong>
           </p>
+        </div>
+      </div>
+
+      <!-- Article Quotes - Visualization -->
+      <div
+        style="
+          background: var(--bg-panel);
+          border: 1px solid var(--border);
+          padding: 20px;
+          margin-bottom: 30px;
+          border-radius: 10px;
+        "
+      >
+        <h3 style="color: var(--primary); margin-bottom: 20px">
+          📜 ЦИТАТЫ ИЗ МЕЖДУНАРОДНЫХ ДОКУМЕНТОВ
+        </h3>
+
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+          "
+        >
+          <!-- UDHR Article 1 -->
+          <div
+            style="
+              background: var(--bg-dark);
+              padding: 15px;
+              border-radius: 8px;
+              border-left: 3px solid #00ff88;
+            "
+          >
+            <h4 style="color: #00ff88; margin: 0 0 10px 0">🌍 ВДПЧ Статья 1</h4>
+            <p style="font-size: 12px; color: var(--text); font-style: italic">
+              "Все люди рождаются свободными и равными в достоинстве и правах.
+              Они наделены разумом и совестью и должны поступать в отношении
+              друг друга в духе братства."
+            </p>
+          </div>
+
+          <!-- Vienna Convention Article 31 -->
+          <div
+            style="
+              background: var(--bg-dark);
+              padding: 15px;
+              border-radius: 8px;
+              border-left: 3px solid #9933ff;
+            "
+          >
+            <h4 style="color: #9933ff; margin: 0 0 10px 0">
+              🏛️ ВК 1969 Статья 31
+            </h4>
+            <p style="font-size: 12px; color: var(--text); font-style: italic">
+              "Договор должен толковаться добросовестно в соответствии с обычным
+              значением, придаваемым терминам в их контексте, а также в свете
+              объекта и целей договора."
+            </p>
+          </div>
+
+          <!-- Vienna Convention Article 53 -->
+          <div
+            style="
+              background: var(--bg-dark);
+              padding: 15px;
+              border-radius: 8px;
+              border-left: 3px solid #ff3366;
+            "
+          >
+            <h4 style="color: #ff3366; margin: 0 0 10px 0">
+              🏛️ ВК 1969 Статья 53 - JUS COGENS
+            </h4>
+            <p style="font-size: 12px; color: var(--text); font-style: italic">
+              "Договор является ничтожным, если в момент его заключения он
+              противоречит императивной норме общего международного права (jus
+              cogens)."
+            </p>
+          </div>
+
+          <!-- ECHR Article 3 -->
+          <div
+            style="
+              background: var(--bg-dark);
+              padding: 15px;
+              border-radius: 8px;
+              border-left: 3px solid #ff3366;
+            "
+          >
+            <h4 style="color: #ff3366; margin: 0 0 10px 0">⚖️ ЕКПЧ Статья 3</h4>
+            <p style="font-size: 12px; color: var(--text); font-style: italic">
+              "Никто не должен подвергаться ни пыткам, ни бесчеловечному или
+              унижающему достоинство обращению или наказанию."
+            </p>
+          </div>
+
+          <!-- ECHR Article 6 -->
+          <div
+            style="
+              background: var(--bg-dark);
+              padding: 15px;
+              border-radius: 8px;
+              border-left: 3px solid #ffaa00;
+            "
+          >
+            <h4 style="color: #ffaa00; margin: 0 0 10px 0">⚖️ ЕКПЧ Статья 6</h4>
+            <p style="font-size: 12px; color: var(--text); font-style: italic">
+              "Каждый имеет право на справедливое и публичное разбирательство
+              дела в разумный срок независимым и беспристрастным судом."
+            </p>
+          </div>
+
+          <!-- Rome Statute Article 7 -->
+          <div
+            style="
+              background: var(--bg-dark);
+              padding: 15px;
+              border-radius: 8px;
+              border-left: 3px solid #ff4444;
+            "
+          >
+            <h4 style="color: #ff4444; margin: 0 0 10px 0">⚖️ РС Статья 7</h4>
+            <p style="font-size: 12px; color: var(--text); font-style: italic">
+              "Преступления против человечности означают любой из следующих
+              актов, совершаемых в рамках широкомасштабного или систематического
+              нападения."
+            </p>
+          </div>
         </div>
       </div>
 
@@ -3290,6 +3424,52 @@
             "Любой акт, нарушающий Jus Cogens,\n" +
             "НЕДЕЙСТВИТЕЛЕН (ex tunc) - с момента создания",
         );
+      }
+
+      // Vienna Filter - VOID BY JUS COGENS
+      function applyViennaFilter() {
+        var violations = 0;
+        if (typeof fraudData !== "undefined") {
+          violations = fraudData.length;
+        }
+
+        var result = "";
+        if (typeof fraudData !== "undefined") {
+          fraudData.forEach(function (d) {
+            result += "\n🚨 " + d.code + " - " + d.date + "\n";
+            result += "   Орган: " + d.authority + "\n";
+            result += "   Статус: ❌ VOID BY JUS COGENS\n";
+            result += "   Основание: Статья 53 ВК 1969\n";
+            result += "   --------------------------------\n";
+          });
+        }
+
+        alert(
+          "⚠️ ВЕНСКИЙ ФИЛЬТР - JUS COGENS ACTIVATED\n\n" +
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n" +
+            "ОБНАРУЖЕНО НАРУШЕНИЙ: " +
+            violations +
+            "\n\n" +
+            "Применены нормы:\n" +
+            "- Статья 53 ВК 1969 (Jus Cogens)\n" +
+            "- Статья 5 Гаагской конвенции 1961\n" +
+            "- Статья 3, 6, 8 ЕКПЧ\n\n" +
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n" +
+            "ДОКУМЕНТЫ СО СТАТУСОМ VOID:\n" +
+            result +
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n" +
+            "Все эти апостили признаются НЕДЕЙСТВИТЕЛЬНЫМИ\n" +
+            "с момента создания (ex tunc) согласно нормам\n" +
+            "международного права",
+        );
+
+        // Visual feedback - highlight fraud entries
+        if (typeof populateEvidenceTable === "function") {
+          document.querySelectorAll(".fraud").forEach(function (el) {
+            el.style.background = "var(--fraud-dim)";
+            el.style.borderLeft = "4px solid #ff3366";
+          });
+        }
       }
 
       // Role switching
