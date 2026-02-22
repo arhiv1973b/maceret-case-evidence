@@ -401,6 +401,67 @@
         border-left: 3px solid var(--accent);
       }
 
+      /* Timeline Styles */
+      .timeline-dot {
+        position: absolute;
+        top: 72px;
+        width: 16px;
+        height: 16px;
+        background: var(--bg-dark);
+        border: 2px solid var(--primary);
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s;
+        z-index: 10;
+      }
+
+      .timeline-dot:hover {
+        transform: scale(1.8);
+        background: var(--primary);
+        box-shadow: 0 0 15px var(--primary);
+      }
+
+      .timeline-dot.fraud {
+        border-color: var(--fraud);
+        background: var(--fraud-dim);
+      }
+
+      .timeline-dot.fraud:hover {
+        background: var(--fraud);
+        box-shadow: 0 0 15px var(--fraud);
+      }
+
+      .timeline-label {
+        position: absolute;
+        top: 100px;
+        font-size: 9px;
+        color: var(--text-dim);
+        transform: rotate(-45deg);
+        white-space: nowrap;
+        transform-origin: left center;
+      }
+
+      .timeline-year {
+        position: absolute;
+        top: 40px;
+        font-size: 11px;
+        color: var(--primary);
+        font-weight: bold;
+      }
+
+      .event-card {
+        background: var(--bg-dark);
+        border: 1px solid var(--border);
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 10px;
+      }
+
+      .event-card.fraud {
+        border-color: var(--fraud);
+        background: var(--fraud-dim);
+      }
+
       /* Tab counter badges */
       .tab-badge {
         background: var(--fraud);
@@ -1087,6 +1148,71 @@
           </div>
         </div>
       </div>
+
+      <!-- Timeline Section -->
+      <section
+        id="timeline-section"
+        style="
+          margin: 40px 0;
+          padding: 20px;
+          background: var(--bg-panel);
+          border: 1px solid var(--border);
+        "
+      >
+        <h2 style="color: var(--primary); margin-bottom: 20px">
+          📜 Хронология событий - Jus Cogens
+        </h2>
+
+        <div
+          id="timeline-container"
+          style="
+            position: relative;
+            height: 180px;
+            margin: 30px 0;
+            overflow-x: auto;
+            overflow-y: hidden;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+          "
+        >
+          <div
+            id="timeline-line"
+            style="
+              position: absolute;
+              top: 80px;
+              left: 30px;
+              height: 4px;
+              background: linear-gradient(90deg, var(--primary), var(--fraud));
+              box-shadow: 0 0 10px var(--primary);
+            "
+          ></div>
+          <div
+            id="timeline-events"
+            style="position: relative; height: 100%"
+          ></div>
+        </div>
+
+        <div
+          id="event-details"
+          style="
+            background: var(--bg-dark);
+            padding: 20px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            min-height: 80px;
+          "
+        >
+          <p style="color: var(--text-dim); text-align: center">
+            📍 Выберите событие на шкале для просмотра деталей
+          </p>
+        </div>
+
+        <div style="text-align: center; margin-top: 15px">
+          <button class="btn" onclick="playTimeline()">▶ Авто-плей</button>
+          <button class="btn" onclick="stopTimeline()">⏹ Стоп</button>
+        </div>
+      </section>
 
       <!-- Download Section -->
       <div style="margin-top: 50px">
@@ -2099,6 +2225,132 @@
         tbody.innerHTML = html;
       }
 
+      // Timeline functions
+      var timelineInterval = null;
+      var timelineDots = [];
+
+      function renderTimeline() {
+        const container = document.getElementById("timeline-events");
+        if (!container || typeof allApostilles === "undefined") return;
+
+        container.innerHTML = "";
+        timelineDots = [];
+
+        // Sort by date
+        const sorted = [...allApostilles].sort((a, b) => {
+          const da = a.date.split(".").reverse().join("-");
+          const db = b.date.split(".").reverse().join("-");
+          return new Date(da) - new Date(db);
+        });
+
+        const startDate = new Date("2021-01-01");
+        const endDate = new Date("2026-12-31");
+        const totalDays = (endDate - startDate) / (1000 * 60 * 60 * 24);
+        const containerWidth = Math.max(800, sorted.length * 30);
+
+        document.getElementById("timeline-line").style.width =
+          containerWidth + "px";
+        container.style.width = containerWidth + "px";
+
+        // Add year markers
+        for (let year = 2021; year <= 2026; year++) {
+          const yearDate = new Date(year + "-01-01");
+          const days = (yearDate - startDate) / (1000 * 60 * 60 * 24);
+          const leftPos = 30 + (days / totalDays) * containerWidth;
+
+          const yearLabel = document.createElement("div");
+          yearLabel.className = "timeline-year";
+          yearLabel.style.left = leftPos + "px";
+          yearLabel.textContent = year;
+          container.appendChild(yearLabel);
+        }
+
+        // Add event dots
+        sorted.forEach((doc, i) => {
+          const parts = doc.date.split(".");
+          const docDate = new Date(parts[2] + "-" + parts[1] + "-" + parts[0]);
+          const days = (docDate - startDate) / (1000 * 60 * 60 * 24);
+          const leftPos = 30 + (days / totalDays) * containerWidth;
+
+          const isFraud = doc.status === "VOID";
+
+          const dot = document.createElement("div");
+          dot.className = "timeline-dot" + (isFraud ? " fraud" : "");
+          dot.style.left = leftPos + "px";
+          dot.title = doc.code + " - " + doc.date;
+
+          dot.onclick = () => showEventDetails(doc);
+
+          container.appendChild(dot);
+          timelineDots.push(dot);
+
+          // Add label every few events
+          if (i % 10 === 0) {
+            const label = document.createElement("div");
+            label.className = "timeline-label";
+            label.style.left = leftPos + "px";
+            label.textContent = doc.date + " " + doc.code.substring(0, 6);
+            container.appendChild(label);
+          }
+        });
+      }
+
+      function showEventDetails(doc) {
+        const details = document.getElementById("event-details");
+        const isFraud = doc.status === "VOID";
+
+        details.className = "event-card" + (isFraud ? " fraud" : "");
+        details.innerHTML = isFraud
+          ? "<h3 style='color: var(--fraud);'>🚨 НАРУШЕНИЕ</h3>"
+          : "<h3 style='color: var(--primary);'>✅ Верифицировано</h3>";
+
+        details.innerHTML +=
+          "<p><strong>Код:</strong> " +
+          doc.code +
+          "</p>" +
+          "<p><strong>Дата:</strong> " +
+          doc.date +
+          "</p>" +
+          "<p><strong>Ведомство:</strong> " +
+          doc.authority +
+          "</p>" +
+          "<p><strong>Статус:</strong> " +
+          doc.status +
+          "</p>" +
+          "<button class='btn' onclick=\"loadPdfByCodeDirect('" +
+          doc.code +
+          "_EVIDENCE')\">📖 Открыть</button>";
+      }
+
+      function playTimeline() {
+        if (timelineDots.length === 0) return;
+
+        let index = 0;
+        stopTimeline();
+
+        timelineInterval = setInterval(() => {
+          if (index < timelineDots.length) {
+            timelineDots[index].click();
+            // Scroll into view
+            const container = document.getElementById("timeline-container");
+            timelineDots[index].scrollIntoView({
+              behavior: "smooth",
+              inline: "center",
+            });
+            index++;
+          } else {
+            stopTimeline();
+          }
+        }, 1500);
+      }
+
+      function stopTimeline() {
+        if (timelineInterval) {
+          clearInterval(timelineInterval);
+          timelineInterval = null;
+        }
+      }
+
       // Direct PDF load for registry
       function loadPdfByCodeDirect(pdfName) {
         document.getElementById("pdfCode").value = pdfName;
@@ -2315,6 +2567,7 @@
         updateTime();
         populateEvidenceTable();
         loadGithubFiles();
+        renderTimeline();
       };
 
       function updateTime() {
