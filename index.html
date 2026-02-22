@@ -978,6 +978,114 @@
         </div>
       </div>
 
+      <!-- UDHR - Universal Declaration of Human Rights -->
+      <div
+        id="udhrBanner"
+        style="
+          background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
+          border: 2px solid #00ff88;
+          padding: 20px;
+          margin-bottom: 30px;
+          border-radius: 10px;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+          "
+        >
+          <div>
+            <h3 style="color: #00ff88; margin: 0">
+              🌍 ВДПЧ - ВСЕОБЩАЯ ДЕКЛАРАЦИЯ ПРАВ ЧЕЛОВЕКА
+            </h3>
+            <p
+              style="color: var(--text-dim); margin: 5px 0 0 0; font-size: 12px"
+            >
+              Принята ГА ООН 10 декабря 1948 года
+            </p>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: center">
+            <span id="udhrStatus" style="color: #00ff88; font-weight: bold"
+              >● ФУНДАМЕНТ</span
+            >
+            <button
+              class="btn"
+              onclick="showUDHR()"
+              style="background: #00ff88; color: var(--bg-dark)"
+            >
+              Показать
+            </button>
+          </div>
+        </div>
+
+        <!-- UDHR Core Articles -->
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+          "
+        >
+          <div
+            style="
+              background: var(--bg-dark);
+              padding: 12px;
+              border-radius: 8px;
+              border-left: 3px solid #00ff88;
+            "
+          >
+            <h4 style="color: #00ff88; margin: 0 0 8px 0">Статья 1</h4>
+            <p style="font-size: 10px; color: var(--text-dim); margin: 0">
+              Свобода, равенство, достоинство
+            </p>
+          </div>
+          <div
+            style="
+              background: var(--bg-dark);
+              padding: 12px;
+              border-radius: 8px;
+              border-left: 3px solid #00ff88;
+            "
+          >
+            <h4 style="color: #00ff88; margin: 0 0 8px 0">Статья 3</h4>
+            <p style="font-size: 10px; color: var(--text-dim); margin: 0">
+              Право на жизнь, свободу, безопасность
+            </p>
+          </div>
+          <div
+            style="
+              background: var(--bg-dark);
+              padding: 12px;
+              border-radius: 8px;
+              border-left: 3px solid #00ff88;
+            "
+          >
+            <h4 style="color: #00ff88; margin: 0 0 8px 0">Статья 5</h4>
+            <p style="font-size: 10px; color: var(--text-dim); margin: 0">
+              Запрет пыток и бесчеловечного обращения
+            </p>
+          </div>
+          <div
+            style="
+              background: var(--bg-dark);
+              padding: 12px;
+              border-radius: 8px;
+              border-left: 3px solid #00ff88;
+            "
+          >
+            <h4 style="color: #00ff88; margin: 0 0 8px 0">Статья 10</h4>
+            <p style="font-size: 10px; color: var(--text-dim); margin: 0">
+              Право на справедливый суд
+            </p>
+          </div>
+        </div>
+      </div>
+
       <!-- Vienna Convention 1969 Module -->
       <div
         id="viennaBanner"
@@ -2854,6 +2962,26 @@
             echrViolations.art8 +
             " фактов\n" +
             "  - Манипуляция персональными данными",
+        );
+      }
+
+      // UDHR Functions
+      function showUDHR() {
+        alert(
+          "🌍 ВСЕОБЩАЯ ДЕКЛАРАЦИЯ ПРАВ ЧЕЛОВЕКА (ВДПЧ)\n" +
+            "Принята ГА ООН 10 декабря 1948 года\n\n" +
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n" +
+            "Статья 1:\n" +
+            "Все люди рождаются свободными и равными в достоинстве и правах\n\n" +
+            "Статья 3:\n" +
+            "Каждый имеет право на жизнь, свободу и личную неприкосновенность\n\n" +
+            "Статья 5:\n" +
+            "Никто не должен подвергаться пыткам или бесчеловечному обращению\n\n" +
+            "Статья 10:\n" +
+            "Каждый имеет право на справедливое публичное разбирательство\n\n" +
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n" +
+            "ВДПЧ является фундаментом международного права\n" +
+            "и имеет статус Jus Cogens",
         );
       }
 
