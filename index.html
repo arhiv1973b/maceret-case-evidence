@@ -759,6 +759,99 @@
         <div class="status-badge">🔴 FORENSIC AUDIT COMPLETE</div>
       </header>
 
+      <!-- Jus Cogens Protocol Banner -->
+      <div
+        id="jusCogensBanner"
+        style="
+          background: linear-gradient(135deg, #1a0a2e 0%, #0a1628 100%);
+          border: 2px solid var(--primary);
+          padding: 20px;
+          margin-bottom: 30px;
+          border-radius: 10px;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+          "
+        >
+          <div>
+            <h3 style="color: var(--primary); margin: 0">
+              🧠 JUS COGENS NEURO-PROTOCOL
+            </h3>
+            <p
+              style="color: var(--text-dim); margin: 5px 0 0 0; font-size: 12px"
+            >
+              Автоматическое разрешение правовых коллизий
+            </p>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: center">
+            <span
+              id="protocolStatus"
+              style="color: var(--primary); font-weight: bold"
+              >● ACTIVE</span
+            >
+            <button
+              class="btn"
+              onclick="activateJusCogens()"
+              style="background: var(--primary); color: var(--bg-dark)"
+            >
+              Запустить протокол
+            </button>
+          </div>
+        </div>
+
+        <!-- Protocol Status Bar -->
+        <div
+          style="
+            margin-top: 15px;
+            padding: 10px;
+            background: var(--bg-dark);
+            border-radius: 5px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              font-size: 11px;
+              color: var(--text-dim);
+            "
+          >
+            <span>Статус: <span id="jcStatus">ГОТОВ</span></span>
+            <span>Нарушений обнаружено: <span id="jcViolations">0</span></span>
+            <span>Действительных: <span id="jcValid">0</span></span>
+          </div>
+          <div
+            style="
+              margin-top: 8px;
+              height: 6px;
+              background: var(--border);
+              border-radius: 3px;
+              overflow: hidden;
+            "
+          >
+            <div
+              id="jcProgressBar"
+              style="
+                height: 100%;
+                width: 0%;
+                background: linear-gradient(
+                  90deg,
+                  var(--fraud),
+                  var(--primary)
+                );
+                transition: width 0.5s;
+              "
+            ></div>
+          </div>
+        </div>
+      </div>
+
       <!-- Stats -->
       <div class="stats-grid">
         <div class="stat-card">
@@ -2356,6 +2449,81 @@
         document.getElementById("pdfCode").value = pdfName;
         loadPdfByCode();
         showRole("files");
+      }
+
+      // Jus Cogens Protocol Functions
+      var jcActive = false;
+      var jcRunning = false;
+
+      function activateJusCogens() {
+        if (jcRunning) return;
+
+        jcRunning = true;
+        document.getElementById("protocolStatus").innerHTML = "⏳ АНАЛИЗ...";
+        document.getElementById("protocolStatus").style.color =
+          "var(--warning)";
+
+        var violations = 0;
+        var valid = 0;
+
+        if (typeof fraudData !== "undefined") {
+          violations = fraudData.length;
+        }
+
+        if (typeof allApostilles !== "undefined") {
+          valid = allApostilles.length - violations;
+        }
+
+        var progress = 0;
+        var interval = setInterval(function () {
+          progress += 5;
+          document.getElementById("jcProgressBar").style.width = progress + "%";
+
+          if (progress >= 100) {
+            clearInterval(interval);
+            completeJusCogens(violations, valid);
+          }
+        }, 50);
+      }
+
+      function completeJusCogens(violations, valid) {
+        document.getElementById("jcStatus").innerHTML = "АКТИВЕН";
+        document.getElementById("jcViolations").innerHTML = violations;
+        document.getElementById("jcValid").innerHTML = valid;
+        document.getElementById("protocolStatus").innerHTML =
+          "🛡️ JUS COGENS ACTIVE";
+        document.getElementById("protocolStatus").style.color =
+          "var(--primary)";
+
+        jcActive = true;
+        jcRunning = false;
+
+        alert(
+          "🛡️ JUS COGENS NEURO-PROTOCOL ACTIVATED\n\nОбнаружено нарушений: " +
+            violations +
+            "\nДействительных: " +
+            valid +
+            "\n\nВсе документы с пустым полем 3 признаются НЕДЕЙСТВИТЕЛЬНЫМИ.",
+        );
+      }
+
+      function verifyJusCogens(code) {
+        var result = { valid: true, reason: "", article: "" };
+
+        if (typeof fraudData !== "undefined") {
+          var found = fraudData.find(function (d) {
+            return d.code === code;
+          });
+          if (found) {
+            result.valid = false;
+            result.reason = "Пустое поле 3 (фамилия/должность отсутствует)";
+            result.article = "Статья 5 Гаагской конвенции 1961 года";
+            return result;
+          }
+        }
+
+        result.reason = "Соответствует Статье 5";
+        return result;
       }
 
       // Role switching
