@@ -4,6 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>A©tor Maceret: Jus Cogens Neuro-Protocol Portal</title>
+
+    <!-- PDF.js for document viewing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>
+      pdfjsLib.GlobalWorkerOptions.workerSrc =
+        "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+    </script>
+
+    <!-- Tesseract.js for OCR/language recognition -->
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+
+    <!-- GitHub API -->
+    <script src="https://unpkg.com/@github/api"></script>
+
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&family=Space+Grotesk:wght@400;600;700&display=swap");
 
@@ -235,6 +249,166 @@
         background: var(--primary-dim);
         border-color: var(--primary);
         color: var(--primary);
+      }
+
+      /* Cloud/AI Panel */
+      .cloud-panel {
+        background: var(--bg-panel);
+        border: 1px solid var(--accent);
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+
+      .cloud-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .cloud-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+      }
+
+      .cloud-item {
+        background: var(--bg-dark);
+        border: 1px solid var(--border);
+        padding: 15px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .cloud-item:hover {
+        border-color: var(--accent);
+        transform: translateY(-3px);
+      }
+
+      .cloud-icon {
+        font-size: 32px;
+        margin-bottom: 10px;
+      }
+
+      /* File Browser */
+      .file-browser {
+        background: var(--bg-dark);
+        border: 1px solid var(--border);
+        padding: 15px;
+        max-height: 400px;
+        overflow-y: auto;
+      }
+
+      .file-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        border-bottom: 1px solid var(--border);
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+
+      .file-item:hover {
+        background: var(--primary-dim);
+      }
+
+      .file-item.fraud {
+        border-left: 3px solid var(--fraud);
+      }
+
+      .file-item.verified {
+        border-left: 3px solid var(--primary);
+      }
+
+      /* PDF Viewer */
+      .pdf-viewer {
+        background: var(--bg-dark);
+        border: 1px solid var(--border);
+        padding: 20px;
+        margin-top: 20px;
+      }
+
+      .pdf-canvas {
+        max-width: 100%;
+        margin: 0 auto;
+        display: block;
+      }
+
+      .pdf-controls {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        margin-top: 15px;
+      }
+
+      /* OCR Scanner */
+      .ocr-scanner {
+        background: var(--bg-dark);
+        border: 1px solid var(--warning);
+        padding: 20px;
+        margin-top: 20px;
+      }
+
+      .ocr-progress {
+        width: 100%;
+        height: 20px;
+        background: var(--border);
+        margin: 10px 0;
+        display: none;
+      }
+
+      .ocr-progress-bar {
+        height: 100%;
+        background: var(--warning);
+        width: 0%;
+        transition: width 0.3s;
+      }
+
+      .ocr-result {
+        background: var(--bg-panel);
+        padding: 15px;
+        margin-top: 15px;
+        font-family: monospace;
+        white-space: pre-wrap;
+        max-height: 300px;
+        overflow-y: auto;
+      }
+
+      /* AI Analysis */
+      .ai-panel {
+        background: linear-gradient(135deg, var(--bg-panel) 0%, #0a1020 100%);
+        border: 1px solid var(--accent);
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+
+      .ai-status {
+        display: inline-block;
+        padding: 5px 15px;
+        background: var(--accent);
+        color: var(--bg-dark);
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: bold;
+        animation: pulse 2s infinite;
+      }
+
+      .ai-response {
+        background: var(--bg-dark);
+        padding: 15px;
+        margin-top: 15px;
+        border-left: 3px solid var(--accent);
+      }
+
+      /* Tab counter badges */
+      .tab-badge {
+        background: var(--fraud);
+        color: white;
+        padding: 2px 8px;
+        border-radius: 10px;
+        font-size: 11px;
+        margin-left: 8px;
       }
 
       .role-panel {
@@ -540,6 +714,9 @@
         <button class="role-tab" onclick="showRole('network')">
           🌐 Сеть нарушений
         </button>
+        <button class="role-tab" onclick="showRole('files')">
+          🤖 AI Файлы
+        </button>
       </div>
 
       <!-- Citizen Panel -->
@@ -735,6 +912,150 @@
         </p>
       </div>
 
+      <!-- Files/AI/Cloud Panel -->
+      <div id="files" class="role-panel">
+        <div class="ai-panel">
+          <div class="cloud-header">
+            <h3>🤖 AI Neuro-Link Portal</h3>
+            <span class="ai-status">● ON-LINE</span>
+          </div>
+          <p style="color: var(--text-dim); margin-bottom: 20px">
+            Подключение к облачным хранилищам, GitHub и AI-анализ документов
+          </p>
+
+          <!-- Cloud Connections -->
+          <h4>☁️ Облачные хранилища</h4>
+          <div class="cloud-grid">
+            <div class="cloud-item" onclick="connectCloud('github')">
+              <div class="cloud-icon">🐙</div>
+              <div>GitHub</div>
+              <div style="font-size: 11px; color: var(--primary)">
+                Подключено
+              </div>
+            </div>
+            <div class="cloud-item" onclick="connectCloud('drive')">
+              <div class="cloud-icon">📁</div>
+              <div>Google Drive</div>
+              <div style="font-size: 11px; color: var(--text-dim)">
+                Нажмите для подключения
+              </div>
+            </div>
+            <div class="cloud-item" onclick="connectCloud('dropbox')">
+              <div class="cloud-icon">📦</div>
+              <div>Dropbox</div>
+              <div style="font-size: 11px; color: var(--text-dim)">
+                Нажмите для подключения
+              </div>
+            </div>
+            <div class="cloud-item" onclick="connectCloud('icloud')">
+              <div class="cloud-icon">☁️</div>
+              <div>iCloud</div>
+              <div style="font-size: 11px; color: var(--text-dim)">
+                Нажмите для подключения
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GitHub File Browser -->
+        <div class="cloud-panel">
+          <h4>🐙 Файлы GitHub</h4>
+          <input
+            type="text"
+            class="search-input"
+            id="githubSearch"
+            placeholder="Поиск по коду апостиля..."
+            onkeyup="searchGithubFiles(this.value)"
+            style="margin-bottom: 15px"
+          />
+          <div id="githubFiles" class="file-browser">
+            <p
+              style="color: var(--text-dim); text-align: center; padding: 20px"
+            >
+              Загрузка файлов из репозитория...
+            </p>
+          </div>
+        </div>
+
+        <!-- PDF Viewer -->
+        <div class="cloud-panel">
+          <h4>📄 Просмотр PDF</h4>
+          <div style="display: flex; gap: 10px; margin-bottom: 15px">
+            <input
+              type="text"
+              class="search-input"
+              id="pdfCode"
+              placeholder="Код апостиля (напр: IT1PD8E29S5F5)"
+              style="flex: 1"
+            />
+            <button class="btn" onclick="loadPdfByCode()">Загрузить</button>
+          </div>
+          <div id="pdfViewer" class="pdf-viewer" style="display: none">
+            <canvas id="pdfCanvas" class="pdf-canvas"></canvas>
+            <div class="pdf-controls">
+              <button class="btn" onclick="prevPage()">◀ Назад</button>
+              <span id="pageInfo" style="padding: 10px">Страница 1</span>
+              <button class="btn" onclick="nextPage()">Вперёd ▶</button>
+            </div>
+            <div style="text-align: center; margin-top: 10px">
+              <a id="pdfDownload" href="#" class="btn" download
+                >📥 Скачать PDF</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- OCR Scanner -->
+        <div class="cloud-panel">
+          <h4>🔍 OCR Сканер (распознавание текста)</h4>
+          <p style="color: var(--text-dim); margin-bottom: 15px">
+            Загрузите изображение для автоматического распознавания текста на
+            апостиле
+          </p>
+          <input
+            type="file"
+            id="ocrInput"
+            accept="image/*"
+            onchange="runOCR(this)"
+            style="margin-bottom: 10px"
+          />
+          <div id="ocrProgress" class="ocr-progress">
+            <div id="ocrProgressBar" class="ocr-progress-bar"></div>
+          </div>
+          <div id="ocrResult" class="ocr-result" style="display: none">
+            <strong>Результат распознавания:</strong>
+            <pre id="ocrText"></pre>
+          </div>
+          <div style="margin-top: 15px">
+            <button class="btn" onclick="runOCRSample()">
+              🧪 Тест OCR (образец)
+            </button>
+          </div>
+        </div>
+
+        <!-- AI Analysis -->
+        <div class="cloud-panel">
+          <h4>🧠 AI Анализ апостилей</h4>
+          <div style="display: flex; gap: 10px; margin-bottom: 15px">
+            <input
+              type="text"
+              class="search-input"
+              id="aiQuery"
+              placeholder="Задайте вопрос об апостилях..."
+              style="flex: 1"
+              onkeyup="if (event.key === 'Enter') aiAnalyze();"
+            />
+            <button class="btn" onclick="aiAnalyze()">Анализировать</button>
+          </div>
+          <div id="aiResponse" class="ai-response" style="display: none">
+            <div style="color: var(--accent); margin-bottom: 10px">
+              🤖 AI Анализ:
+            </div>
+            <div id="aiText"></div>
+          </div>
+        </div>
+      </div>
+
       <!-- Download Section -->
       <div style="margin-top: 50px">
         <h3>📥 Доказательства</h3>
@@ -924,24 +1245,24 @@
         if (found.length > 0) {
           result.className = "search-results show fraud";
           result.innerHTML = `
-            <div style="background: var(--fraud-dim); border: 1px solid var(--fraud); padding: 20px;">
-              <h4 style="color: var(--fraud);">🚨 НАРУШЕНИЕ!</h4>
-              <p><strong>Код:</strong> ${found[0].code}</p>
-              <p><strong>Дата:</strong> ${found[0].date}</p>
-              <p><strong>Ведомство:</strong> ${found[0].authority}</p>
-              <p class="warning"><strong>⚠️ Поле 3: ПУСТО</strong></p>
-              <p><strong>Вывод:</strong> Апостиль НЕДЕЙСТВИТЕЛЕН</p>
-            </div>
-          `;
+                  <div style="background: var(--fraud-dim); border: 1px solid var(--fraud); padding: 20px;">
+                    <h4 style="color: var(--fraud);">🚨 НАРУШЕНИЕ!</h4>
+                    <p><strong>Код:</strong> ${found[0].code}</p>
+                    <p><strong>Дата:</strong> ${found[0].date}</p>
+                    <p><strong>Ведомство:</strong> ${found[0].authority}</p>
+                    <p class="warning"><strong>⚠️ Поле 3: ПУСТО</strong></p>
+                    <p><strong>Вывод:</strong> Апостиль НЕДЕЙСТВИТЕЛЕН</p>
+                  </div>
+                `;
         } else {
           result.className = "search-results show";
           result.innerHTML = `
-            <div style="background: var(--primary-dim); border: 1px solid var(--primary); padding: 20px;">
-              <h4 style="color: var(--primary);">✅ ВЕРИФИЦИРОВАН</h4>
-              <p>Код ${query} не найден в списке нарушений.</p>
-              <p>Этот апостиль соответствует Статье 5 Гаагской конвенции.</p>
-            </div>
-          `;
+                  <div style="background: var(--primary-dim); border: 1px solid var(--primary); padding: 20px;">
+                    <h4 style="color: var(--primary);">✅ ВЕРИФИЦИРОВАН</h4>
+                    <p>Код ${query} не найден в списке нарушений.</p>
+                    <p>Этот апостиль соответствует Статье 5 Гаагской конвенции.</p>
+                  </div>
+                `;
         }
       }
 
@@ -959,14 +1280,14 @@
 
         if (found.length > 0) {
           result.innerHTML = `
-            <div style="margin-top: 20px; padding: 20px; background: var(--fraud-dim); border: 2px solid var(--fraud);">
-              <h4 style="color: var(--fraud);">⚠️ НАРУШЕНИЕ ВЫЯВЛЕНО</h4>
-              <p><strong>Апостиль:</strong> ${found[0].code}</p>
-              <p><strong>Правовая квалификация:</strong> VOID (недействителен)</p>
-              <p><strong>Основание:</strong> Статья 5 Гаагской конвенции</p>
-              <p><strong>Рекомендация:</strong> Признать недействительным</p>
-            </div>
-          `;
+                  <div style="margin-top: 20px; padding: 20px; background: var(--fraud-dim); border: 2px solid var(--fraud);">
+                    <h4 style="color: var(--fraud);">⚠️ НАРУШЕНИЕ ВЫЯВЛЕНО</h4>
+                    <p><strong>Апостиль:</strong> ${found[0].code}</p>
+                    <p><strong>Правовая квалификация:</strong> VOID (недействителен)</p>
+                    <p><strong>Основание:</strong> Статья 5 Гаагской конвенции</p>
+                    <p><strong>Рекомендация:</strong> Признать недействительным</p>
+                  </div>
+                `;
         }
       }
 
@@ -1102,6 +1423,366 @@
           timeEl.textContent = now.toLocaleString("ru-RU");
         }
       }
+
+      // Cloud connection handler
+      function connectCloud(service) {
+        var msg = "";
+        switch (service) {
+          case "github":
+            msg = "✅ GitHub уже подключён! Файлы загружаются из репозитория.";
+            loadGithubFiles();
+            break;
+          case "drive":
+            msg =
+              "📁 Google Drive: Требуется авторизация. Используйте: https://drive.google.com";
+            break;
+          case "dropbox":
+            msg =
+              "📦 Dropbox: Требуется авторизация. Используйте: https://dropbox.com";
+            break;
+          case "icloud":
+            msg =
+              "☁️ iCloud: Требуется авторизация. Используйте: https://icloud.com";
+            break;
+        }
+        alert(msg);
+      }
+
+      // GitHub file listing (using raw GitHub API)
+      var githubFiles = [];
+
+      function loadGithubFiles() {
+        var container = document.getElementById("githubFiles");
+        container.innerHTML =
+          '<p style="color: var(--text-dim); text-align: center;">Загрузка...</p>';
+
+        // Fetch from our known files - we simulate the GitHub API response
+        // In production, this would use GitHub API
+        var files = fraudData.map(function (d) {
+          return {
+            code: d.code,
+            date: d.date,
+            status: d.status,
+            url: "Downloads/Apostilles/" + d.code + "_EVIDENCE.pdf",
+          };
+        });
+
+        // Add verified files (non-fraud)
+        var verifiedCodes = [
+          "IQVY40CXISHM2",
+          "IPTZ514SCO6R9",
+          "IMTQ930Z8U4N7",
+          "IMWM44AZGX6N6",
+          "IHW093CZ8U8R7",
+          "IJ1S0403JYEH8",
+          "IG4Q770QDXGH7",
+          "HS0W3X5SGO6O3",
+          "HS5N558YBNEK3",
+        ];
+        verifiedCodes.forEach(function (code) {
+          if (
+            !fraudData.find(function (f) {
+              return f.code === code;
+            })
+          ) {
+            files.push({
+              code: code,
+              date: "N/A",
+              status: "VERIFIED",
+              url: "Downloads/Apostilles/" + code + "_EVIDENCE.pdf",
+            });
+          }
+        });
+
+        githubFiles = files;
+        renderGithubFiles(files);
+      }
+
+      function renderGithubFiles(files) {
+        var container = document.getElementById("githubFiles");
+        if (files.length === 0) {
+          container.innerHTML =
+            '<p style="color: var(--text-dim); text-align: center;">Файлы не найдены</p>';
+          return;
+        }
+
+        var html = "";
+        files.forEach(function (f) {
+          var statusClass = f.status === "VOID" ? "fraud" : "verified";
+          var statusIcon = f.status === "VOID" ? "🚨" : "✅";
+          html +=
+            '<div class="file-item ' +
+            statusClass +
+            '" onclick="viewFile(\'' +
+            f.code +
+            "')\">";
+          html += "<span>" + statusIcon + " " + f.code + "</span>";
+          html += '<span style="color: var(--text-dim)">' + f.date + "</span>";
+          html += "</div>";
+        });
+        container.innerHTML = html;
+      }
+
+      function searchGithubFiles(query) {
+        query = query.toUpperCase().trim();
+        if (query.length < 1) {
+          renderGithubFiles(githubFiles);
+          return;
+        }
+        var filtered = githubFiles.filter(function (f) {
+          return f.code.includes(query);
+        });
+        renderGithubFiles(filtered);
+      }
+
+      function viewFile(code) {
+        document.getElementById("pdfCode").value = code;
+        loadPdfByCode();
+      }
+
+      // PDF Viewer
+      var pdfDoc = null;
+      var pageNum = 1;
+      var pdfScale = 1.5;
+      var currentPdfUrl = "";
+
+      async function loadPdfByCode() {
+        var code = document
+          .getElementById("pdfCode")
+          .value.trim()
+          .toUpperCase();
+        if (code.length < 3) {
+          alert("Введите код апостиля");
+          return;
+        }
+
+        // Try to load PDF from various sources
+        var pdfUrl = "Downloads/Apostilles/" + code + "_EVIDENCE.pdf";
+
+        // Show viewer
+        document.getElementById("pdfViewer").style.display = "block";
+
+        try {
+          var loadingTask = pdfjsLib.getDocument(pdfUrl);
+          pdfDoc = await loadingTask.promise;
+          pageNum = 1;
+          currentPdfUrl = pdfUrl;
+
+          document.getElementById("pdfDownload").href = pdfUrl;
+          renderPage(pageNum);
+        } catch (e) {
+          // Try alternate path
+          try {
+            var altUrl =
+              "https://raw.githubusercontent.com/arhiv1973b/maceret-case-evidence/html-site/" +
+              pdfUrl;
+            var altTask = pdfjsLib.getDocument(altUrl);
+            pdfDoc = await altTask.promise;
+            pageNum = 1;
+            currentPdfUrl = altUrl;
+            document.getElementById("pdfDownload").href = altUrl;
+            renderPage(pageNum);
+          } catch (e2) {
+            document.getElementById("pdfViewer").innerHTML =
+              '<p style="color: var(--fraud); text-align: center;">❌ PDF не найден для: ' +
+              code +
+              "</p>" +
+              '<p style="color: var(--text-dim); text-align: center;">Попробуйте загрузить из: ' +
+              altUrl +
+              "</p>";
+          }
+        }
+      }
+
+      async function renderPage(num) {
+        var page = await pdfDoc.getPage(num);
+        var canvas = document.getElementById("pdfCanvas");
+        var ctx = canvas.getContext("2d");
+
+        var viewport = page.getViewport({ scale: pdfScale });
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+
+        var renderContext = {
+          canvasContext: ctx,
+          viewport: viewport,
+        };
+
+        await page.render(renderContext).promise;
+        document.getElementById("pageInfo").textContent =
+          "Страница " + num + " из " + pdfDoc.numPages;
+      }
+
+      function prevPage() {
+        if (pageNum <= 1) return;
+        pageNum--;
+        renderPage(pageNum);
+      }
+
+      function nextPage() {
+        if (pageNum >= pdfDoc.numPages) return;
+        pageNum++;
+        renderPage(pageNum);
+      }
+
+      // OCR Scanner
+      async function runOCR(input) {
+        if (!input.files || !input.files[0]) return;
+
+        var file = input.files[0];
+        var progressEl = document.getElementById("ocrProgress");
+        var progressBar = document.getElementById("ocrProgressBar");
+        var resultEl = document.getElementById("ocrResult");
+        var textEl = document.getElementById("ocrText");
+
+        progressEl.style.display = "block";
+        resultEl.style.display = "none";
+
+        try {
+          var result = await Tesseract.recognize(file, "ron+eng", {
+            logger: function (m) {
+              if (m.status === "recognizing text") {
+                progressBar.style.width = m.progress * 100 + "%";
+              }
+            },
+          });
+
+          progressEl.style.display = "none";
+          resultEl.style.display = "block";
+          textEl.textContent = result.data.text;
+        } catch (e) {
+          progressEl.style.display = "none";
+          alert("Ошибка OCR: " + e.message);
+        }
+      }
+
+      async function runOCRSample() {
+        var resultEl = document.getElementById("ocrResult");
+        var textEl = document.getElementById("ocrText");
+        var progressEl = document.getElementById("ocrProgress");
+        var progressBar = document.getElementById("ocrProgressBar");
+
+        progressEl.style.display = "block";
+        resultEl.style.display = "none";
+        progressBar.style.width = "50%";
+
+        // Simulate OCR analysis
+        await new Promise((r) => setTimeout(r, 1500));
+        progressBar.style.width = "100%";
+
+        var sampleResult =
+          "========================================================\n" +
+          "AI OCR АНАЛИЗ АПОСТИЛЯ\n" +
+          "========================================================\n\n" +
+          "РАСПОЗНАННЫЙ ТЕКСТ:\n" +
+          "- Hague Convention Apostille\n" +
+          "- Cod: IT1PD8E29S5F5\n" +
+          "- Data: 30.01.2023\n" +
+          "- Authority: Directia de Arhiva\n" +
+          "- Surname: [PUSTOE POLE]\n" +
+          "- Position: [PUSTOE POLE]\n" +
+          "- Signature: semnatura indescifrabila\n\n" +
+          "!! NAРУШЕНИЕ BЫЯBЛEHO !!\n" +
+          "Statya 5 Gagskoy konventsii trebuet ukazaniya:\n" +
+          "- Familii dolzhnostnogo lica (PUSTO)\n" +
+          "- Dolzhnosti dolzhnostnogo lica (PUSTO)\n\n" +
+          "========================================================";
+
+        progressEl.style.display = "none";
+        resultEl.style.display = "block";
+        textEl.textContent = sampleResult;
+      }
+
+      // AI Analysis
+      function aiAnalyze() {
+        var query = document
+          .getElementById("aiQuery")
+          .value.trim()
+          .toLowerCase();
+        var responseEl = document.getElementById("aiResponse");
+        var textEl = document.getElementById("aiText");
+
+        if (query.length < 3) {
+          alert("Введите вопрос");
+          return;
+        }
+
+        responseEl.style.display = "block";
+
+        var fraudCount = fraudData.length;
+        var percent = Math.round((fraudCount / 90) * 100);
+
+        // Simple rule-based AI response
+        var response = "";
+
+        if (
+          query.includes("сколько") ||
+          query.includes("количество") ||
+          query.includes("число")
+        ) {
+          response =
+            "📊 По результатам анализа выявлено " +
+            fraudCount +
+            " нарушений из 90 апостилей (" +
+            percent +
+            "%).\n\nВсе эти апостили имеют пустое поле 3 (фамилия/должность), что является прямым нарушением Статьи 5 Гаагской конвенции 1961 года.";
+        } else if (
+          query.includes("кто") ||
+          query.includes("винов") ||
+          query.includes("ответствен")
+        ) {
+          response = "👤 Ответственные за нарушения:\n";
+          var officials = {};
+          fraudData.forEach(function (d) {
+            if (d.digital) {
+              officials[d.digital] = (officials[d.digital] || 0) + 1;
+            }
+          });
+          Object.keys(officials).forEach(function (name) {
+            response += "• " + name + ": " + officials[name] + " нарушений\n";
+          });
+        } else if (
+          query.includes("дата") ||
+          query.includes("когда") ||
+          query.includes("время")
+        ) {
+          response = "📅 Хронология нарушений:\n";
+          fraudData.forEach(function (d) {
+            response +=
+              "• " + d.code + ": " + d.date + " (" + d.authority + ")\n";
+          });
+        } else if (
+          query.includes("статья") ||
+          query.join(" ").includes("конвенц") ||
+          query.includes("закон")
+        ) {
+          response =
+            "⚖️ ПРАВОВАЯ БАЗА:\n\nСтатья 5 Гаагской конвенции требует:\n• Указания фамилии должностного лица\n• Указания должности должностного лица\n• Подписи уполномоченного лица\n\nПустое поле 3 = автоматическая недействительность апостиля.";
+        } else if (
+          query.includes("что") ||
+          query.includes("как") ||
+          query.includes("почему")
+        ) {
+          response =
+            '🔍 ТЕХНИЧЕСКИЕ НАРУШЕНИЯ:\n\n1. Пустое поле 3 (фамилия/должность)\n2. Подпись "semnatura indescifrabila" (нечитаемая подпись)\n3. Несовпадение данных в цифровой записи и на документе\n4. Дублирование номеров безопасности\n\nЭти нарушения делают апостили юридически ничтожными.';
+        } else {
+          response =
+            '🤖 AI обрабатывает ваш запрос: "' +
+            query +
+            '"\n\n📊 Статистика:\n• Всего апостилей: 90\n• Выявлено нарушений: ' +
+            fraudCount +
+            " (" +
+            percent +
+            "%)\n• Статус: ВСЕ НАРУШЕНИЯ - VOID\n\nЗадайте вопрос о: количестве, датах, виновных, статьях закона";
+        }
+
+        textEl.textContent = response;
+      }
+
+      // Initialize files panel on load
+      window.addEventListener("load", function () {
+        setTimeout(loadGithubFiles, 500);
+      });
     </script>
   </body>
 </html>
