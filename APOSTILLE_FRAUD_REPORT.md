@@ -22,13 +22,13 @@ This violates **Article 5 of the Hague Convention**, which requires:
 
 ## The Violation
 
-| Field                       | Required                   | Actual       |
-| --------------------------- | -------------------------- | ------------ |
-| Field 2 (Signature)         | "semnatura indescifrabila" | ✅ Present   |
-| Field 3 (Position/Title)    | **MUST indicate position** | ❌ **EMPTY** |
-| Field 7 (Digital Signature) | Employee signature         | ✅ Present   |
+| Field                       | Required                   | Actual                    |
+| --------------------------- | -------------------------- | ------------------------- |
+| Field 2 (Signature)         | "semnatura indescifrabila" | ✅ Present                |
+| Field 3 (Position/Title)    | **MUST indicate SURNAME**  | ❌ **EMPTY - NO SURNAME** |
+| Field 7 (Digital Signature) | Employee signature         | ✅ Present                |
 
-**Without the position, the apostille certifies NOTHING.**
+**Without the surname/position, the apostille certifies NOTHING - it's a VOID document.**
 
 ---
 
