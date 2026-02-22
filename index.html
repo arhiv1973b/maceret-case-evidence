@@ -775,7 +775,7 @@
     </div>
 
     <script>
-      // Data
+      // Data - Full database
       const fraudData = [
         {
           code: "IT1PD8E29S5F5",
@@ -864,19 +864,44 @@
         },
       ];
 
+      // Verified data
+      const verifiedData = [
+        {
+          code: "IMWM44AZGX6N6",
+          date: "18.01.2021",
+          authority: "Various",
+          status: "VERIFIED",
+        },
+        {
+          code: "BOUS9XAQDTFH2",
+          date: "24.02.2021",
+          authority: "Various",
+          status: "VERIFIED",
+        },
+        {
+          code: "CQ0VC27VGTCK6",
+          date: "29.03.2021",
+          authority: "Various",
+          status: "VERIFIED",
+        },
+      ];
+
       // Role switching
       function showRole(role) {
-        document.querySelectorAll('.role-tab').forEach(function(t) { t.classList.remove('active'); });
-        document.querySelectorAll('.role-panel').forEach(function(p) { p.classList.remove('active'); });
+        document.querySelectorAll(".role-tab").forEach(function (t) {
+          t.classList.remove("active");
+        });
+        document.querySelectorAll(".role-panel").forEach(function (p) {
+          p.classList.remove("active");
+        });
         var tab = event.target;
-        tab.classList.add('active');
+        tab.classList.add("active");
         var panel = document.getElementById(role);
-        panel.classList.add('active');
+        panel.classList.add("active");
 
-        if (role === 'network') {
+        if (role === "network") {
           setTimeout(initNetwork, 100);
         }
-      }
       }
 
       // Accordion
