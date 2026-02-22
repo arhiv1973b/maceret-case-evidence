@@ -1086,6 +1086,190 @@
         </div>
       </div>
 
+      <!-- Rome Statute Module -->
+      <div
+        id="romeBanner"
+        style="
+          background: linear-gradient(135deg, #4a1a1a 0%, #2d0a0a 100%);
+          border: 2px solid #ff4444;
+          padding: 20px;
+          margin-bottom: 30px;
+          border-radius: 10px;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+          "
+        >
+          <div>
+            <h3 style="color: #ff4444; margin: 0">⚖️ РИМСКИЙ СТАТУТ МУС</h3>
+            <p
+              style="color: var(--text-dim); margin: 5px 0 0 0; font-size: 12px"
+            >
+              Статьи 5, 7, 17, 29, 32 - Международный уголовный суд
+            </p>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: center">
+            <span id="romeStatus" style="color: #ff4444; font-weight: bold"
+              >● АКТИВЕН</span
+            >
+            <button
+              class="btn"
+              onclick="showRomeStatute()"
+              style="background: #ff4444; color: white"
+            >
+              Применить
+            </button>
+          </div>
+        </div>
+
+        <!-- Rome Statute Articles -->
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
+            margin-top: 15px;
+          "
+        >
+          <div
+            style="
+              background: var(--bg-dark);
+              padding: 10px;
+              border-radius: 8px;
+              border-left: 3px solid #ff4444;
+            "
+          >
+            <h4 style="color: #ff4444; margin: 0 0 6px 0; font-size: 12px">
+              Статья 5
+            </h4>
+            <p style="font-size: 9px; color: var(--text-dim); margin: 0">
+              Преступления под юрисдикцией суда
+            </p>
+            <div
+              id="art5Status"
+              style="
+                font-size: 11px;
+                font-weight: bold;
+                color: #ff4444;
+                margin-top: 4px;
+              "
+            >
+              ○ ГОТОВ
+            </div>
+          </div>
+          <div
+            style="
+              background: var(--bg-dark);
+              padding: 10px;
+              border-radius: 8px;
+              border-left: 3px solid #ff6666;
+            "
+          >
+            <h4 style="color: #ff6666; margin: 0 0 6px 0; font-size: 12px">
+              Статья 7
+            </h4>
+            <p style="font-size: 9px; color: var(--text-dim); margin: 0">
+              Преступления против человечности
+            </p>
+            <div
+              id="art7Status"
+              style="
+                font-size: 11px;
+                font-weight: bold;
+                color: #ff6666;
+                margin-top: 4px;
+              "
+            >
+              ⚠ 13 ФАКТОВ
+            </div>
+          </div>
+          <div
+            style="
+              background: var(--bg-dark);
+              padding: 10px;
+              border-radius: 8px;
+              border-left: 3px solid #ffaa00;
+            "
+          >
+            <h4 style="color: #ffaa00; margin: 0 0 6px 0; font-size: 12px">
+              Статья 17
+            </h4>
+            <p style="font-size: 9px; color: var(--text-dim); margin: 0">
+              Вопросы приемлемости
+            </p>
+            <div
+              id="art17Status"
+              style="
+                font-size: 11px;
+                font-weight: bold;
+                color: #ffaa00;
+                margin-top: 4px;
+              "
+            >
+              ⚠ ДЕЛАЕТ
+            </div>
+          </div>
+          <div
+            style="
+              background: var(--bg-dark);
+              padding: 10px;
+              border-radius: 8px;
+              border-left: 3px solid #ff8888;
+            "
+          >
+            <h4 style="color: #ff8888; margin: 0 0 6px 0; font-size: 12px">
+              Статья 29
+            </h4>
+            <p style="font-size: 9px; color: var(--text-dim); margin: 0">
+              Неприменимость сроков давности
+            </p>
+            <div
+              id="art29Status"
+              style="
+                font-size: 11px;
+                font-weight: bold;
+                color: #ff8888;
+                margin-top: 4px;
+              "
+            >
+              ✓ БЕССРОЧНО
+            </div>
+          </div>
+          <div
+            style="
+              background: var(--bg-dark);
+              padding: 10px;
+              border-radius: 8px;
+              border-left: 3px solid #ffcccc;
+            "
+          >
+            <h4 style="color: #ffcccc; margin: 0 0 6px 0; font-size: 12px">
+              Статья 32
+            </h4>
+            <p style="font-size: 9px; color: var(--text-dim); margin: 0">
+              Ошибка факта или права
+            </p>
+            <div
+              id="art32Status"
+              style="
+                font-size: 11px;
+                font-weight: bold;
+                color: #ffcccc;
+                margin-top: 4px;
+              "
+            >
+              ○ ПРОВЕРКА
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Vienna Convention 1969 Module -->
       <div
         id="viennaBanner"
@@ -2982,6 +3166,44 @@
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n" +
             "ВДПЧ является фундаментом международного права\n" +
             "и имеет статус Jus Cogens",
+        );
+      }
+
+      // Rome Statute Functions
+      function showRomeStatute() {
+        var violations = 0;
+        if (typeof fraudData !== "undefined") {
+          violations = fraudData.length;
+        }
+
+        document.getElementById("art7Status").innerHTML =
+          "⚠ " + violations + " ФАКТОВ";
+
+        alert(
+          "⚖️ РИМСКИЙ СТАТУТ МЕЖДУНАРОДНОГО УГОЛОВНОГО СУДА\n" +
+            "Принят 17 июля 1998 года, вступил в силу 1 июля 2002\n\n" +
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n" +
+            "Статья 5 - Юрисдикция суда:\n" +
+            "✓ Геноцид, преступления против человечности,\n" +
+            "  военные преступления, агрессия\n\n" +
+            "Статья 7 - Преступления против человечности:\n" +
+            "⚠ Обнаружено " +
+            violations +
+            " фактов:\n" +
+            "  - Умышленное лишение свободы\n" +
+            "  - Бесчеловечное обращение\n" +
+            "  - Преследование\n\n" +
+            "Статья 17 - Приемлемость:\n" +
+            "⚠ Дела не должны рассматриваться национальными судами\n" +
+            "  при отсутствии намерения или возможности судить\n\n" +
+            "Статья 29 - Сроки давности:\n" +
+            "✓ Неприменимы к преступлениям под юрисдикцией суда\n\n" +
+            "Статья 32 - Ошибка факта/права:\n" +
+            "○ Не является основанием для освобождения от ответственности\n" +
+            "  при наличии умысла\n\n" +
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n" +
+            "МУС может рассматривать дела, когда национальные суды\n" +
+            "не желают или не способны осуществлять правосудие",
         );
       }
 
