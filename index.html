@@ -1885,6 +1885,13 @@
         },
       ];
 
+      // Global variables for PDF Viewer
+      var pdfDoc = null;
+      var pageNum = 1;
+      var pdfScale = 1.5;
+      var currentPdfUrl = "";
+      var githubFiles = [];
+
       // Populate evidence table
       function populateEvidenceTable() {
         var tbody = document.getElementById("evidenceTableBody");
@@ -2169,8 +2176,6 @@
       }
 
       // GitHub file listing (using raw GitHub API)
-      var githubFiles = [];
-
       function loadGithubFiles() {
         var container = document.getElementById("githubFiles");
         container.innerHTML =
@@ -2261,11 +2266,6 @@
       }
 
       // PDF Viewer
-      var pdfDoc = null;
-      var pageNum = 1;
-      var pdfScale = 1.5;
-      var currentPdfUrl = "";
-
       async function loadPdfByCode() {
         var code = document
           .getElementById("pdfCode")
@@ -2283,7 +2283,7 @@
         document.getElementById("pdfViewer").style.display = "block";
 
         try {
-          var loadingTask = pdfjsLib.getDocument(pdfUrl);
+          let loadingTask = pdfjsLib.getDocument(pdfUrl);
           pdfDoc = await loadingTask.promise;
           pageNum = 1;
           currentPdfUrl = pdfUrl;
@@ -2293,10 +2293,10 @@
         } catch (e) {
           // Try alternate path
           try {
-            var altUrl =
+            let altUrl =
               "https://raw.githubusercontent.com/arhiv1973b/maceret-case-evidence/html-site/" +
               pdfUrl;
-            var altTask = pdfjsLib.getDocument(altUrl);
+            let altTask = pdfjsLib.getDocument(altUrl);
             pdfDoc = await altTask.promise;
             pageNum = 1;
             currentPdfUrl = altUrl;
@@ -2359,7 +2359,7 @@
         resultEl.style.display = "none";
 
         try {
-          var result = await Tesseract.recognize(file, "ron+eng", {
+          let result = await Tesseract.recognize(file, "ron+eng", {
             logger: function (m) {
               if (m.status === "recognizing text") {
                 progressBar.style.width = m.progress * 100 + "%";
@@ -2452,7 +2452,7 @@
           query.includes("ответствен")
         ) {
           response = "👤 Ответственные за нарушения:\n";
-          var officials = {};
+          let officials = {};
           fraudData.forEach(function (d) {
             if (d.digital) {
               officials[d.digital] = (officials[d.digital] || 0) + 1;
