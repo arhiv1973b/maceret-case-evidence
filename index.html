@@ -2,192 +2,769 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <title>MACERET CASE: Evidence Integrity Portal</title>
+    <title>A©tor Maceret: Jus Cogens Evidence Portal</title>
     <style>
+      * {
+        box-sizing: border-box;
+      }
       body {
         font-family: "Courier New", monospace;
         background: #0a0a0a;
         color: #00ff00;
         line-height: 1.6;
         padding: 20px;
+        margin: 0;
       }
       .container {
-        max-width: 900px;
+        max-width: 1000px;
         margin: 0 auto;
-        border: 1px solid #00ff00;
-        padding: 30px;
-        box-shadow: 0 0 20px #004400;
       }
       h1 {
-        border-bottom: 2px solid #00ff00;
-        padding-bottom: 10px;
+        border-bottom: 3px solid #00ff00;
+        padding-bottom: 15px;
         text-transform: uppercase;
+        font-size: 24px;
       }
-      .alert {
-        color: #ff0000;
-        font-weight: bold;
-        border: 1px solid #ff0000;
-        padding: 15px;
+      h2 {
+        border-left: 4px solid #00ff00;
+        padding-left: 15px;
+        margin-top: 30px;
+      }
+      h3 {
+        color: #88ff88;
+      }
+
+      .search-box {
         margin: 20px 0;
-        font-size: 14px;
+        padding: 20px;
+        border: 2px solid #00ff00;
+        background: #001100;
       }
-      .file-list {
-        list-style: none;
-        padding: 0;
-      }
-      .file-list li {
-        margin: 15px 0;
-        background: #1a1a1a;
+      .search-box input {
+        width: 100%;
         padding: 15px;
-        border-left: 5px solid #00ff00;
-      }
-      a {
+        font-size: 18px;
+        background: #000;
         color: #00ff00;
-        text-decoration: none;
-        border-bottom: 1px dashed #00ff00;
-        font-weight: bold;
+        border: 1px solid #00ff00;
+        font-family: inherit;
       }
-      a:hover {
-        background: #00ff00;
-        color: #000;
+      .search-box input:focus {
+        outline: none;
+        box-shadow: 0 0 15px #00ff00;
       }
+
       .stats {
         display: flex;
-        justify-content: space-between;
+        gap: 20px;
         margin: 20px 0;
-        border: 1px solid #00ff00;
-        padding: 15px;
       }
       .stat-box {
+        flex: 1;
         text-align: center;
+        padding: 20px;
+        border: 1px solid #00ff00;
+        background: #001100;
       }
       .stat-number {
-        font-size: 32px;
+        font-size: 36px;
         font-weight: bold;
       }
       .fraud {
-        color: #ff0000;
+        color: #ff3333;
       }
       .verified {
         color: #00ff00;
       }
+
+      .alert {
+        background: #330000;
+        border: 2px solid #ff3333;
+        padding: 20px;
+        margin: 20px 0;
+        color: #ff3333;
+      }
+
+      .accordion {
+        margin: 10px 0;
+        border: 1px solid #00ff00;
+      }
+      .accordion-header {
+        padding: 15px 20px;
+        background: #001100;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .accordion-header:hover {
+        background: #002200;
+      }
+      .accordion-header.fraud {
+        background: #330000;
+        border-color: #ff3333;
+      }
+      .accordion-header.fraud:hover {
+        background: #440000;
+      }
+      .accordion-content {
+        display: none;
+        padding: 20px;
+        background: #0a0a0a;
+        border-top: 1px solid #003300;
+      }
+      .accordion-content.show {
+        display: block;
+      }
+
+      .field {
+        margin: 10px 0;
+        padding: 10px;
+        background: #001100;
+        border-left: 3px solid #00ff00;
+      }
+      .field.empty {
+        border-left: 3px solid #ff3333;
+        background: #220000;
+      }
+      .field-label {
+        color: #888;
+        font-size: 12px;
+      }
+      .field-value {
+        font-size: 16px;
+      }
+      .field-value.empty {
+        color: #ff3333;
+      }
+
+      .violation-box {
+        background: #330000;
+        border: 2px solid #ff3333;
+        padding: 15px;
+        margin: 10px 0;
+        color: #ff3333;
+      }
+
       .btn {
         display: inline-block;
+        padding: 10px 20px;
         background: #003300;
         color: #00ff00;
-        padding: 10px 20px;
         border: 1px solid #00ff00;
-        margin: 10px 5px 10px 0;
         text-decoration: none;
+        cursor: pointer;
+        margin: 5px;
       }
       .btn:hover {
         background: #00ff00;
         color: #000;
       }
+
+      .code-tag {
+        display: inline-block;
+        padding: 3px 8px;
+        background: #002200;
+        border: 1px solid #00ff00;
+        font-size: 12px;
+        margin: 2px;
+      }
+      .code-tag.fraud {
+        background: #330000;
+        border-color: #ff3333;
+        color: #ff3333;
+      }
+
+      .info-box {
+        background: #001100;
+        border: 1px solid #00ff00;
+        padding: 15px;
+        margin: 10px 0;
+      }
+
       blockquote {
-        border-left: 3px solid #00ff00;
-        padding-left: 15px;
+        border-left: 4px solid #00ff00;
+        padding-left: 20px;
         margin: 20px 0;
         color: #88ff88;
+        font-style: italic;
+      }
+
+      .signature-proof {
+        margin: 15px 0;
+        padding: 15px;
+        background: #001100;
+        border: 1px solid #00ff00;
+      }
+      .signature-proof .real {
+        color: #00ff00;
+      }
+      .signature-proof .digital {
+        color: #8888ff;
+      }
+      .signature-proof .mismatch {
+        color: #ff3333;
+        font-weight: bold;
+      }
+
+      .scenario-box {
+        background: #001100;
+        border: 1px solid #00ff00;
+        padding: 20px;
+        margin: 15px 0;
+      }
+      .scenario-box.judge {
+        border-color: #ffff00;
+        background: #111100;
+      }
+      .scenario-box h4 {
+        margin-top: 0;
+        color: #ffff00;
+      }
+      .scenario-box.judge h4 {
+        color: #ffff00;
+      }
+
+      .user-scenario {
+        background: #001111;
+        border: 1px solid #00ffff;
+        padding: 15px;
+        margin: 10px 0;
+      }
+      .user-scenario h4 {
+        color: #00ffff;
+        margin-top: 0;
+      }
+
+      .legal-note {
+        background: #110011;
+        border: 1px solid #ff00ff;
+        padding: 15px;
+        margin: 10px 0;
+      }
+      .legal-note h4 {
+        color: #ff00ff;
+        margin-top: 0;
+      }
+
+      .evidence-link {
+        display: block;
+        padding: 10px;
+        background: #002200;
+        margin: 5px 0;
+        border-left: 3px solid #00ff00;
+        color: #00ff00;
+        text-decoration: none;
+      }
+      .evidence-link:hover {
+        background: #003300;
+      }
+
+      .warning {
+        color: #ff3333;
+        font-weight: bold;
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <h1>A©tor Maceret: Jus Cogens</h1>
-      <p><strong>Case ID:</strong> CASE-MACHERET-1997-2026</p>
-      <p><strong>Status:</strong> 🔴 FORENSIC AUDIT COMPLETE</p>
+      <h1>⚖️ A©tor Maceret: Jus Cogens Evidence Portal</h1>
+      <p>
+        <strong>Case:</strong> MACHERET-1997-2026 | <strong>Status:</strong> 🔴
+        FORENSIC AUDIT COMPLETE
+      </p>
 
+      <!-- ПОИСК -->
+      <div class="search-box">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="🔍 Введите код апостиля для поиска..."
+          onkeyup="searchApostilles()"
+        />
+        <div style="margin-top: 10px; color: #888; font-size: 12px">
+          Пример: IT1PD8E29S5F5, DLTP7B8ZHWGQ7, 4O3WF02QGRCI1
+        </div>
+      </div>
+
+      <div
+        id="searchResult"
+        style="
+          display: none;
+          padding: 15px;
+          margin: 10px 0;
+          border: 2px solid #ff3333;
+          background: #220000;
+        "
+      >
+        <div id="searchContent"></div>
+      </div>
+
+      <!-- СТАТИСТИКА -->
       <div class="stats">
         <div class="stat-box">
           <div class="stat-number">90</div>
-          <div>Total Apostilles</div>
+          <div>Всего апостилей</div>
         </div>
-        <div class="stat-box fraud">
-          <div class="stat-number">13</div>
-          <div>Fraudulent (14%)</div>
+        <div class="stat-box" style="border-color: #ff3333">
+          <div class="stat-number fraud">13</div>
+          <div class="fraud">НАРУШЕНИЙ (14%)</div>
         </div>
-        <div class="stat-box verified">
-          <div class="stat-number">77</div>
-          <div>Verified</div>
+        <div class="stat-box">
+          <div class="stat-number verified">77</div>
+          <div>Верифицировано</div>
         </div>
       </div>
 
+      <!-- ГЛАВНОЕ НАРУШЕНИЕ -->
       <div class="alert">
-        🚨 НАРУШЕНИЕ ГААГСКОЙ КОНВЕНЦИИ: Статья 5<br /><br />
-        <strong>ОТСУТСТВИЕ ФАМИЛИИ ДОЛЖНОСТНОГО ЛИЦА</strong> в поле 3
-        апостиля<br />
-        = НЕДЕЙСТВИТЕЛЬНЫЙ ДОКУМЕНТ (VOID)
+        <h2 style="margin-top: 0; color: #ff3333">
+          🚨 НАРУШЕНИЕ ГААГСКОЙ КОНВЕНЦИИ (Статья 5)
+        </h2>
+        <p style="font-size: 16px">
+          <strong>ОТСУТСТВИЕ ФАМИЛИИ ДОЛЖНОСТНОГО ЛИЦА</strong> — апостиль
+          НЕДЕЙСТВИТЕЛЕН<br />
+          <strong>Требование:</strong> Фамилия + Должность подписанта |
+          <strong>Реальность:</strong> <span class="warning">ПУСТО</span>
+        </p>
       </div>
 
-      <h3>📋 ОСНОВНЫЕ ОТЧЁТЫ:</h3>
-      <ul class="file-list">
-        <li>
-          📄
-          <a
-            href="https://github.com/arhiv1973b/maceret-case-evidence/blob/html-site/APOSTILLE_FRAUD_REPORT.md"
-            target="_blank"
-            >ОТЧЁТ О ФАЛЬСИФИКАЦИИ АПОСТИЛЕЙ</a
-          ><br />
-          — Полный юридический разбор нарушений
-        </li>
-        <li>
-          📄
-          <a
-            href="https://github.com/arhiv1973b/maceret-case-evidence/blob/html-site/TECHNICAL_INTEGRITY_REPORT.md"
-            target="_blank"
-            >ТЕХНИЧЕСКИЙ АУДИТ</a
-          ><br />
-          — Байт-в-байт верификация файлов
-        </li>
-      </ul>
+      <!-- ДЛЯ ОБЫЧНОГО ПОЛЬЗОВАТЕЛЯ -->
+      <h2>👤 Сценарий: Обычный Пользователь</h2>
+      <div class="user-scenario">
+        <h4>📌 Что видит обычный человек:</h4>
+        <p>1. Заходит на сайт → видит красное предупреждение о нарушении</p>
+        <p>2. Вводит код апостиля → получает мгновенный ответ о статусе</p>
+        <p>3. Видит цепочку нарушений → понимает масштаб фальсификации</p>
+        <p>
+          4. Может скачать доказательства → использовать для защиты своих прав
+        </p>
+        <button class="btn" onclick="demoUserSearch()">
+          👁️ Демонстрация поиска
+        </button>
+      </div>
 
-      <h3>📂 ВИЗУАЛЬНЫЕ АРХИВЫ:</h3>
-      <ul class="file-list">
-        <li>
-          🖼️
-          <a
-            href="https://github.com/arhiv1973b/maceret-case-evidence/tree/html-site/Verified_Apostilles_PNG"
-            target="_blank"
-            >Verified_Apostilles_PNG</a
-          >
-          — 90 верифицированных апостилей
-        </li>
-        <li>
-          🖼️
-          <a
-            href="https://github.com/arhiv1973b/maceret-case-evidence/tree/html-site/Gov_Apostilles_PNG"
-            target="_blank"
-            >Gov_Apostilles_PNG</a
-          >
-          — 11 апостилей с госпортала
-        </li>
-      </ul>
+      <!-- ДЛЯ СУДЬИ -->
+      <h2>⚖️ Сценарий: Судья Молдавского Суда</h2>
+      <div class="scenario-box judge">
+        <h4>📋 Протокол для судьи:</h4>
 
-      <h3>📥 СКАЧАТЬ ВСЕ ФАЙЛЫ:</h3>
-      <a
-        href="https://github.com/arhiv1973b/maceret-case-evidence/archive/refs/heads/html-site.zip"
-        class="btn"
-        >📦 Скачать ZIP</a
-      >
-      <a
-        href="https://github.com/arhiv1973b/maceret-case-evidence"
-        target="_blank"
-        class="btn"
-        >🐙 GitHub Репозиторий</a
-      >
+        <p><strong>Вопрос 1:</strong> "Как выявить нарушение?"</p>
+        <p>
+          <strong>Ответ:</strong> Введите код апостиля в поиске. Если поле 3
+          пустое — нарушение Статьи 5 Гаагской конвенции.
+        </p>
 
-      <h3>⚖️ Правовой Нейропротокол:</h3>
+        <p><strong>Вопрос 2:</strong> "Какие доказательства предоставлены?"</p>
+        <p>
+          <strong>Ответ:</strong> 90 апостилей, 13 с нарушениями (14%).
+          Сравнение цифровых подписей и реальных подписей.
+        </p>
+
+        <p><strong>Вопрос 3:</strong> "Какое нарушение?"</p>
+        <p>
+          <strong>Ответ:</strong> Апостиль удостоверяет "неразборчивую подпись"
+          БЕЗ указания фамилии и должности. Это нарушает Статью 5 Гаагской
+          конвенции.
+        </p>
+
+        <p><strong>Вопрос 4:</strong> "Какие последствия?"</p>
+        <p>
+          <strong>Ответ:</strong> Апостиль без фамилии должностного лица —
+          НЕДЕЙСТВИТЕЛЕН (VOID). Документы, заверенные такими апостилями, не
+          имеют юридической силы.
+        </p>
+
+        <button class="btn" onclick="demoJudgeSearch('IT1PD8E29S5F5')">
+          👁️ Демонстрация для судьи
+        </button>
+      </div>
+
+      <!-- ЦЕПОЧКА НАРУШЕНИЙ -->
+      <h2>🔗 Цепочка нарушений (Доказательная база)</h2>
+      <div class="info-box">
+        <p><strong>Ключевые нарушения:</strong></p>
+        <div style="display: flex; flex-wrap: wrap; gap: 5px">
+          <span class="code-tag fraud">IT1PD8E29S5F5</span> →
+          <span class="code-tag fraud">4O3WF02QGRCI1</span> →
+          <span class="code-tag fraud">DLTP7B8ZHWGQ7</span> →
+          <span class="code-tag fraud">CG0T6Y1TBUEL7</span>
+        </div>
+        <p style="margin-top: 15px; color: #888">
+          Все эти апостили от <strong>Directia de Arhiva</strong> (Муниципальный
+          Архив Кишинёва)
+        </p>
+      </div>
+
+      <!-- ПРИМЕР НАРУШЕНИЯ №86 -->
+      <h2>📋 Пример нарушения: №86 (IT1PD8E29S5F5)</h2>
+      <div class="accordion">
+        <div class="accordion-header fraud" onclick="toggleAccordion(this)">
+          <span>🔴 Подробнее о нарушении</span>
+          <span>▼</span>
+        </div>
+        <div class="accordion-content">
+          <div class="violation-box">
+            <strong>🚨 НАРУШЕНИЕ:</strong> Поле 3 - ФАМИЛИЯ/Должность
+            <strong>ПУСТО</strong>
+          </div>
+
+          <div class="field empty">
+            <div class="field-label">ПОЛЕ 2: Подпись (что удостоверено)</div>
+            <div class="field-value">
+              semnatura indescifrabila (неразборчивая подпись)
+            </div>
+          </div>
+
+          <div class="field empty">
+            <div class="field-label">
+              ПОЛЕ 3: Фамилия и должность (ОБЯЗАТЕЛЬНО!)
+            </div>
+            <div class="field-value empty">⚠️ ОТСУТСТВУЕТ (ПУСТО)</div>
+          </div>
+
+          <div class="field">
+            <div class="field-label">
+              ПОЛЕ 7: Цифровая подпись сотрудника архива
+            </div>
+            <div class="field-value">Grimailo Ana</div>
+          </div>
+
+          <div class="signature-proof">
+            <h4>🔍 ДОКАЗАТЕЛЬСТВО:</h4>
+            <div class="real">
+              📝 Реальная подпись на документе: <strong>Maia Flnchea</strong>
+            </div>
+            <div class="digital">
+              💾 Цифровая подпись (поле 7): Grimailo Ana
+            </div>
+            <div class="mismatch">⚠️ НЕ СОВПАДАЮТ!</div>
+          </div>
+
+          <p style="color: #ff3333; font-weight: bold">
+            Вывод: Апостиль НЕ удостоверяет личность подписанта. Апостиль
+            НЕДЕЙСТВИТЕЛЕН.
+          </p>
+        </div>
+      </div>
+
+      <!-- ПРАВОВАЯ ССЫЛКА -->
+      <h2>⚖️ Правовое обоснование</h2>
+      <div class="legal-note">
+        <h4>📜 Статья 5 Гаагской Конвенции 1961:</h4>
+        <p>Апостиль удостоверяет:</p>
+        <ol>
+          <li>Подлинность подписи</li>
+          <li>
+            <strong>Должность/полномочия подписанта</strong> (ОБЯЗАТЕЛЬНО)
+          </li>
+          <li>Личность печати/штампа</li>
+        </ol>
+        <p class="warning">
+          <strong>ВЫВОД:</strong> Без указания должности — апостиль нарушает
+          Конвенцию = НЕДЕЙСТВИТЕЛЕН
+        </p>
+      </div>
+
+      <!-- СПИСОК ВСЕХ НАРУШЕНИЙ -->
+      <h2>📛 Все 13 нарушений</h2>
+      <div class="accordion">
+        <div class="accordion-header fraud" onclick="toggleAccordion(this)">
+          <span>🔴 Показать полный список</span>
+          <span>▼</span>
+        </div>
+        <div class="accordion-content">
+          <table style="width: 100%; border-collapse: collapse; color: #00ff00">
+            <tr style="border-bottom: 1px solid #00ff00">
+              <th style="padding: 10px; text-align: left">№</th>
+              <th style="padding: 10px; text-align: left">Код</th>
+              <th style="padding: 10px; text-align: left">Дата</th>
+              <th style="padding: 10px; text-align: left">Ведомство</th>
+              <th style="padding: 10px; text-align: left">Статус</th>
+            </tr>
+            <tr>
+              <td>36</td>
+              <td>DLTP7B8ZHWGQ7</td>
+              <td>08.07.2022</td>
+              <td>Directia de Arhiva</td>
+              <td class="warning">НАРУШЕНИЕ</td>
+            </tr>
+            <tr>
+              <td>41</td>
+              <td>CG0T6Y1TBUEL7</td>
+              <td>12.07.2022</td>
+              <td>Curtea Suprema</td>
+              <td class="warning">НАРУШЕНИЕ</td>
+            </tr>
+            <tr>
+              <td>68</td>
+              <td>DFVMD2FQLW5N3</td>
+              <td>14.12.2022</td>
+              <td>Directia de Arhiva</td>
+              <td class="warning">НАРУШЕНИЕ</td>
+            </tr>
+            <tr>
+              <td>70</td>
+              <td>HQ7X9W62GUJL9</td>
+              <td>20.04.2022</td>
+              <td>Penitenciarul Nr.15</td>
+              <td class="warning">НАРУШЕНИЕ</td>
+            </tr>
+            <tr>
+              <td>71</td>
+              <td>BS7XCZF1EUJG3</td>
+              <td>15.07.2022</td>
+              <td>Directia de Arhiva</td>
+              <td class="warning">НАРУШЕНИЕ</td>
+            </tr>
+            <tr>
+              <td>77</td>
+              <td>4O3WF02QGRCI1</td>
+              <td>30.01.2023</td>
+              <td>Directia de Arhiva</td>
+              <td class="warning">НАРУШЕНИЕ</td>
+            </tr>
+            <tr>
+              <td>79</td>
+              <td>DQ1N892ZFXDI3</td>
+              <td>13.03.2023</td>
+              <td>Directia de Arhiva</td>
+              <td class="warning">НАРУШЕНИЕ</td>
+            </tr>
+            <tr>
+              <td>85</td>
+              <td>6R2V5Z4XBZBH8</td>
+              <td>20.07.2022</td>
+              <td>Directia de Politie</td>
+              <td class="warning">НАРУШЕНИЕ</td>
+            </tr>
+            <tr>
+              <td>86</td>
+              <td>IT1PD8E29S5F5</td>
+              <td>30.01.2023</td>
+              <td>Directia de Arhiva</td>
+              <td class="warning">НАРУШЕНИЕ</td>
+            </tr>
+            <tr>
+              <td>90</td>
+              <td>4J20E98WFY7J2</td>
+              <td>03.10.2022</td>
+              <td>Directia de Arhiva</td>
+              <td class="warning">НАРУШЕНИЕ</td>
+            </tr>
+            <tr>
+              <td>93</td>
+              <td>6OZUD89VBUEJ3</td>
+              <td>01.11.2022</td>
+              <td>Directia Generala Locativ</td>
+              <td class="warning">НАРУШЕНИЕ</td>
+            </tr>
+            <tr>
+              <td>96</td>
+              <td>IHW093CZ8U8R7</td>
+              <td>03.08.2022</td>
+              <td>Directia de Arhiva</td>
+              <td class="warning">НАРУШЕНИЕ</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- СКАЧАТЬ -->
+      <h2>📥 Скачать доказательства:</h2>
+      <button class="btn" onclick="downloadZip()">📦 Скачать ZIP архив</button>
+      <button class="btn" onclick="openRepo()">🐙 Репозиторий</button>
+      <button class="btn" onclick="openFile('APOSTILLE_FRAUD_REPORT.md')">
+        📄 Отчёт о фальсификации
+      </button>
+      <button class="btn" onclick="openFile('TECHNICAL_INTEGRITY_REPORT.md')">
+        🔧 Технический аудит
+      </button>
+
+      <!-- ФИНАЛЬНАЯ ЦИТАТА -->
       <blockquote>
+        <strong>⚖️ Правовой Нейропротокол:</strong><br /><br />
         "Все нормы Jus Cogens должны соблюдаться Erga Omnes.<br />
-        Любое техническое искажение реестра является актом саботажа<br />
-        против международного правопорядка."
+        Апостиль без указания фамилии должностного лица — НЕДЕЙСТВИТЕЛЕН.<br />
+        Это нарушение Статьи 5 Гаагской Конвенции 1961 года."
       </blockquote>
 
-      <p style="text-align: right; margin-top: 50px; color: #888888">
+      <p style="text-align: right; margin-top: 50px; color: #666">
         Signed: A©tor Maceret Alexei<br />
         Date: 2026-02-22
       </p>
     </div>
+
+    <script>
+      const fraudApostilles = [
+        {
+          code: "IT1PD8E29S5F5",
+          date: "30.01.2023",
+          authority: "Directia de Arhiva",
+          digital: "Grimailo Ana",
+          realSigner: "Maia Flnchea",
+          violation: "Поле 3 - ФАМИЛИЯ ПУСТО",
+        },
+        {
+          code: "4O3WF02QGRCI1",
+          date: "30.01.2023",
+          authority: "Directia de Arhiva",
+          digital: "Cristina Deleanu",
+          violation: "Поле 3 - ФАМИЛИЯ ПУСТО",
+        },
+        {
+          code: "DLTP7B8ZHWGQ7",
+          date: "08.07.2022",
+          authority: "Directia de Arhiva",
+          digital: "Mirzac Iuliana",
+          violation: "Поле 3 - ФАМИЛИЯ ПУСТО",
+        },
+        {
+          code: "CG0T6Y1TBUEL7",
+          date: "12.07.2022",
+          authority: "Curtea Suprema",
+          digital: "Mirzac Iuliana",
+          violation: "Поле 3 - ФАМИЛИЯ ПУСТО",
+        },
+        {
+          code: "DFVMD2FQLW5N3",
+          date: "14.12.2022",
+          authority: "Directia de Arhiva",
+          digital: "Cristina Deleanu",
+          violation: "Поле 3 - ФАМИЛИЯ ПУСТО",
+        },
+        {
+          code: "HQ7X9W62GUJL9",
+          date: "20.04.2022",
+          authority: "Penitenciarul Nr.15",
+          digital: "Valeriu Frimu",
+          violation: "Поле 3 - ФАМИЛИЯ ПУСТО",
+        },
+        {
+          code: "BS7XCZF1EUJG3",
+          date: "15.07.2022",
+          authority: "Directia de Arhiva",
+          digital: "Mirzac Iuliana",
+          violation: "Поле 3 - ФАМИЛИЯ ПУСТО",
+        },
+        {
+          code: "DQ1N892ZFXDI3",
+          date: "13.03.2023",
+          authority: "Directia de Arhiva",
+          digital: "Mirzac Iuliana",
+          violation: "Поле 3 - ФАМИЛИЯ ПУСТО",
+        },
+        {
+          code: "6R2V5Z4XBZBH8",
+          date: "20.07.2022",
+          authority: "Directia de Politie",
+          digital: "Mihaela Goleac",
+          violation: "Поле 3 - ФАМИЛИЯ ПУСТО",
+        },
+        {
+          code: "4J20E98WFY7J2",
+          date: "03.10.2022",
+          authority: "Directia de Arhiva",
+          digital: "Valeriu Frimu",
+          violation: "Поле 3 - ФАМИЛИЯ ПУСТО",
+        },
+        {
+          code: "IHW093CZ8U8R7",
+          date: "03.08.2022",
+          authority: "Directia de Arhiva",
+          digital: "Mirzac Iuliana",
+          violation: "Поле 3 - ФАМИЛИЯ ПУСТО",
+        },
+        {
+          code: "6OZUD89VBUEJ3",
+          date: "01.11.2022",
+          authority: "Directia Generala Locativ",
+          digital: "Grimailo Ana",
+          violation: "Поле 3 - ФАМИЛИЯ ПУСТО",
+        },
+      ];
+
+      function toggleAccordion(header) {
+        header.nextElementSibling.classList.toggle("show");
+      }
+
+      function searchApostilles() {
+        const input = document
+          .getElementById("searchInput")
+          .value.toUpperCase();
+        const result = document.getElementById("searchResult");
+        const content = document.getElementById("searchContent");
+
+        if (input.length < 3) {
+          result.style.display = "none";
+          return;
+        }
+
+        const found = fraudApostilles.filter((a) => a.code.includes(input));
+
+        if (found.length > 0) {
+          result.style.display = "block";
+          content.innerHTML = `
+            <h3 style="color:#ff3333;">🚨 НАРУШЕНИЕ ГААГСКОЙ КОНВЕНЦИИ!</h3>
+            <p><strong>Код:</strong> ${found[0].code}</p>
+            <p><strong>Дата:</strong> ${found[0].date}</p>
+            <p><strong>Ведомство:</strong> ${found[0].authority}</p>
+            <p><strong>Цифровая подпись:</strong> ${found[0].digital}</p>
+            <p class="warning"><strong>⚠️ ${found[0].violation}</strong></p>
+            <p><strong>Вывод:</strong> Апостиль НЕДЕЙСТВИТЕЛЕН (VOID)</p>
+          `;
+        } else {
+          result.style.display = "block";
+          result.style.borderColor = "#00ff00";
+          result.style.background = "#001100";
+          content.innerHTML = `
+            <h3 style="color:#00ff00;">✅ Апостиль ВЕРИФИЦИРОВАН</h3>
+            <p>Код ${input} не найден в списке нарушений.</p>
+            <p>Этот апостиль соответствует требованиям Статьи 5 Гаагской конвенции.</p>
+          `;
+        }
+      }
+
+      function demoUserSearch() {
+        document.getElementById("searchInput").value = "IT1PD8E29S5F5";
+        searchApostilles();
+      }
+
+      function demoJudgeSearch(code) {
+        document.getElementById("searchInput").value = code;
+        searchApostilles();
+        alert("Судья видит: нарушение выявлено. Апостиль недействителен.");
+      }
+
+      function openGitHub(path) {
+        window.open(
+          "https://github.com/arhiv1973b/maceret-case-evidence/blob/html-site/" +
+            path,
+          "_blank",
+        );
+      }
+
+      function openFile(path) {
+        window.open(
+          "https://github.com/arhiv1973b/maceret-case-evidence/blob/html-site/" +
+            path,
+          "_blank",
+        );
+      }
+
+      function downloadZip() {
+        window.open(
+          "https://github.com/arhiv1973b/maceret-case-evidence/archive/refs/heads/html-site.zip",
+          "_blank",
+        );
+      }
+
+      function openRepo() {
+        window.open(
+          "https://github.com/arhiv1973b/maceret-case-evidence",
+          "_blank",
+        );
+      }
+    </script>
   </body>
 </html>
