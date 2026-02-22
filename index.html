@@ -2247,6 +2247,18 @@
     </div>
 
     <script>
+      // Global variables
+      var jcActive = false;
+      var jcRunning = false;
+      var timelineInterval = null;
+      var timelineDots = [];
+      var echrViolations = { art3: 1, art6: 13, art8: 1 };
+      var pdfDoc = null;
+      var pageNum = 1;
+      var pdfScale = 1.5;
+      var currentPdfUrl = "";
+      var githubFiles = [];
+
       // Data - Full database
       const fraudData = [
         {
@@ -2920,13 +2932,6 @@
         },
       ];
 
-      // Global variables for PDF Viewer
-      var pdfDoc = null;
-      var pageNum = 1;
-      var pdfScale = 1.5;
-      var currentPdfUrl = "";
-      var githubFiles = [];
-
       // Populate evidence table
       function populateEvidenceTable() {
         var tbody = document.getElementById("evidenceTableBody");
@@ -2961,9 +2966,6 @@
       }
 
       // Timeline functions
-      var timelineInterval = null;
-      var timelineDots = [];
-
       function renderTimeline() {
         const container = document.getElementById("timeline-events");
         if (!container || typeof allApostilles === "undefined") return;
@@ -3094,9 +3096,6 @@
       }
 
       // Jus Cogens Protocol Functions
-      var jcActive = false;
-      var jcRunning = false;
-
       function activateJusCogens() {
         if (jcRunning) return;
 
@@ -3169,12 +3168,6 @@
       }
 
       // ECHR Functions
-      var echrViolations = {
-        art3: 1, // Torture/inhuman treatment - related to medical evidence
-        art6: 13, // Unfair trial - falsified apostilles
-        art8: 1, // Privacy - data manipulation
-      };
-
       function showECHRViolations() {
         document.getElementById("art3Count").innerHTML = echrViolations.art3;
         document.getElementById("art6Count").innerHTML = echrViolations.art6;
