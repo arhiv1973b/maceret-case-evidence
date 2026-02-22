@@ -10,12 +10,14 @@
 
 ## Summary
 
-13 out of 90 apostilles contain the violation: "semnatura indescifrabila" (unreadable signature) WITHOUT indicating the position/title of the signatory.
+**CRITICAL VIOLATION: ABSENCE OF SURNAME OF THE OFFICIAL**
+
+13 out of 90 apostilles contain the violation: "semnatura indescifrabila" (unreadable signature) WITHOUT indicating the SURNAME and position/title of the signatory.
 
 This violates **Article 5 of the Hague Convention**, which requires:
 
 1. Authenticity of signature
-2. **Capacity/position of the signatory** (REQUIRED)
+2. **SURNAME and position/title of the signatory** (REQUIRED - MISSING)
 3. Identity of seal/stamp
 
 ---
