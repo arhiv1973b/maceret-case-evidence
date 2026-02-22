@@ -1101,6 +1101,30 @@
               ○ ОЖИДАЕТ
             </div>
           </div>
+          <div
+            style="
+              background: var(--bg-dark);
+              padding: 12px;
+              border-radius: 8px;
+              border-left: 3px solid #00ccff;
+            "
+          >
+            <h4 style="color: #00ccff; margin: 0 0 8px 0">Статья 60</h4>
+            <p style="font-size: 11px; color: var(--text-dim); margin: 0">
+              Прекращение договора вследствие нарушения
+            </p>
+            <div
+              id="art60Status"
+              style="
+                font-size: 14px;
+                font-weight: bold;
+                color: #00ccff;
+                margin-top: 5px;
+              "
+            >
+              ⚠ 13 НАРУШЕНИЙ
+            </div>
+          </div>
         </div>
 
         <!-- Legal Hierarchy -->
@@ -2842,6 +2866,8 @@
 
         document.getElementById("art53Status").innerHTML =
           "⚠ " + violations + " НАРУШЕНИЙ";
+        document.getElementById("art60Status").innerHTML =
+          "⚠ " + violations + " НАРУШЕНИЙ";
 
         alert(
           "🏛️ ВЕНСКАЯ КОНВЕНЦИЯ 1969 - ПРИМЕНЕНА\n\n" +
@@ -2851,6 +2877,10 @@
             "⚠ Обнаружено " +
             violations +
             " нарушений императивных норм\n\n" +
+            "Статья 60 - Прекращение договора:\n" +
+            "⚠ " +
+            violations +
+            " случаев существенного нарушения\n\n" +
             "Статья 64 - Imperium contra jus:\n" +
             "○ Применяется при обнаружении коллизий\n\n" +
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n" +
