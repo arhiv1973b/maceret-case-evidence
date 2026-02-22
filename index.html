@@ -1090,8 +1090,50 @@
 
       // Initialize on load
       window.onload = function () {
-        // Network will init when tab clicked
+        // Auto-refresh every 30 seconds for real-time updates
+        setInterval(updateTime, 1000);
+        updateTime();
       };
+
+      function updateTime() {
+        var now = new Date();
+        var timeEl = document.getElementById("currentTime");
+        if (timeEl) {
+          timeEl.textContent = now.toLocaleString("ru-RU");
+        }
+      }
+
+      // Real-time validation
+      function validateApostille() {
+        var input = document.getElementById("realtimeSearch");
+        if (!input) return;
+
+        var code = input.value.toUpperCase().trim();
+        var result = document.getElementById("realtimeResult");
+
+        if (code.length < 3) {
+          if (result) result.innerHTML = "";
+          return;
+        }
+
+        var found = fraudData.filter(function (d) {
+          return d.code.includes(code);
+        });
+
+        if (result) {
+          if (found.length > 0) {
+            result.innerHTML =
+              '<div style="color: var(--fraud); padding: 10px; border: 1px solid var(--fraud);">' +
+              "🚨 НАРУШЕНИЕ: " +
+              found[0].code +
+              " - VOID</div>";
+          } else {
+            result.innerHTML =
+              '<div style="color: var(--primary); padding: 10px; border: 1px solid var(--primary);">' +
+              "✅ ВЕРИФИЦИРОВАН</div>";
+          }
+        }
+      }
     </script>
   </body>
 </html>
