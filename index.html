@@ -978,6 +978,156 @@
         </div>
       </div>
 
+      <!-- Vienna Convention 1969 Module -->
+      <div
+        id="viennaBanner"
+        style="
+          background: linear-gradient(135deg, #2d1b4e 0%, #1a0a2e 100%);
+          border: 2px solid #9933ff;
+          padding: 20px;
+          margin-bottom: 30px;
+          border-radius: 10px;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+          "
+        >
+          <div>
+            <h3 style="color: #9933ff; margin: 0">🏛️ ВЕНСКАЯ КОНВЕНЦИЯ 1969</h3>
+            <p
+              style="color: var(--text-dim); margin: 5px 0 0 0; font-size: 12px"
+            >
+              Статьи 31, 53, 64 - Конвенция Конвенций
+            </p>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: center">
+            <span id="viennaStatus" style="color: #9933ff; font-weight: bold"
+              >● АКТИВЕН</span
+            >
+            <button
+              class="btn"
+              onclick="applyViennaConvention()"
+              style="background: #9933ff; color: white"
+            >
+              Применить
+            </button>
+          </div>
+        </div>
+
+        <!-- Vienna Articles -->
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+          "
+        >
+          <div
+            style="
+              background: var(--bg-dark);
+              padding: 12px;
+              border-radius: 8px;
+              border-left: 3px solid #9933ff;
+            "
+          >
+            <h4 style="color: #9933ff; margin: 0 0 8px 0">Статья 31</h4>
+            <p style="font-size: 11px; color: var(--text-dim); margin: 0">
+              Добросовестное толкование договоров
+            </p>
+            <div
+              id="art31Status"
+              style="
+                font-size: 14px;
+                font-weight: bold;
+                color: var(--primary);
+                margin-top: 5px;
+              "
+            >
+              ✓ АКТИВНО
+            </div>
+          </div>
+          <div
+            style="
+              background: var(--bg-dark);
+              padding: 12px;
+              border-radius: 8px;
+              border-left: 3px solid #ff3366;
+            "
+          >
+            <h4 style="color: #ff3366; margin: 0 0 8px 0">Статья 53</h4>
+            <p style="font-size: 11px; color: var(--text-dim); margin: 0">
+              Jus Cogens - Императивные нормы
+            </p>
+            <div
+              id="art53Status"
+              style="
+                font-size: 14px;
+                font-weight: bold;
+                color: #ff3366;
+                margin-top: 5px;
+              "
+            >
+              ⚠ 13 НАРУШЕНИЙ
+            </div>
+          </div>
+          <div
+            style="
+              background: var(--bg-dark);
+              padding: 12px;
+              border-radius: 8px;
+              border-left: 3px solid #ffaa00;
+            "
+          >
+            <h4 style="color: #ffaa00; margin: 0 0 8px 0">Статья 64</h4>
+            <p style="font-size: 11px; color: var(--text-dim); margin: 0">
+              Imperium contra jus недействительно
+            </p>
+            <div
+              id="art64Status"
+              style="
+                font-size: 14px;
+                font-weight: bold;
+                color: #ffaa00;
+                margin-top: 5px;
+              "
+            >
+              ○ ОЖИДАЕТ
+            </div>
+          </div>
+        </div>
+
+        <!-- Legal Hierarchy -->
+        <div
+          style="
+            margin-top: 15px;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+          "
+        >
+          <p
+            style="
+              font-size: 11px;
+              color: var(--text-dim);
+              margin: 0;
+              text-align: center;
+            "
+          >
+            <strong style="color: #9933ff">ВДПЧ</strong> →
+            <strong style="color: #9933ff">Венская конвенция 1969</strong> →
+            <strong style="color: #00ccff">ЕКПЧ</strong> →
+            <strong>Национальное право</strong>
+          </p>
+        </div>
+      </div>
+
       <!-- Stats -->
       <div class="stats-grid">
         <div class="stat-card">
@@ -2680,6 +2830,34 @@
             echrViolations.art8 +
             " фактов\n" +
             "  - Манипуляция персональными данными",
+        );
+      }
+
+      // Vienna Convention 1969 Functions
+      function applyViennaConvention() {
+        var violations = 0;
+        if (typeof fraudData !== "undefined") {
+          violations = fraudData.length;
+        }
+
+        document.getElementById("art53Status").innerHTML =
+          "⚠ " + violations + " НАРУШЕНИЙ";
+
+        alert(
+          "🏛️ ВЕНСКАЯ КОНВЕНЦИЯ 1969 - ПРИМЕНЕНА\n\n" +
+            "Статья 31 - Добросовестное толкование:\n" +
+            "✓ Активна\n\n" +
+            "Статья 53 - Jus Cogens:\n" +
+            "⚠ Обнаружено " +
+            violations +
+            " нарушений императивных норм\n\n" +
+            "Статья 64 - Imperium contra jus:\n" +
+            "○ Применяется при обнаружении коллизий\n\n" +
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n" +
+            "ПРАВОВАЯ ИЕРАРХИЯ:\n" +
+            "ВДПЧ → Венская конв.1969 → ЕКПЧ → Нац.право\n\n" +
+            "Любой акт, нарушающий Jus Cogens,\n" +
+            "НЕДЕЙСТВИТЕЛЕН (ex tunc) - с момента создания",
         );
       }
 
