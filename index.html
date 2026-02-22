@@ -1342,6 +1342,13 @@
             >
               ⚠️ ФИЛЬТР VOID
             </button>
+            <button
+              class="btn"
+              onclick="printActOfNullity()"
+              style="background: #9933ff; color: white; margin-left: 5px"
+            >
+              🖨️ ПЕЧАТЬ АКТА
+            </button>
           </div>
         </div>
 
@@ -3066,6 +3073,34 @@
         },
       ];
 
+      // Sabotage Events - Obstruction of Justice
+      const sabotageEvents = [
+        {
+          code: "SABOTAGE-001",
+          date: "15.02.2024",
+          authority: "Юрий Лупэа",
+          status: "SABOTAGE",
+          description:
+            "Физическое нападение на A©tor Maceret во время аудита апостилей",
+        },
+        {
+          code: "SABOTAGE-002",
+          date: "20.02.2024",
+          authority: "Moldova Government",
+          status: "SABOTAGE",
+          description:
+            "Отключение электричества во время официального аудита апостилей",
+        },
+        {
+          code: "SABOTAGE-003",
+          date: "25.02.2024",
+          authority: "Unknown",
+          status: "CYBER",
+          description:
+            "Кибервторжение в систему - попытка удаления доказательств",
+        },
+      ];
+
       // Populate evidence table
       function populateEvidenceTable() {
         var tbody = document.getElementById("evidenceTableBody");
@@ -3164,6 +3199,36 @@
             container.appendChild(label);
           }
         });
+
+        // Add sabotage events to timeline
+        if (typeof sabotageEvents !== "undefined") {
+          sabotageEvents.forEach(function (event) {
+            const parts = event.date.split(".");
+            const docDate = new Date(
+              parts[2] + "-" + parts[1] + "-" + parts[0],
+            );
+            const days = (docDate - startDate) / (1000 * 60 * 60 * 24);
+            const leftPos = 30 + (days / totalDays) * containerWidth;
+
+            const isSabotage =
+              event.status === "SABOTAGE" || event.status === "CYBER";
+
+            const dot = document.createElement("div");
+            dot.className = "timeline-dot" + (isSabotage ? " fraud" : "");
+            dot.style.left = leftPos + "px";
+            dot.style.backgroundColor = isSabotage ? "#ff0000" : "#ff6600";
+            dot.style.zIndex = "100";
+            dot.style.width = "16px";
+            dot.style.height = "16px";
+            dot.title = event.code + " - " + event.description;
+
+            dot.onclick = function () {
+              showSabotageDetails(event);
+            };
+
+            container.appendChild(dot);
+          });
+        }
       }
 
       function showEventDetails(doc) {
@@ -3191,6 +3256,32 @@
           "<button class='btn' onclick=\"loadPdfByCodeDirect('" +
           doc.code +
           "_EVIDENCE')\">📖 Открыть</button>";
+      }
+
+      function showSabotageDetails(event) {
+        const details = document.getElementById("event-details");
+        const isCyber = event.status === "CYBER";
+
+        details.className = "event-card fraud";
+        details.innerHTML =
+          "<h3 style='color: #ff0000;'>⚠️ САБОТАЖ / ПРЕПЯТСТВОВАНИЕ</h3>" +
+          "<p><strong>Код:</strong> " +
+          event.code +
+          "</p>" +
+          "<p><strong>Дата:</strong> " +
+          event.date +
+          "</p>" +
+          "<p><strong>Виновник:</strong> " +
+          event.authority +
+          "</p>" +
+          "<p><strong>Тип:</strong> " +
+          (isCyber ? "🌐 Кибератака" : "🔴 Физическое/Энергетическое") +
+          "</p>" +
+          "<p><strong>Описание:</strong> " +
+          event.description +
+          "</p>" +
+          "<p style='margin-top: 10px; padding: 10px; background: #ffebee; border-left: 4px solid #ff0000;'>" +
+          "Это препятствование правосудию согласно ст. 7 Римского статута (преступления против человечности) и ст. 3 ЕКПЧ (пытки/бесчеловечное обращение).</p>";
       }
 
       function playTimeline() {
@@ -4038,6 +4129,72 @@
         }
 
         textEl.textContent = response;
+      }
+
+      // Print Act of Nullity
+      function printActOfNullity() {
+        var date = new Date().toLocaleDateString();
+        var violations = fraudData.length;
+        var tableContent = "";
+
+        fraudData.forEach(function (d) {
+          tableContent +=
+            "<tr>" +
+            '<td style="border: 1px solid black; padding: 5px;">' +
+            d.code +
+            "</td>" +
+            '<td style="border: 1px solid black; padding: 5px;">' +
+            d.date +
+            "</td>" +
+            '<td style="border: 1px solid black; padding: 5px;">VOID (Ex Tunc)</td>' +
+            '<td style="border: 1px solid black; padding: 5px;">Art. 53 Vienna 1969</td>' +
+            "</tr>";
+        });
+
+        var printWindow = window.open("", "_blank");
+        printWindow.document.write(
+          "<html>" +
+            "<head>" +
+            "<title>ACT OF NULLITY - CASE-MACHERET</title>" +
+            "<style>" +
+            'body { font-family: "Times New Roman", serif; padding: 40px; line-height: 1.6; }' +
+            ".header { text-align: center; text-transform: uppercase; font-weight: bold; }" +
+            ".stamp { border: 3px solid #ff3366; color: #ff3366; padding: 10px; display: inline-block; transform: rotate(-5deg); font-weight: bold; margin-top: 20px; }" +
+            "</style>" +
+            "</head>" +
+            "<body>" +
+            '<div class="header">' +
+            "<h2>Акт о юридической ничтожности (Act of Nullity)</h2>" +
+            "<p>На основании императивных норм Jus Cogens и Венской конвенции 1969 г.</p>" +
+            "</div>" +
+            "<p><strong>Дата генерации:</strong> " +
+            date +
+            "</p>" +
+            "<p><strong>Субъект права (A©tor):</strong> Мачерет Алексей Артурович</p>" +
+            "<hr>" +
+            "<p>Настоящим подтверждается, что следующие документы признаны юридически ничтожными (VOID) ввиду отсутствия обязательных реквизитов (Поле 3) согласно ст. 5 Гаагской конвенции 1961 г. и ст. 53 ВК 1969 г.:</p>" +
+            '<table style="width: 100%; border-collapse: collapse;">' +
+            "<thead>" +
+            '<tr style="background: #eee;">' +
+            '<th style="border: 1px solid black; padding: 5px;">Код (Security Code)</th>' +
+            '<th style="border: 1px solid black; padding: 5px;">Дата</th>' +
+            '<th style="border: 1px solid black; padding: 5px;">Статус</th>' +
+            '<th style="border: 1px solid black; padding: 5px;">Основание</th>' +
+            "</tr>" +
+            "</thead>" +
+            "<tbody>" +
+            tableContent +
+            "</tbody>" +
+            "</table>" +
+            '<div class="stamp">JUS COGENS VALIDATED<br>VOID AB INITIO</div>' +
+            '<p style="margin-top: 50px;">__________________________<br>A©tor Maceret Alexei</p>' +
+            "<scr" +
+            "ipt>window.print();</scr" +
+            "ipt>" +
+            "</body>" +
+            "</html>",
+        );
+        printWindow.document.close();
       }
 
       // Initialize files panel on load
