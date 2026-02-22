@@ -1090,50 +1090,224 @@
 
       <!-- Download Section -->
       <div style="margin-top: 50px">
-        <h3>📥 Доказательства</h3>
+        <h3>📥 Отдел доказательств</h3>
 
-        <!-- Main Registry PDF -->
+        <!-- Evidence Menu Grid -->
         <div
-          class="evidence-card"
           style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
             margin-bottom: 30px;
-            padding: 20px;
-            background: var(--bg-panel);
-            border: 2px solid var(--primary);
           "
         >
-          <h4 style="color: var(--primary); margin-bottom: 15px">
-            📋 Реестр апостилей Мачерет ( Jus Cogens )
-          </h4>
-          <p style="margin-bottom: 15px; color: var(--text-dim)">
-            Основной документ - Реестр апостилей с доказательствами нарушений
-          </p>
-          <a
-            href="Downloads/Реестр_полный_EVIDENCE.pdf"
-            class="btn"
-            download
-            style="display: inline-block"
-            >📥 Скачать Реестр (PDF)</a
-          >
-          <button
-            class="btn"
-            onclick="loadPdfByCodeDirect('Реестр_полный_EVIDENCE')"
-            style="margin-left: 10px"
-          >
-            📖 Просмотр
-          </button>
-          <a
-            href="APOSTILLE_VERIFICATION_REPORT.md"
-            class="btn"
-            target="_blank"
+          <!-- Исковое заявление -->
+          <div
+            class="evidence-card"
             style="
-              margin-left: 10px;
-              background: var(--accent);
-              color: var(--bg-dark);
+              padding: 20px;
+              background: var(--bg-panel);
+              border: 1px solid var(--border);
             "
           >
-            📊 Отчёт о верификации
-          </a>
+            <h4 style="color: var(--primary); margin-bottom: 10px">
+              📄 Исковое заявление
+            </h4>
+            <p
+              style="
+                color: var(--text-dim);
+                font-size: 12px;
+                margin-bottom: 15px;
+              "
+            >
+              Полный текст иска о возмещении ущерба
+            </p>
+            <a
+              href="иск_о_возмещении_ущерба.md"
+              class="btn"
+              target="_blank"
+              style="display: inline-block"
+              >📖 Открыть</a
+            >
+          </div>
+
+          <!-- Реестр апостилей -->
+          <div
+            class="evidence-card"
+            style="
+              padding: 20px;
+              background: var(--bg-panel);
+              border: 1px solid var(--primary);
+            "
+          >
+            <h4 style="color: var(--primary); margin-bottom: 10px">
+              📑 Реестр апостилей
+            </h4>
+            <p
+              style="
+                color: var(--text-dim);
+                font-size: 12px;
+                margin-bottom: 15px;
+              "
+            >
+              148 апостилей с верификацией
+            </p>
+            <a
+              href="Downloads/Реестр_полный_EVIDENCE.pdf"
+              class="btn"
+              download
+              style="display: inline-block"
+              >📥 Скачать</a
+            >
+            <button
+              class="btn"
+              onclick="loadPdfByCodeDirect('Реестр_полный_EVIDENCE')"
+              style="margin-left: 5px"
+            >
+              📖 Просмотр
+            </button>
+          </div>
+
+          <!-- Верификация апостилей -->
+          <div
+            class="evidence-card"
+            style="
+              padding: 20px;
+              background: var(--bg-panel);
+              border: 1px solid var(--fraud);
+            "
+          >
+            <h4 style="color: var(--fraud); margin-bottom: 10px">
+              🔍 Верификация апостилей
+            </h4>
+            <p
+              style="
+                color: var(--text-dim);
+                font-size: 12px;
+                margin-bottom: 15px;
+              "
+            >
+              13 нечитаемых подписей - саботаж
+            </p>
+            <a
+              href="APOSTILLE_VERIFICATION_REPORT.md"
+              class="btn"
+              target="_blank"
+              style="display: inline-block"
+              >📊 Отчёт</a
+            >
+            <a
+              href="APOSTILLE_FRAUD_REPORT.md"
+              class="btn"
+              target="_blank"
+              style="margin-left: 5px"
+              >🚨 Нарушения</a
+            >
+          </div>
+
+          <!-- Аналитические отчёты -->
+          <div
+            class="evidence-card"
+            style="
+              padding: 20px;
+              background: var(--bg-panel);
+              border: 1px solid var(--accent);
+            "
+          >
+            <h4 style="color: var(--accent); margin-bottom: 10px">
+              📊 Аналитические отчёты
+            </h4>
+            <p
+              style="
+                color: var(--text-dim);
+                font-size: 12px;
+                margin-bottom: 15px;
+              "
+            >
+              Полный анализ доказательств
+            </p>
+            <a
+              href="TECHNICAL_INTEGRITY_REPORT.md"
+              class="btn"
+              target="_blank"
+              style="display: inline-block"
+              >🔧 Технический</a
+            >
+            <a
+              href="Downloads/LEGAL_ANALYSIS.md"
+              class="btn"
+              target="_blank"
+              style="margin-left: 5px"
+              >⚖️ Юридический</a
+            >
+          </div>
+
+          <!-- История документов -->
+          <div
+            class="evidence-card"
+            style="
+              padding: 20px;
+              background: var(--bg-panel);
+              border: 1px solid var(--border);
+            "
+          >
+            <h4 style="color: var(--text); margin-bottom: 10px">
+              📜 История документов
+            </h4>
+            <p
+              style="
+                color: var(--text-dim);
+                font-size: 12px;
+                margin-bottom: 15px;
+              "
+            >
+              Хронология всех документов
+            </p>
+            <a
+              href="Downloads/LEGAL_TIMELINE.md"
+              class="btn"
+              target="_blank"
+              style="display: inline-block"
+              >📅 Хронология</a
+            >
+            <a
+              href="Downloads/EVIDENCE_CHAIN.md"
+              class="btn"
+              target="_blank"
+              style="margin-left: 5px"
+              >🔗 Цепочка</a
+            >
+          </div>
+
+          <!-- Реестр онлайн -->
+          <div
+            class="evidence-card"
+            style="
+              padding: 20px;
+              background: var(--bg-panel);
+              border: 1px solid var(--warning);
+            "
+          >
+            <h4 style="color: var(--warning); margin-bottom: 10px">
+              🌐 Реестр апостилей (онлайн)
+            </h4>
+            <p
+              style="
+                color: var(--text-dim);
+                font-size: 12px;
+                margin-bottom: 15px;
+              "
+            >
+              Оригинальный реестр Минюста РМ
+            </p>
+            <a
+              href="https://apostila.gov.md"
+              class="btn"
+              target="_blank"
+              style="display: inline-block"
+              >🌐 Минюст РМ</a
+            >
+          </div>
         </div>
 
         <!-- Evidence Table -->
