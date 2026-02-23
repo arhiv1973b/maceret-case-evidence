@@ -2,7 +2,8 @@ name: Deploy Evidence Portal
 
 on:
   push:
-    branches: ['main', 'master', 'evidence']
+    branches:
+      ['main', 'master', 'evidence', 'evidence-branch', 'html-site', 'gh-pages']
   workflow_dispatch:
 
 permissions:
@@ -12,9 +13,6 @@ permissions:
 
 jobs:
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
