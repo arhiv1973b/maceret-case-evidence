@@ -1,0 +1,87 @@
+{
+  "$schema": "https://actor.schema/v1",
+  "meta": {
+    "caseId": "CASE-MACHERET-1997-2026",
+    "version": "2026.02.21-FINAL",
+    "jurisdiction": ["MD", "ECHR"],
+    "signer": "A©tor Maceret Alexei"
+  },
+  "evidence_triggers": [
+    {
+      "id": "trigger-torture-1997",
+      "title": "Пытки в полиции Рышкань",
+      "file": "7H2Q3790FZEI5_EVIDENCE.pdf",
+      "type": "TORTURE",
+      "date": "13.10.1998",
+      "case": "1-568/98",
+      "impact": "Пытка 17-18.07.1997 - избиение резиновой палкой",
+      "link": "./Apostilles/7H2Q3790FZEI5_EVIDENCE.pdf"
+    },
+    {
+      "id": "trigger-framed-drugs-2002",
+      "title": "Подделка наркотиков",
+      "file": "5S2WF92X7X4R8_EVIDENCE.pdf",
+      "type": "FRAMED_DRUGS",
+      "date": "21.02.2003",
+      "case": "1-272/03",
+      "impact": "Незаконный обыск 19.09.2002 - сфальсифицированные наркотики",
+      "link": "./Apostilles/5S2WF92X7X4R8_EVIDENCE.pdf"
+    },
+    {
+      "id": "trigger-false-conviction-2009",
+      "title": "Ложное осуждение (2.6г марганцовки)",
+      "file": "CK5O133ZKLJE8_EVIDENCE.pdf",
+      "type": "FALSE_CONVICTION",
+      "date": "25.10.2021",
+      "case": "1-42/09",
+      "impact": "2.70г перманганата калия = 1 год 7 месяцев тюрьмы",
+      "link": "./Apostilles/CK5O133ZKLJE8_EVIDENCE.pdf"
+    },
+    {
+      "id": "trigger-victim-murder-2022",
+      "title": "Убийство свидетеля (Маркова Галина)",
+      "file": "CO2S9BA3JX6H1_EVIDENCE.pdf",
+      "type": "MURDER_COVER_UP",
+      "date": "01.04.2022",
+      "impact": "Поддельное свидетельство о смерти с диагнозом 'рак'",
+      "link": "./Apostilles/CO2S9BA3JX6H1_EVIDENCE.pdf"
+    },
+    {
+      "id": "trigger-identity-distortion",
+      "title": "Искажение фамилии: Maceret -> Maciret",
+      "file": "Искажение Фамилии.pdf",
+      "type": "Identity Manipulation",
+      "impact": "Создание юридического фантома для исключения из реестров",
+      "link": "./evidence/distortion_1997.pdf"
+    },
+    {
+      "id": "trigger-financial-inflation",
+      "title": "Финансовая западня: 90 -> 12 000 MDL",
+      "file": "apostila.1-137_08.pdf",
+      "type": "Financial Escalation",
+      "impact": "Трансформация в штраф по ст. 361 ч.2 УК РМ",
+      "link": "./evidence/apostille_137_08.pdf"
+    },
+    {
+      "id": "trigger-manual-hide-2009",
+      "title": "Мануальное сокрытие: Дело 1a-42/09",
+      "file": "apostila.1a-42_09.pdf",
+      "type": "Manual Record Subterfuge",
+      "impact": "Рукописное дело на русском для исключения из реестра",
+      "link": "./evidence/apostille_1a42_09.pdf"
+    },
+    {
+      "id": "trigger-oleinic-fiction",
+      "title": "Фикция Дела Олейник",
+      "file": "1-984_07.pdf",
+      "type": "Procedural Fraud",
+      "impact": "Легализация показаний под пытками",
+      "link": "./evidence/oleinic_fraud.pdf"
+    }
+  ],
+  "technical_compliance": {
+    "hash_algo": "SHA-256",
+    "signature_type": "Ed25519",
+    "hosting": "GitHub Pages"
+  }
+}

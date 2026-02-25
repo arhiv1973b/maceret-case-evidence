@@ -4,6 +4,10 @@ WORKDIR /evidence
 
 COPY Apostilles ./Apostilles/
 COPY APOSTILLE_INVESTIGATION_SUMMARY.md ./
+COPY README.md ./
+COPY metadata.jsonld ./
+COPY metadata-dublin-core.xml ./
+COPY "Реестр_полный_EVIDENCE.pdf" ./
 
 RUN apk add --no-cache sha256sum && \
     mkdir -p /integrity-hashes && \
