@@ -122,6 +122,174 @@
         letter-spacing: 2px;
       }
 
+      .main-nav {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .main-nav a {
+        color: var(--text);
+        text-decoration: none;
+        font-size: 14px;
+        transition: color 0.3s;
+      }
+
+      .main-nav a:hover {
+        color: var(--primary);
+      }
+
+      .hero {
+        text-align: center;
+        padding: 60px 20px;
+        margin-bottom: 40px;
+      }
+
+      .hero h1 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 48px;
+        color: var(--primary);
+        margin-bottom: 20px;
+      }
+
+      .hero-subtitle {
+        font-size: 24px;
+        color: var(--accent);
+        margin-bottom: 20px;
+      }
+
+      .hero-description {
+        max-width: 800px;
+        margin: 0 auto 30px;
+        color: var(--text-dim);
+        line-height: 1.6;
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        padding: 12px 30px;
+        border: 1px solid var(--primary);
+        background: transparent;
+        color: var(--primary);
+        cursor: pointer;
+        font-family: inherit;
+        text-decoration: none;
+        transition: all 0.3s;
+      }
+
+      .btn:hover {
+        background: var(--primary-dim);
+      }
+
+      .btn-primary {
+        background: var(--primary);
+        color: var(--bg-dark);
+      }
+
+      .btn-primary:hover {
+        box-shadow: 0 0 20px var(--primary-dim);
+      }
+
+      .section {
+        padding: 40px 0;
+      }
+
+      .section h2 {
+        color: var(--primary);
+        margin-bottom: 30px;
+        font-size: 28px;
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+      }
+
+      .about-card {
+        background: var(--bg-panel);
+        border: 1px solid var(--border);
+        padding: 25px;
+        border-radius: 8px;
+      }
+
+      .about-card h3 {
+        color: var(--accent);
+        margin-bottom: 15px;
+      }
+
+      .about-card p {
+        color: var(--text-dim);
+        line-height: 1.6;
+      }
+
+      .contacts-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+      }
+
+      .contact-card {
+        background: var(--bg-panel);
+        border: 1px solid var(--border);
+        padding: 25px;
+        border-radius: 8px;
+      }
+
+      .contact-card h3 {
+        color: var(--accent);
+        margin-bottom: 15px;
+      }
+
+      .contact-card ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .contact-card li {
+        margin-bottom: 10px;
+      }
+
+      .contact-card a {
+        color: var(--text);
+        text-decoration: none;
+      }
+
+      .contact-card a:hover {
+        color: var(--primary);
+      }
+
+      .contact-card input,
+      .contact-card textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        background: var(--bg-dark);
+        border: 1px solid var(--border);
+        color: var(--text);
+        font-family: inherit;
+      }
+
+      .contact-card input:focus,
+      .contact-card textarea:focus {
+        outline: none;
+        border-color: var(--primary);
+      }
+
+      .main-footer {
+        text-align: center;
+        padding: 30px;
+        border-top: 1px solid var(--border);
+        margin-top: 40px;
+        color: var(--text-dim);
+      }
+
       .status-badge {
         padding: 8px 20px;
         border: 1px solid var(--fraud);
@@ -939,6 +1107,13 @@
       <!-- Header -->
       <header>
         <div class="logo">⚖️ A©tor Maceret</div>
+        <nav class="main-nav">
+          <a href="#about">О проекте</a>
+          <a href="#statistics">Статистика</a>
+          <a href="#jus-cogens">Jus Cogens</a>
+          <a href="#timeline">Хронология</a>
+          <a href="#contacts">Контакты</a>
+        </nav>
         <div class="header-right">
           <div class="status-badge">🔴 FORENSIC AUDIT COMPLETE</div>
           <div class="lang-toggle">
@@ -949,6 +1124,111 @@
           </div>
         </div>
       </header>
+
+      <!-- Hero Section -->
+      <section class="hero">
+        <h1>CASE-MACHERET-1997-2026</h1>
+        <p class="hero-subtitle">
+          Цифровая архитектура доверия для международного правосудия
+        </p>
+        <p class="hero-description">
+          Архив документирует системные нарушения императивных норм
+          международного права (jus cogens). Каждое нарушение фиксируется во
+          времени — срок давности не применяется.
+        </p>
+        <div class="hero-buttons">
+          <a href="#statistics" class="btn btn-primary">Смотреть статистику</a>
+          <a href="#timeline" class="btn btn-secondary">Хронология событий</a>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="section">
+        <h2>📋 О проекте</h2>
+        <div class="about-grid">
+          <div class="about-card">
+            <h3>Цель</h3>
+            <p>
+              Документирование системных нарушений jus cogens и формирование
+              доказательной базы для международных инстанций.
+            </p>
+          </div>
+          <div class="about-card">
+            <h3>Метод</h3>
+            <p>
+              Цифровая верификация апостилей, анализ хронологии, выявление
+              паттернов безнаказанности.
+            </p>
+          </div>
+          <div class="about-card">
+            <h3>Результат</h3>
+            <p>
+              Архив доказательств для ЕСПЧ, МУС, ООН и других международных
+              правовых механизмов.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contacts Section -->
+      <section id="contacts" class="section">
+        <h2>📬 Контакты и обратная связь</h2>
+        <div class="contacts-grid">
+          <div class="contact-card">
+            <h3>Международные инстанции</h3>
+            <ul>
+              <li>
+                <a href="https://www.icc-cpi.int" target="_blank"
+                  >Международный уголовный суд (МУС)</a
+                >
+              </li>
+              <li>
+                <a href="https://www.echr.coe.int" target="_blank">ЕСПЧ</a>
+              </li>
+              <li>
+                <a href="https://www.ohchr.org" target="_blank"
+                  >ООН по правам человека</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="contact-card">
+            <h3>Документация</h3>
+            <ul>
+              <li>
+                <a href="APOSTILLE_FRAUD_REPORT.md" target="_blank"
+                  >Отчёт о мошенничестве</a
+                >
+              </li>
+              <li>
+                <a href="APOSTILLE_VERIFICATION_REPORT.md" target="_blank"
+                  >Отчёт о верификации</a
+                >
+              </li>
+              <li>
+                <a href="TECHNICAL_INTEGRITY_REPORT.md" target="_blank"
+                  >Технический отчёт</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="contact-card">
+            <h3>Форма обратной связи</h3>
+            <form id="feedbackForm" onsubmit="submitFeedback(event)">
+              <input type="text" placeholder="Ваше имя" required />
+              <input type="email" placeholder="Email" required />
+              <textarea placeholder="Сообщение" rows="3" required></textarea>
+              <button type="submit" class="btn">Отправить</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="main-footer">
+        <p>© 2026 CASE-MACHERET-1997-2026 | Digital Evidence Archive</p>
+        <p>Jus Cogens — Императивные нормы не имеют срока давности</p>
+      </footer>
 
       <!-- Jus Cogens Protocol Banner -->
       <div
@@ -5527,105 +5807,31 @@
 
         document.querySelectorAll(".stat-label")[0].textContent =
           t.totalApostilles;
-        document.querySelectorAll(".stat-label")[1].textContent =
-          t.violations + " (14%)";
-        document.querySelectorAll(".stat-label")[2].textContent = t.verified;
-        document.querySelectorAll(".stat-label")[3].textContent = t.courts;
+      }
 
-        document.querySelector(".alert-banner h2").textContent =
-          t.violationAlert;
-        document.querySelector(".alert-banner p strong").textContent =
-          t.missingSurname;
+      function submitFeedback(e) {
+        e.preventDefault();
+        alert("Спасибо! Ваше сообщение отправлено.");
+        e.target.reset();
+      }
 
-        const tabs = document.querySelectorAll(".role-tab");
-        if (tabs[0]) tabs[0].textContent = t.citizen;
-        if (tabs[1]) tabs[1].textContent = t.judge;
-        if (tabs[2]) tabs[2].textContent = t.lawyer;
-        if (tabs[3]) tabs[3].textContent = t.investigator;
-        if (tabs[4]) tabs[4].textContent = t.network;
-        if (tabs[5]) tabs[5].textContent = t.aiFiles;
-
-        const searchInput = document.getElementById("citizenSearch");
-        if (searchInput) searchInput.placeholder = t.searchPlaceholder;
-
-        // Update section titles and labels
+      // Update section titles and labels
+      function updateSectionTitles(t) {
         const jusCogensTitle = document.querySelector("#jusCogensBanner h3");
         if (jusCogensTitle) jusCogensTitle.textContent = t.jusCogensTitle;
 
         const jcStatus = document.getElementById("jcStatus");
         if (jcStatus) jcStatus.textContent = t.protocolReady;
-
-        const jcViolationsLabel = document.querySelector(
-          "#jusCogensBanner span:nth-child(2)",
-        );
-        const jcViolationsSpan = document.querySelector(
-          "#jusCogensBanner div span:nth-child(1)",
-        );
-        if (jcViolationsSpan) {
-          const parts = jcViolationsSpan.innerHTML.split(":");
-          jcViolationsSpan.innerHTML =
-            t.protocolReady.split(":")[0] + ": " + parts[1].split(":").pop();
-        }
-
-        const echrTitle = document.querySelector("#echrBanner h3");
-        if (echrTitle) echrTitle.textContent = t.echrTitle;
-
-        const udhrTitle = document.querySelector("#udhrBanner h3");
-        if (udhrTitle) udhrTitle.textContent = t.udhrTitle;
-
-        const romeTitle = document.querySelector("#romeBanner h3");
-        if (romeTitle) romeTitle.textContent = t.romeTitle;
-
-        const viennaTitle = document.querySelector("#viennaBanner h3");
-        if (viennaTitle) viennaTitle.textContent = t.viennaTitle;
-
-        const quotesTitle = document.querySelector("h3");
-        if (quotesTitle && quotesTitle.textContent.includes("ЦИТАТЫ")) {
-          quotesTitle.textContent = t.quotes;
-        }
-
-        // Update Vienna Filter and Print Act buttons
-        const voidFilterBtns = document.querySelectorAll(
-          'button[onclick="applyViennaFilter()"]',
-        );
-        for (const btn of voidFilterBtns) {
-          btn.textContent = t.voidFilter;
-        }
-
-        const printActBtns = document.querySelectorAll(
-          'button[onclick="printActOfNullity()"]',
-        );
-        for (const btn of printActBtns) {
-          btn.textContent = t.printAct;
-        }
-
-        // Update section headers
-        const evidenceSection = document.querySelector("#timeline-section h2");
-        if (
-          evidenceSection &&
-          evidenceSection.textContent.includes("Хронология")
-        ) {
-          evidenceSection.textContent =
-            lang === "ru"
-              ? "📜 Хронология событий - Jus Cogens"
-              : "📜 Event Timeline - Jus Cogens";
-        }
-
-        const downloadSection = document.querySelector("div > h3");
-        const downloadSections = document.querySelectorAll("div > h3");
-        for (const h3 of downloadSections) {
-          if (
-            h3.textContent.includes("Отдел доказательств") ||
-            h3.textContent.includes("Evidence")
-          ) {
-            h3.textContent =
-              lang === "ru"
-                ? "📥 Отдел доказательств"
-                : "📥 Evidence Department";
-          }
-        }
       }
 
+      // Load saved language
+      (function () {
+        const savedLang = localStorage.getItem("lang") || "ru";
+        setLang(savedLang);
+      })();
+    </script>
+  </body>
+</html>
       // Load saved language
       (function () {
         const savedLang = localStorage.getItem("lang") || "ru";
