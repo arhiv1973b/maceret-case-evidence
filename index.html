@@ -1232,7 +1232,7 @@
 
       <!-- Jus Cogens Protocol Banner -->
       <div
-        id="jusCogensBanner"
+        id="jus-cogens"
         style="
           background: linear-gradient(135deg, #1a0a2e 0%, #0a1628 100%);
           border: 2px solid var(--primary);
@@ -2107,7 +2107,7 @@
       </div>
 
       <!-- Stats -->
-      <div class="stats-grid">
+      <div id="statistics" class="stats-grid">
         <div class="stat-card">
           <div class="stat-number">90</div>
           <div class="stat-label">Всего Апостилей</div>
@@ -2799,7 +2799,7 @@
 
       <!-- Timeline Section -->
       <section
-        id="timeline-section"
+        id="timeline"
         style="
           margin: 40px 0;
           padding: 20px;
@@ -4183,25 +4183,25 @@
       const sabotageEvents = [
         {
           code: "SABOTAGE-001",
-          date: "19.02.2026",
+          date: "18.02.2026",
           authority: "Yuri Lupea (Lupiy Yuri)",
           status: "ASSAULT",
           description:
-            "Физическое нападение на A©tor Maceret во время аудита апостилей. Удар в область головы/лица.",
+            "Физическое нападение на A©tor Maceret после выписки из БСМП. Удар в лицо. Направлялся в Суд мед на Короленко,8.",
           legalQualification:
             "Obstruction of Justice with Violence - Статья 3 ЕКПЧ (пытки/бесчеловечное обращение)",
-          evidence: "SECURITY_INCIDENT_REPORT.md",
+          evidence: "нападение Лупя Юрий.signed.pdf",
         },
         {
           code: "SABOTAGE-002",
-          date: "19.02.2026",
+          date: "18.02.2026",
           authority: "Moldova Government",
           status: "SABOTAGE",
           description:
             "Отключение электричества (Blackout) точно во время верификации данных реестра апостилей",
           legalQualification:
             "Psychological Torture - Препятствование правосудию",
-          evidence: "SECURITY_INCIDENT_REPORT.md",
+          evidence: "нападение Лупя Юрий.signed.pdf",
         },
         {
           code: "SABOTAGE-003",
@@ -4216,9 +4216,9 @@
         {
           code: "CASE-1997",
           date: "17.07.1997",
-          authority: "Police Riscany",
+          authority: "Комиссариат сектор Центр",
           status: "TORTURE",
-          description: "Первая сессия пыток - Полицейский участок Riscany",
+          description: "Первая сессия пыток - Комиссариат сектор Центр, Кишинев",
           legalQualification: "Art. 3 ECHR - Torture",
           evidence: "7H2Q3790FZEI5",
         },
@@ -5817,7 +5817,7 @@
 
       // Update section titles and labels
       function updateSectionTitles(t) {
-        const jusCogensTitle = document.querySelector("#jusCogensBanner h3");
+        const jusCogensTitle = document.querySelector("#jus-cogens h3");
         if (jusCogensTitle) jusCogensTitle.textContent = t.jusCogensTitle;
 
         const jcStatus = document.getElementById("jcStatus");
