@@ -1,0 +1,42 @@
+{
+  "missingFunctions": [],
+  "missingFiles": [
+    {
+      "file": "https://legal.un.org/ilc/texts/instruments/english/conventions/1_1_1969.pdf",
+      "type": "href",
+      "fullPath": "/home/arhiv/maceret-case-evidence/https:/legal.un.org/ilc/texts/instruments/english/conventions/1_1_1969.pdf"
+    },
+    {
+      "file": "https://apostila.gov.md",
+      "type": "href",
+      "fullPath": "/home/arhiv/maceret-case-evidence/https:/apostila.gov.md"
+    },
+    {
+      "file": "Downloads/Apostilles/' +\n            pdfName +\n            '.pdf",
+      "type": "href",
+      "fullPath": "/home/arhiv/maceret-case-evidence/Downloads/Apostilles/' +\n            pdfName +\n            '.pdf"
+    },
+    {
+      "file": "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js",
+      "type": "src",
+      "fullPath": "/home/arhiv/maceret-case-evidence/https:/cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"
+    },
+    {
+      "file": "https://cdnjs.cloudflare.com/ajax/libs/tesseract.js/5.0.0/tesseract.min.js",
+      "type": "src",
+      "fullPath": "/home/arhiv/maceret-case-evidence/https:/cdnjs.cloudflare.com/ajax/libs/tesseract.js/5.0.0/tesseract.min.js"
+    },
+    {
+      "file": "Реестр_полный_EVIDENCE",
+      "type": "onclick",
+      "fullPath": "/home/arhiv/maceret-case-evidence/Downloads/Реестр_полный_EVIDENCE"
+    }
+  ],
+  "brokenLinks": [],
+  "orphanedButtons": [
+    {
+      "text": "Отправить",
+      "html": "<button type=\"submit\" class=\"btn\">Отправить</button>"
+    }
+  ]
+}
