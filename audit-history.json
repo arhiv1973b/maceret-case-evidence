@@ -1,0 +1,41 @@
+[
+  {
+    "timestamp": "2026-03-05T13:18:40.999Z",
+    "stats": {
+      "total": 0,
+      "void": 0,
+      "verified": 0
+    },
+    "issues": {
+      "missingFilesCount": 1,
+      "orphanedButtonsCount": 0
+    },
+    "changes": {
+      "newIssues": [
+        {
+          "type": "missingFile",
+          "file": "Downloads/Apostilles/' +\n            pdfName +\n            '.pdf"
+        }
+      ],
+      "resolvedIssues": [],
+      "unchanged": []
+    }
+  },
+  {
+    "timestamp": "2026-03-05T13:19:28.239Z",
+    "stats": {
+      "total": 90,
+      "void": 12,
+      "verified": 78
+    },
+    "issues": {
+      "missingFilesCount": 1,
+      "orphanedButtonsCount": 0
+    },
+    "changes": {
+      "newIssues": [],
+      "resolvedIssues": [],
+      "unchanged": []
+    }
+  }
+]
