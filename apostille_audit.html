@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apostille Art.5 Audit - OCR Results</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-slate-50 p-6">
+    <div class="max-w-7xl mx-auto">
+      <header class="mb-8">
+        <h1 class="text-3xl font-bold text-slate-800">
+          Apostille Compliance Audit
+        </h1>
+        <p class="text-slate-600">
+          Art. 5 Hague Convention 1961 - Field 3 Analysis
+        </p>
+        <div class="mt-2 text-sm text-red-600">
+          13 documents with missing surname/illegible signature
+        </div>
+      </header>
+
+      <div class="grid gap-4" id="results"></div>
+    </div>
+
+    <script>
+      const apostilles = [
+        {
+          code: 'IT1PD8E29S5F5',
+          sig: 'indescifrabila',
+          pos: 'sef',
+          signer: 'Grimailo Ana',
+          authority: 'Directia de Arhiva',
+          date: '30.01.2023',
+          pages: 2,
+          page2_content: 'TCPDF footer only',
+          violation: true,
+        },
+        {
+          code: 'DLTP7B8ZHWGQ7',
+          sig: 'indescifrabila',
+          pos: 'Functionar',
+          signer: 'Mirzac Iuliana',
+          authority: 'Directia de Arhiva',
+          date: '08.07.2022',
+          pages: 7,
+          page2_content: 'Перевод - Дело N 1ra-719/2022 (Court translation)',
+          violation: true,
+        },
+        {
+          code: 'CG0T6Y1TBUEL7',
+          sig: 'indescifrabila',
+          pos: 'Functionar',
+          signer: 'Mirzac Iuliana',
+          authority: 'Curtea Suprema',
+          date: '12.07.2022',
+          pages: 7,
+          page2_content: 'Перевод - Дело N I ra-834/09 (Supreme Court)',
+          violation: true,
+        },
+        {
+          code: '5PWVD5A28PBS8',
+          sig: 'OK',
+          pos: 'Sef',
+          signer: 'Mirzac Iuliana',
+          authority: 'Directia de Arhiva',
+          date: '22.09.2022',
+          pages: 2,
+          page2_content: 'TCPDF footer only',
+          violation: true,
+        },
+        {
+          code: 'DFVMD2FQLW5N3',
+          sig: 'indescifrabila',
+          pos: 'sef',
+          signer: 'Cristina Deleanu',
+          authority: 'Directia de Arhiva',
+          date: '14.12.2022',
+          pages: 3,
+          page2_content: 'Page 2/3',
+          violation: true,
+        },
+        {
+          code: 'HQ7X9W62GUJL9',
+          sig: 'indescifrabila',
+          pos: 'sef',
+          signer: 'Valeriu Frimu',
+          authority: 'Penitenciarul Nr.15',
+          date: '20.04.2022',
+          pages: 2,
+          page2_content: 'TCPDF footer',
+          violation: true,
+        },
+        {
+          code: 'BS7XCZF1EUJG3',
+          sig: 'indescifrabila',
+          pos: 'Functionar',
+          signer: 'Mirzac Iuliana',
+          authority: 'Directia de Arhiva',
+          date: '15.07.2022',
+          pages: 2,
+          page2_content: 'TCPDF footer',
+          violation: true,
+        },
+        {
+          code: '4O3WF02QGRCI1',
+          sig: 'indescifrabila',
+          pos: 'sef',
+          signer: 'Cristina Deleanu',
+          authority: 'Directia de Arhiva',
+          date: '30.01.2023',
+          pages: 2,
+          page2_content: 'TCPDF footer only',
+          violation: true,
+        },
+        {
+          code: 'DQ1N892ZFXDI3',
+          sig: 'indescifrabila',
+          pos: 'Functionar',
+          signer: 'Mirzac Iuliana',
+          authority: 'Directia de Arhiva',
+          date: '13.03.2023',
+          pages: 2,
+          page2_content: 'TCPDF footer',
+          violation: true,
+        },
+        {
+          code: '6R2V5Z4XBZBH8',
+          sig: 'indescifrabila',
+          pos: 'sef',
+          signer: 'Mihaela Goleac',
+          authority: 'Directia de Politie',
+          date: '20.07.2022',
+          pages: 2,
+          page2_content: 'TCPDF footer',
+          violation: true,
+        },
+        {
+          code: '4J20E98WFY7J2',
+          sig: 'indescifrabila',
+          pos: 'secretar',
+          signer: 'Valeriu Frimu',
+          authority: 'Directia de Arhiva',
+          date: '03.10.2022',
+          pages: 2,
+          page2_content: 'TCPDF footer only',
+          violation: true,
+        },
+        {
+          code: '6OZUD89VBUEJ3',
+          sig: 'indescifrabila',
+          pos: 'sef',
+          signer: 'Grimailo Ana',
+          authority: 'Directia Generala Locativ',
+          date: '01.11.2022',
+          pages: 2,
+          page2_content: 'TCPDF footer',
+          violation: true,
+        },
+        {
+          code: 'IHW093CZ8U8R7',
+          sig: 'indescifrabila',
+          pos: 'Functionar',
+          signer: 'Mirzac Iuliana',
+          authority: 'Directia de Arhiva',
+          date: '03.08.2022',
+          pages: 2,
+          page2_content: 'TCPDF footer',
+          violation: true,
+        },
+      ];
+
+      const container = document.getElementById('results');
+
+      apostilles.forEach((a) => {
+        const card = document.createElement('div');
+        card.className =
+          'bg-white rounded-lg shadow p-4 border-l-4 ' +
+          (a.sig === 'indescifrabila' ? 'border-red-500' : 'border-yellow-500');
+
+        const pdfUrl = `https://arhiv1973b.github.io/maceret-case-evidence/Downloads/Apostilles/${a.code}_EVIDENCE.pdf`;
+
+        card.innerHTML = `
+                <div class="flex justify-between items-start">
+                    <div>
+                        <div class="flex items-center gap-3">
+                            <span class="font-mono font-bold text-lg">${a.code}</span>
+                            <span class="px-2 py-1 bg-red-100 text-red-800 text-xs rounded">Art.5 VIOLATION</span>
+                        </div>
+                        <div class="text-sm text-slate-600 mt-1">${a.authority} | ${a.date}</div>
+                        <div class="text-sm mt-2">
+                            <span class="font-semibold">Signer:</span> ${a.signer}
+                        </div>
+                    </div>
+                    <a href="${pdfUrl}" target="_blank" class="text-blue-600 hover:underline text-sm">View PDF</a>
+                </div>
+                <div class="mt-4 grid grid-cols-2 gap-4 text-sm">
+                    <div>
+                        <span class="text-slate-500">Field 2 (Signature):</span>
+                        <span class="font-mono ${a.sig === 'indescifrabila' ? 'text-red-600 font-bold' : 'text-green-600'}">${a.sig}</span>
+                    </div>
+                    <div>
+                        <span class="text-slate-500">Field 3 (Position):</span>
+                        <span class="font-mono ${a.pos.length < 5 ? 'text-red-600 font-bold' : ''}">${a.pos}</span>
+                    </div>
+                    <div>
+                        <span class="text-slate-500">Pages:</span>
+                        <span>${a.pages}</span>
+                    </div>
+                    <div>
+                        <span class="text-slate-500">Page 2:</span>
+                        <span class="text-xs">${a.page2_content}</span>
+                    </div>
+                </div>
+            `;
+        container.appendChild(card);
+      });
+    </script>
+  </body>
+</html>

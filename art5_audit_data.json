@@ -1,0 +1,161 @@
+{
+  "audit_date": "2026-03-07",
+  "total_violations": 13,
+  "documents": [
+    {
+      "code": "IT1PD8E29S5F5",
+      "field2_signature": "indescifrabila",
+      "field3_position": "sef",
+      "signer": "Grimailo Ana",
+      "authority": "Directia de Arhiva",
+      "date": "30.01.2023",
+      "pages": 2,
+      "page2_type": "TCPDF_footer",
+      "art5_violation": true
+    },
+    {
+      "code": "DLTP7B8ZHWGQ7",
+      "field2_signature": "indescifrabila",
+      "field3_position": "Functionar",
+      "signer": "Mirzac Iuliana",
+      "authority": "Directia de Arhiva",
+      "date": "08.07.2022",
+      "pages": 7,
+      "page2_type": "court_translation",
+      "art5_violation": true
+    },
+    {
+      "code": "CG0T6Y1TBUEL7",
+      "field2_signature": "indescifrabila",
+      "field3_position": "Functionar",
+      "signer": "Mirzac Iuliana",
+      "authority": "Curtea Suprema",
+      "date": "12.07.2022",
+      "pages": 7,
+      "page2_type": "court_translation",
+      "art5_violation": true
+    },
+    {
+      "code": "5PWVD5A28PBS8",
+      "field2_signature": "OK",
+      "field3_position": "Sef",
+      "signer": "Mirzac Iuliana",
+      "authority": "Directia de Arhiva",
+      "date": "22.09.2022",
+      "pages": 2,
+      "page2_type": "TCPDF_footer",
+      "art5_violation": true
+    },
+    {
+      "code": "DFVMD2FQLW5N3",
+      "field2_signature": "indescifrabila",
+      "field3_position": "sef",
+      "signer": "Cristina Deleanu",
+      "authority": "Directia de Arhiva",
+      "date": "14.12.2022",
+      "pages": 3,
+      "page2_type": "document_content",
+      "art5_violation": true
+    },
+    {
+      "code": "HQ7X9W62GUJL9",
+      "field2_signature": "indescifrabila",
+      "field3_position": "sef",
+      "signer": "Valeriu Frimu",
+      "authority": "Penitenciarul Nr.15",
+      "date": "20.04.2022",
+      "pages": 2,
+      "page2_type": "TCPDF_footer",
+      "art5_violation": true
+    },
+    {
+      "code": "BS7XCZF1EUJG3",
+      "field2_signature": "indescifrabila",
+      "field3_position": "Functionar",
+      "signer": "Mirzac Iuliana",
+      "authority": "Directia de Arhiva",
+      "date": "15.07.2022",
+      "pages": 2,
+      "page2_type": "TCPDF_footer",
+      "art5_violation": true
+    },
+    {
+      "code": "4O3WF02QGRCI1",
+      "field2_signature": "indescifrabila",
+      "field3_position": "sef",
+      "signer": "Cristina Deleanu",
+      "authority": "Directia de Arhiva",
+      "date": "30.01.2023",
+      "pages": 2,
+      "page2_type": "TCPDF_footer",
+      "art5_violation": true
+    },
+    {
+      "code": "DQ1N892ZFXDI3",
+      "field2_signature": "indescifrabila",
+      "field3_position": "Functionar",
+      "signer": "Mirzac Iuliana",
+      "authority": "Directia de Arhiva",
+      "date": "13.03.2023",
+      "pages": 2,
+      "page2_type": "TCPDF_footer",
+      "art5_violation": true
+    },
+    {
+      "code": "6R2V5Z4XBZBH8",
+      "field2_signature": "indescifrabila",
+      "field3_position": "sef",
+      "signer": "Mihaela Goleac",
+      "authority": "Directia de Politie",
+      "date": "20.07.2022",
+      "pages": 2,
+      "page2_type": "TCPDF_footer",
+      "art5_violation": true
+    },
+    {
+      "code": "4J20E98WFY7J2",
+      "field2_signature": "indescifrabila",
+      "field3_position": "secretar",
+      "signer": "Valeriu Frimu",
+      "authority": "Directia de Arhiva",
+      "date": "03.10.2022",
+      "pages": 2,
+      "page2_type": "TCPDF_footer",
+      "art5_violation": true
+    },
+    {
+      "code": "6OZUD89VBUEJ3",
+      "field2_signature": "indescifrabila",
+      "field3_position": "sef",
+      "signer": "Grimailo Ana",
+      "authority": "Directia Generala Locativ",
+      "date": "01.11.2022",
+      "pages": 2,
+      "page2_type": "TCPDF_footer",
+      "art5_violation": true
+    },
+    {
+      "code": "IHW093CZ8U8R7",
+      "field2_signature": "indescifrabila",
+      "field3_position": "Functionar",
+      "signer": "Mirzac Iuliana",
+      "authority": "Directia de Arhiva",
+      "date": "03.08.2022",
+      "pages": 2,
+      "page2_type": "TCPDF_footer",
+      "art5_violation": true
+    }
+  ],
+  "summary": {
+    "illegible_signatures": 12,
+    "missing_surname": 13,
+    "court_documents_translated": 2,
+    "signers": {
+      "Mirzac Iuliana": 6,
+      "Grimailo Ana": 2,
+      "Cristina Deleanu": 2,
+      "Valeriu Frimu": 2,
+      "Mihaela Goleac": 1
+    }
+  }
+}
