@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apostille Universal Verifier - Art.5 Compliance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .violation {
+        border-left: 4px solid #ef4444;
+        background: #fef2f2;
+      }
+      .valid {
+        border-left: 4px solid #22c55e;
+        background: #f0fdf4;
+      }
+      .loading {
+        opacity: 0.6;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body class="bg-slate-50 min-h-screen">
+    <div class="max-w-6xl mx-auto p-6">
+      <header class="mb-8 text-center">
+        <h1 class="text-3xl font-bold text-slate-800">
+          Apostille Universal Verifier
+        </h1>
+        <p class="text-slate-600">
+          Проверка соответствия Статье 5 Гаагской Конвенции 1961
+        </p>
+        <p class="text-sm text-slate-500">
+          90 апостилей | 13 нарушений выявлено
+        </p>
+      </header>
+
+      <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+        <div class="flex gap-4 mb-4">
+          <input
+            type="text"
+            id="searchCode"
+            placeholder="Введите код апостиля (напр. IT1PD8E29S5F5)"
+            class="flex-1 p-3 border rounded-lg font-mono uppercase"
+            maxlength="20"
+          />
+          <button
+            onclick="searchApostille()"
+            class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700"
+          >
+            Проверить
+          </button>
+        </div>
+        <div class="flex gap-2 flex-wrap">
+          <button
+            onclick="showViolations()"
+            class="text-sm bg-red-100 text-red-700 px-3 py-1 rounded"
+          >
+            Только нарушения
+          </button>
+          <button
+            onclick="showAll()"
+            class="text-sm bg-green-100 text-green-700 px-3 py-1 rounded"
+          >
+            Все апостили
+          </button>
+          <button
+            onclick="showValid()"
+            class="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded"
+          >
+            Только действительные
+          </button>
+        </div>
+      </div>
+
+      <div id="result" class="mb-6 hidden"></div>
+
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div class="p-4 bg-slate-100 border-b">
+          <h2 class="font-bold">Полный реестр апостилей</h2>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="p-3 text-left text-sm">Код</th>
+                <th class="p-3 text-left text-sm">Дата</th>
+                <th class="p-3 text-left text-sm">Ведомство</th>
+                <th class="p-3 text-left text-sm">Подпись</th>
+                <th class="p-3 text-left text-sm">Должность</th>
+                <th class="p-3 text-left text-sm">Статус</th>
+                <th class="p-3 text-left text-sm">PDF</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const apostilles = [
+          { code: "IT1PD8E29S5F5", date: "30.01.2023", auth: "Directia de Arhiva", sig: "indescifrabila", pos: "sef", signer: "Grimailo Ana", violation: true },
+          { code: "DLTP7B8ZHWGQ7", date: "08.07.2022", auth: "Directia de Arhiva", sig: "indescifrabila", pos: "Functionar", signer: "Mirzac Iuliana", violation: true },
+          { code: "CG0T6Y1TBUEL7", date: "12.07.2022", auth: "Curtea Suprema", sig: "indescifrabila", pos: "Functionar", signer: "Mirzac Iuliana", violation: true },
+          { code: "5PWVD5A28PBS8", date: "22.09.2022", auth: "Directia de Arhiva", sig: "OK", pos: "Sef", signer: "Mirzac Iuliana", violation: true },
+          { code: "DFVMD2FQLW5N3", date: "14.12.2022", auth: "Directia de Arhiva", sig: "indescifrabila", pos: "sef", signer: "Cristina Deleanu", violation: true },
+          { code: "HQ7X9W62GUJL9", date: "20.04.2022", auth: "Penitenciarul Nr.15", sig: "indescifrabila", pos: "sef", signer: "Valeriu Frimu", violation: true },
+          { code: "BS7XCZF1EUJG3", date: "15.07.2022", auth: "Directia de Arhiva", sig: "indescifrabila", pos: "Functionar", signer: "Mirzac Iuliana", violation: true },
+          { code: "4O3WF02QGRCI1", date: "30.01.2023", auth: "Directia de Arhiva", sig: "indescifrabila", pos: "sef", signer: "Cristina Deleanu", violation: true },
+          { code: "DQ1N892ZFXDI3", date: "13.03.2023", auth: "Directia de Arhiva", sig: "indescifrabila", pos: "Functionar", signer: "Mirzac Iuliana", violation: true },
+          { code: "6R2V5Z4XBZBH8", date: "20.07.2022", auth: "Directia de Politie", sig: "indescifrabila", pos: "sef", signer: "Mihaela Goleac", violation: true },
+          { code: "4J20E98WFY7J2", date: "03.10.2022", auth: "Directia de Arhiva", sig: "indescifrabila", pos: "secretar", signer: "Valeriu Frimu", violation: true },
+          { code: "6OZUD89VBUEJ3", date: "01.11.2022", auth: "Directia Generala Locativ", sig: "indescifrabila", pos: "sef", signer: "Grimailo Ana", violation: true },
+          { code:CZ8U8 "IHW093R7", date: "03.08.2022", auth: "Directia de Arhiva", sig: "indescifrabila", pos: "Functionar", signer: "Mirzac Iuliana", violation: true },
+          { code: "3HWVD912FN7H4", date: "15.06.2022", auth: "Directia de Arhiva", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "3QWY79726SDN4", date: "20.06.2022", auth: "Curtea Suprema", sig: "OK", pos: " judecator", signer: "Verified", violation: false },
+          { code: "3R3T11BQ6TJI1", date: "22.06.2022", auth: "Directia de Arhiva", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "3RX0DXD1DOFL2", date: "28.06.2022", auth: "Directia de Arhiva", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "3S6V078ZELJK9", date: "01.07.2022", auth: "Directia de Arhiva", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "3SUU150WIRBO8", date: "05.07.2022", auth: "Directia de Arhiva", sig: "OK", pos: "Functionar", signer: "Verified", violation: false },
+          { code: "5G2T615VCPFG1", date: "10.08.2022", auth: "Directia de Arhiva", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "5GTUD58SJQ5N6", date: "15.08.2022", auth: "Ministerul Justitiei", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "5J1O95ARLQJN5", date: "18.08.2022", auth: "Directia de Arhiva", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "5L7N238Z7QHH5", date: "25.08.2022", auth: "Directia de Arhiva", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "5OTZ38FVFN8R2", date: "01.09.2022", auth: "Curtea de Apel", sig: "OK", pos: "judecator", signer: "Verified", violation: false },
+          { code: "5S2WF92X7X4R8", date: "08.09.2022", auth: "Directia de Arhiva", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "6H0S225X9UFN2", date: "12.09.2022", auth: "Directia de Arhiva", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "6J4V25F3DNGJ8", date: "18.09.2022", auth: "Directia de Arhiva", sig: "OK", pos: "Functionar", signer: "Verified", violation: false },
+          { code: "6LTO0B9ZBV7N3", date: "22.09.2022", auth: "Ministerul Justitiei", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "6QTV0Z4VIS7I1", date: "28.09.2022", auth: "Directia de Arhiva", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "6R3U2Y63JZ6M3", date: "03.10.2022", auth: "Curtea Suprema", sig: "OK", pos: "judecator", signer: "Verified", violation: false },
+          { code: "6S1Q564XIRJJ8", date: "08.10.2022", auth: "Directia de Arhiva", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "7FYS428VLM4F4", date: "15.10.2022", auth: "Directia de Arhiva", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "7G6OCX9YIR8K7", date: "20.10.2022", auth: "Directia de Politie", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "7G6YCW5R9NCP4", date: "25.10.2022", auth: "Directia de Arhiva", sig: "OK", pos: "Functionar", signer: "Verified", violation: false },
+          { code: "7H2Q3790FZEI5", date: "01.11.2022", auth: "Curtea de Apel", sig: "OK", pos: "judecator", signer: "Verified", violation: false },
+          { code: "7R0W7XAY9OFH2", date: "08.11.2022", auth: "Directia de Arhiva", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "8I2N14CVELIQ5", date: "15.11.2022", auth: "Directia de Arhiva", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "8I6O30ASHY6M6", date: "20.11.2022", auth: "Ministerul Justitiei", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "8OUQ636YBZGI7", date: "25.11.2022", auth: "Directia de Arhiva", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "8OUW0ZDQJZGQ2", date: "01.12.2022", auth: "Directia de Arhiva", sig: "OK", pos: "Functionar", signer: "Verified", violation: false },
+          { code: "8Q0V733ZLQFO7", date: "08.12.2022", auth: "Curtea Suprema", sig: "OK", pos: "judecator", signer: "Verified", violation: false },
+          { code: "9J3V97AV8T4M8", date: "15.12.2022", auth: "Directia de Arhiva", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "9L5ZBB6SHU9K5", date: "20.12.2022", auth: "Directia de Arhiva", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "9OVS71FRKM4S3", date: "28.12.2022", auth: "Directia de Arhiva", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "9T3M953ZBUHO4", date: "05.01.2023", auth: "Curtea de Apel", sig: "OK", pos: "judecator", signer: "Verified", violation: false },
+          { code: "BO1SF0EV8U6P7", date: "10.01.2023", auth: "Directia de Arhiva", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "BO2TCZ6WHSFG4", date: "15.01.2023", auth: "Directia de Arhiva", sig: "OK", pos: "Functionar", signer: "Verified", violation: false },
+          { code: "BOUS9XAQDTFH2", date: "20.01.2023", auth: "Ministerul Justitiei", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "CFYN438ZLLFN2", date: "25.01.2023", auth: "Directia de Arhiva", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "CH3OF03S9Q7F9", date: "28.01.2023", auth: "Directia de Arhiva", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "CI6P9821GWFR5", date: "30.01.2023", auth: "Curtea Suprema", sig: "OK", pos: "judecator", signer: "Verified", violation: false },
+          { code: "CK5O133ZKLJE8", date: "01.02.2023", auth: "Directia de Arhiva", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "CO2S9BA3JX6H1", date: "05.02.2023", auth: "Directia de Arhiva", sig: "OK", pos: "Functionar", signer: "Verified", violation: false },
+          { code: "COUQ976XEZCH7", date: "08.02.2023", auth: "Directia de Politie", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "CQ0VC27VGTCK6", date: "12.02.2023", auth: "Directia de Arhiva", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "CQ5PF42YCMDO5", date: "15.02.2023", auth: "Directia de Arhiva", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "CT5X1Y51KUDM1", date: "18.02.2023", auth: "Curtea de Apel", sig: "OK", pos: "judecator", signer: "Verified", violation: false },
+          { code: "CTTO324Z8MDO7", date: "22.02.2023", auth: "Directia de Arhiva", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "DI6RDB72JYDL1", date: "25.02.2023", auth: "Directia de Arhiva", sig: "OK", pos: "Functionar", signer: "Verified", violation: false },
+          { code: "DIV07B9RCV8P4", date: "01.03.2023", auth: "Ministerul Justitiei", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "DJ6Z0130LM7H2", date: "05.03.2023", auth: "Directia de Arhiva", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "DLUX84ASKYII6", date: "08.03.2023", auth: "Directia de Arhiva", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "DOUM4B2ZHL7J7", date: "12.03.2023", auth: "Directia de Arhiva", sig: "OK", pos: "Functionar", signer: "Verified", violation: false },
+          { code: "DOYO489SCL5K2", date: "15.03.2023", auth: "Curtea Suprema", sig: "OK", pos: "judecator", signer: "Verified", violation: false },
+          { code: "DQWVCZCRGYBP4", date: "18.03.2023", auth: "Directia de Arhiva", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "DR4Y1584JW9F4", date: "22.03.2023", auth: "Directia de Arhiva", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "EJ2077249VEH8", date: "25.03.2023", auth: "Directia de Politie", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "EJ3U9703FPFS4", date: "01.04.2023", auth: "Directia de Arhiva", sig: "OK", pos: "Functionar", signer: "Verified", violation: false },
+          { code: "EL3X827SBY4J0", date: "05.04.2023", auth: "Directia de Arhiva", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "EOYXD0FZ7Y8P2", date: "08.04.2023", auth: "Ministerul Justitiei", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "EQ6RD50ZGP8M0", date: "12.04.2023", auth: "Curtea de Apel", sig: "OK", pos: "judecator", signer: "Verified", violation: false },
+          { code: "FJXU588SHPDP2", date: "15.04.2023", auth: "Directia de Arhiva", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "FL2VB340JYEG5", date: "18.04.2023", auth: "Directia de Arhiva", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "FN5P1X6ZIP6R3", date: "22.04.2023", auth: "Directia de Arhiva", sig: "OK", pos: "Functionar", signer: "Verified", violation: false },
+          { code: "FPWSB4ARCR9L3", date: "25.04.2023", auth: "Directia de Arhiva", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "FRWX11FTJU5F9", date: "01.05.2023", auth: "Curtea Suprema", sig: "OK", pos: "judecator", signer: "Verified", violation: false },
+          { code: "GGTUEBEZGYGH7", date: "05.05.2023", auth: "Directia de Arhiva", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "GO5V1W1R7XCF7", date: "08.05.2023", auth: "Directia de Arhiva", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "GS5T609ZFL4E3", date: "12.05.2023", auth: "Directia de Arhiva", sig: "OK", pos: "Functionar", signer: "Verified", violation: false },
+          { code: "HFUO1X3XGUDF7", date: "15.05.2023", auth: "Directia de Politie", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "HI4O379ZEPGN2", date: "18.05.2023", auth: "Directia de Arhiva", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "HS0W3X5SGO6O3", date: "22.05.2023", auth: "Ministerul Justitiei", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "HS5N558YBNEK3", date: "25.05.2023", auth: "Directia de Arhiva", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "IG4Q770QDXGH7", date: "01.06.2023", auth: "Directia de Arhiva", sig: "OK", pos: "Functionar", signer: "Verified", violation: false },
+          { code: "IJ1S0403JYEH8", date: "05.06.2023", auth: "Curtea de Apel", sig: "OK", pos: "judecator", signer: "Verified", violation: false },
+          { code: "IMTQ930Z8U4N7", date: "08.06.2023", auth: "Directia de Arhiva", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "IMWM44AZGX6N6", date: "12.06.2023", auth: "Directia de Arhiva", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "IPTZ514SCO6R9", date: "15.06.2023", auth: "Directia de Arhiva", sig: "OK", pos: "sef", signer: "Verified", violation: false },
+          { code: "IQVY40CXISHM2", date: "18.06.2023", auth: "Directia de Arhiva", sig: "OK", pos: "Functionar", signer: "Verified", violation: false },
+          { code: "4O2V205Z9TCG2", date: "03.10.2022", auth: "Directia de Arhiva", sig: "OK", pos: "sef", signer: "Verified", violation: false }
+      ];
+
+      const tableBody = document.getElementById('tableBody');
+      let currentFilter = 'all';
+
+      function getPdfUrl(code) {
+          return `https://arhiv1973b.github.io/maceret-case-evidence/Downloads/Apostilles/${code}_EVIDENCE.pdf`;
+      }
+
+      function renderTable(filter = 'all') {
+          currentFilter = filter;
+          tableBody.innerHTML = '';
+
+          const filtered = filter === 'violations' ? apostilles.filter(a => a.violation) :
+                         filter === 'valid' ? apostilles.filter(a => !a.violation) :
+                         apostilles;
+
+          filtered.forEach(a => {
+              const row = document.createElement('tr');
+              row.className = a.violation ? 'violation' : 'valid';
+              row.innerHTML = `
+                  <td class="p-3 font-mono text-sm">${a.code}</td>
+                  <td class="p-3 text-sm">${a.date}</td>
+                  <td class="p-3 text-sm">${a.auth}</td>
+                  <td class="p-3 text-sm ${a.sig === 'indescifrabila' ? 'text-red-600 font-bold' : 'text-green-600'}">${a.sig}</td>
+                  <td class="p-3 text-sm">${a.pos}</td>
+                  <td class="p-3">
+                      <span class="px-2 py-1 text-xs rounded ${a.violation ? 'bg-red-200 text-red-800' : 'bg-green-200 text-green-800'}">
+                          ${a.violation ? 'НАРУШЕНИЕ' : 'ДЕЙСТВИТЕЛЕН'}
+                      </span>
+                  </td>
+                  <td class="p-3">
+                      <a href="${getPdfUrl(a.code)}" target="_blank" class="text-blue-600 hover:underline text-sm">PDF</a>
+                  </td>
+              `;
+              tableBody.appendChild(row);
+          });
+      }
+
+      function searchApostille() {
+          const code = document.getElementById('searchCode').value.toUpperCase().trim();
+          const result = document.getElementById('result');
+
+          const found = apostilles.find(a => a.code === code);
+
+          if (found) {
+              result.className = `mb-6 p-4 rounded-lg ${found.violation ? 'violation' : 'valid'}`;
+              result.innerHTML = `
+                  <div class="flex justify-between items-start">
+                      <div>
+                          <h3 class="font-bold text-lg">${found.code}</h3>
+                          <p class="text-sm">${found.date} | ${found.auth}</p>
+                          <div class="mt-2 grid grid-cols-2 gap-4 text-sm">
+                              <div>Подпись: <span class="${found.sig === 'indescifrabila' ? 'text-red-600 font-bold' : 'text-green-600'}">${found.sig}</span></div>
+                              <div>Должность: <span class="font-mono">${found.pos}</span></div>
+                          </div>
+                      </div>
+                      <div class="text-right">
+                          <span class="px-3 py-1 rounded text-sm ${found.violation ? 'bg-red-500 text-white' : 'bg-green-500 text-white'}">
+                              ${found.violation ? 'НАРУШЕНИЕ СТ.5' : 'ДЕЙСТВИТЕЛЕН'}
+                          </span>
+                          <a href="${getPdfUrl(found.code)}" target="_blank" class="block mt-2 text-blue-600 hover:underline">Скачать PDF</a>
+                      </div>
+                  </div>
+              `;
+          } else {
+              result.className = 'mb-6 p-4 rounded-lg bg-yellow-100 border border-yellow-400';
+              result.innerHTML = `Апостиль с кодом <strong>${code}</strong> не найден в базе. Проверьте правильность кода.`;
+          }
+          result.classList.remove('hidden');
+      }
+
+      function showViolations() { renderTable('violations'); }
+      function showValid() { renderTable('valid'); }
+      function showAll() { renderTable('all'); }
+
+      document.getElementById('searchCode').addEventListener('keypress', function(e) {
+          if (e.key === 'Enter') searchApostille();
+      });
+
+      renderTable();
+    </script>
+  </body>
+</html>
