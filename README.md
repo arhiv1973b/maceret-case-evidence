@@ -1,3 +1,8 @@
+> **A©tor © Declaration**  
+> Этот репозиторий принадлежит A©tor (arhiv1973b).  
+> Мастер-ключ: A©TOR_KEY="# [⚖ A©tor Declaration]"  
+> Несанкционированное изменение имени, формы или содержимого запрещено.
+
 # CASE-MACHERET-1997-2026
 
 ## Digital Trust Architecture for International Justice
