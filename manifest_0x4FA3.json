@@ -1,0 +1,17 @@
+{
+  "report_id": "CASE-MACHERET-1997-2026",
+  "legal_framework": "Universal Declaration of Human Rights (UDHR) / Jus Cogens",
+  "subject_idnp": "2000001159655",
+  "incident_summary": {
+    "transaction_amount": "25210256.15 MDL",
+    "gateway_shift": "FinComBank S.A. -> Moldindconbank S.A.",
+    "card_conflict": "5929_BLOCKED -> 6089_ACTIVE",
+    "auth_token": "MD-APPLEPAY-6089-20260403",
+    "chronology": {
+      "incident_date": "2026-04-03",
+      "dag_commit_timestamp": "2026-09-23T12:16:19Z"
+    }
+  },
+  "dag_node_id": "0x4FA3-2026-04",
+  "dag_status": "COMMITTED"
+}
