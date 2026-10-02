@@ -1,0 +1,20 @@
+{
+    "registry_type": "EMAIL_FORENSIC_INDEX",
+    "case_id": "CASE-MACHERET-1997-2026",
+    "financial_anchor_link": "90655f14",
+    "legal_basis": "UDHR Art. 3, Art. 17.2 (Proof of non-rehabilitation)",
+    "emails": [
+        {
+            "filename": "email_01_arrest_1997.txt",
+            "sha256": "14e57a8e27b7554657aee893b386ce796aa72a889ad5749169df36a4fc74e594",
+            "status": "LOCKED",
+            "relation_to_anchor": "CONTINUING_VIOLATION_EVIDENCE"
+        },
+        {
+            "filename": "email_02_evidence.txt",
+            "sha256": "98ab5dadf24d79ae09cd6e84c421792d979760b30b9d0b42a8b349c659966fe8",
+            "status": "LOCKED",
+            "relation_to_anchor": "CONTINUING_VIOLATION_EVIDENCE"
+        }
+    ]
+}
