@@ -1,6 +1,6 @@
 {
-  "registry_version": "1.1.0",
-  "generated_at": "2026-10-14T22:10:00+03:00",
+  "registry_version": "1.2.0",
+  "generated_at": "2026-10-14T22:35:00+03:00",
   "case_id": "CASE-MACHERET-1997-2026",
   "actor_key": "# [⚖ A©tor Declaration]",
   "principle": "ONLY real files with computed SHA-256. No fabrication.",
@@ -12,8 +12,7 @@
       "size_bytes": 640439,
       "google_drive_file_id": "1VXm0iHET9BO9FZGNRaS5hsICufeqcfdN",
       "google_drive_view_link": "https://drive.google.com/file/d/1VXm0iHET9BO9FZGNRaS5hsICufeqcfdN/view",
-      "category": "msign-apostille",
-      "tunnel_type": "google-drive-view"
+      "category": "msign-apostille"
     },
     {
       "id": "MSIGN-20251112151930106",
@@ -22,8 +21,7 @@
       "size_bytes": 1186944,
       "google_drive_file_id": "1sWbMUZ1Jro9hDIlHaaFhFWZy590VW2PI",
       "google_drive_view_link": "https://drive.google.com/file/d/1sWbMUZ1Jro9hDIlHaaFhFWZy590VW2PI/view",
-      "category": "msign-apostille",
-      "tunnel_type": "google-drive-view"
+      "category": "msign-apostille"
     },
     {
       "id": "MSIGN-20251112152125492",
@@ -32,8 +30,7 @@
       "size_bytes": 1422260,
       "google_drive_file_id": "15YO9ZR1CNZZlCU6NvVPRyHju8zHRmh1f",
       "google_drive_view_link": "https://drive.google.com/file/d/15YO9ZR1CNZZlCU6NvVPRyHju8zHRmh1f/view",
-      "category": "msign-apostille",
-      "tunnel_type": "google-drive-view"
+      "category": "msign-apostille"
     },
     {
       "id": "APOSTILLE-REGISTRY-WORKING-SIGNED",
@@ -42,8 +39,7 @@
       "size_bytes": 304558,
       "google_drive_file_id": "1PXZu2LURp9VGB16Dl-Zk4he4uaVr2Oue",
       "google_drive_view_link": "https://drive.google.com/file/d/1PXZu2LURp9VGB16Dl-Zk4he4uaVr2Oue/view",
-      "category": "apostille",
-      "tunnel_type": "google-drive-view"
+      "category": "apostille"
     },
     {
       "id": "ATTACK-LUPIA-YURI-SIGNED",
@@ -52,8 +48,7 @@
       "size_bytes": 352096,
       "google_drive_file_id": "1_F3SLCd7VeYOoDN6uQr6Wu0be0y9fCyt",
       "google_drive_view_link": "https://drive.google.com/file/d/1_F3SLCd7VeYOoDN6uQr6Wu0be0y9fCyt/view",
-      "category": "court-signed",
-      "tunnel_type": "google-drive-view"
+      "category": "court-signed"
     },
     {
       "id": "CRIMINAL-MANIFEST-FINCOMBANK-2026",
@@ -62,8 +57,7 @@
       "size_bytes": 159752,
       "google_drive_file_id": "1ay-EeRjwYpwMPE-FkUGuDWcQijpMy03f",
       "google_drive_view_link": "https://drive.google.com/file/d/1ay-EeRjwYpwMPE-FkUGuDWcQijpMy03f/view",
-      "category": "financial-forensic",
-      "tunnel_type": "google-drive-view"
+      "category": "financial-forensic"
     },
     {
       "id": "CASE-1-568_98-APOSTILLED",
@@ -73,8 +67,7 @@
       "google_drive_file_id": "1wBOt-Ks11WvASMmAbkBs0HEVPmr5y4wt",
       "google_drive_view_link": "https://drive.google.com/file/d/1wBOt-Ks11WvASMmAbkBs0HEVPmr5y4wt/view",
       "category": "criminal-case-volume",
-      "case_ref": "1-568/98",
-      "tunnel_type": "google-drive-view"
+      "case_ref": "1-568/98"
     },
     {
       "id": "CASE-1-568_98-APOSTILLED-7",
@@ -84,13 +77,45 @@
       "google_drive_file_id": "1TuSwQifRskkGcTHlMQWXrCcf1wK08HAj",
       "google_drive_view_link": "https://drive.google.com/file/d/1TuSwQifRskkGcTHlMQWXrCcf1wK08HAj/view",
       "category": "criminal-case-volume",
-      "case_ref": "1-568/98",
-      "tunnel_type": "google-drive-view"
+      "case_ref": "1-568/98"
+    },
+    {
+      "id": "CASE-1-658-COMPOSITE",
+      "original_filename": "Дело № 1-658 ,1-72 - 1--137,1ра-834 и 1-28.pdf",
+      "sha256": "4f9325f38bcb0fb2f1704d5099dc96263f4d706e3f6ef1422ebe24625d1870c3",
+      "size_bytes": 63743361,
+      "google_drive_file_id": "1yVyBorVX_tktpGNleQftWeEzeIqVZsUu",
+      "google_drive_view_link": "https://drive.google.com/file/d/1yVyBorVX_tktpGNleQftWeEzeIqVZsUu/view",
+      "category": "criminal-case-volume",
+      "case_ref": "1-658 / 1-72 / 1-137 / 1ра-834 / 1-28",
+      "udhr_articles": [5, 6, 7, 8, 10]
+    },
+    {
+      "id": "CASE-1-272-APPEAL-SIGNED",
+      "original_filename": "Дело № 1-272_03 в Апеляционную Палату [2814].подписан.pdf",
+      "sha256": "62f6572247b9c8fa874d6ad94f13f7ece5d28d9d68b4a6008135f55357aec18c",
+      "size_bytes": 1051356,
+      "google_drive_file_id": "10mBtaKl2KwzxaI2aVQ3hUFuQxPLLF1YI",
+      "google_drive_view_link": "https://drive.google.com/file/d/10mBtaKl2KwzxaI2aVQ3hUFuQxPLLF1YI/view",
+      "category": "criminal-case-volume",
+      "case_ref": "1-272/03",
+      "udhr_articles": [5, 7, 8, 10]
+    },
+    {
+      "id": "CASE-1-272-TORTURE-APPEAL",
+      "original_filename": "Дело№ 1 -272 через центр в апелл на решение по пыткам от 21 февраля 2003.pdf",
+      "sha256": "cacbd1cab9d643dc44ff2e3f84d3c02c6733a6a6324c057f0d7f1bef5a7d4dba",
+      "size_bytes": 943139,
+      "google_drive_file_id": "1-aj3DqJ7-bNgT9koUemnUrCzX0CYT7VF",
+      "google_drive_view_link": "https://drive.google.com/file/d/1-aj3DqJ7-bNgT9koUemnUrCzX0CYT7VF/view",
+      "category": "criminal-case-volume",
+      "case_ref": "1-272 (torture appeal 21.02.2003)",
+      "udhr_articles": [5, 7, 8, 10]
     }
   ],
   "stats": {
-    "total_real_files": 8,
+    "total_real_files": 11,
     "null_sha256": 0,
-    "case_volumes_1_568": 2
+    "still_not_found": ["1а-2232", "11а-42"]
   }
 }
