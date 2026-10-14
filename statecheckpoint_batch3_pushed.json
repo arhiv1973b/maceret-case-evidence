@@ -1,0 +1,16 @@
+{
+  "checkpoint": "statecheckpoint_batch3_pushed",
+  "timestamp": "2026-10-14T20:50:00+03:00",
+  "case_id": "CASE-MACHERET-1997-2026",
+  "actor_key": "# [⚖ A©tor Declaration]",
+  "batch": 3,
+  "status": "manifests_updated_html_generated_ready_for_push",
+  "candidates_integrated": [
+    "UN-OHCHR-MANIFEST-tw571ryb-JUS-COGENS",
+    "UN-NOTIFICATION-MD",
+    "MEMORANDUM-JUS-COGENS-ERGA-OMNES",
+    "COVER-LETTER-JUS-COGENS-UN-VENICE",
+    "UN-MACHERET-PDF"
+  ],
+  "notes": "Venice cover letters + UN OHCHR Manifest + Memorandum + UN_NOTIFICATION + historical UN-Macheret. No discrete CSJ cassation / Law 112 PDF found in Drive sweep beyond prior judicial batch."
+}
