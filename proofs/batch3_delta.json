@@ -1,0 +1,27 @@
+{
+  "batch3_delta": true,
+  "manifest_version_target": "1.5.0",
+  "new_ids": [
+    "UN-OHCHR-MANIFEST-tw571ryb-JUS-COGENS",
+    "UN-NOTIFICATION-MD",
+    "MEMORANDUM-JUS-COGENS-ERGA-OMNES",
+    "COVER-LETTER-JUS-COGENS-UN-VENICE",
+    "UN-MACHERET-PDF"
+  ],
+  "sha256": {
+    "UN-OHCHR-MANIFEST-tw571ryb-JUS-COGENS": "152ee4c916d6c58dbb0e61c3e045d7347873b2e651abaf2f22ba709aba404464",
+    "UN-NOTIFICATION-MD": "d00770b93365fbbcdcc2fec06b7f7de169af59ed9c2501bed3479e67fa082596",
+    "MEMORANDUM-JUS-COGENS-ERGA-OMNES": "86a77fbc008cc5e57c7d0c385845d47d18301aafcc75f23338a2308864cb8b99",
+    "COVER-LETTER-JUS-COGENS-UN-VENICE": "39343078f72fad87ed13ab29f02f180c33d265b85178830420fa37b56dba0d43",
+    "UN-MACHERET-PDF": "1a3c383095437a26b5a54c93a3d9994cfe504689921062846a0f04fba676fceb"
+  },
+  "drive_ids": {
+    "UN-OHCHR-MANIFEST-tw571ryb-JUS-COGENS": "1kY13NAyVGDTu32e5ndBNfGdkYwujenu6",
+    "UN-NOTIFICATION-MD": "1cSqelh35IQigo2SLNzQscTKAB2UEjZJr",
+    "MEMORANDUM-JUS-COGENS-ERGA-OMNES": "1bFJKx5R4OJ0y0d1dfKPwYRxvD_Re2GB9",
+    "COVER-LETTER-JUS-COGENS-UN-VENICE": "1CDGcj9pyFbKvNAi1vIwKfd_hi6w59uQX",
+    "UN-MACHERET-PDF": "1CKaRwDs72MVoQkYvEYE2DUx5EsBBVWcH"
+  },
+  "html": "docs/batch3_international_vsp_block.html",
+  "note": "Full proofs/manifest.json and un_evidence_bundle.json updated locally to v1.5.0/1.2; HTML + checkpoint pushed. Merge delta into main manifests on next cycle if needed."
+}

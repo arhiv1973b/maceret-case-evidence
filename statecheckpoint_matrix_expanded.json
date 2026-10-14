@@ -1,0 +1,9 @@
+{
+  "checkpoint": "statecheckpoint_matrix_expanded",
+  "timestamp": "2026-10-14T22:35:00+03:00",
+  "status": "HEAVY_VOLUMES_INTEGRATED",
+  "added": ["CASE-1-658-COMPOSITE", "CASE-1-272-APPEAL-SIGNED", "CASE-1-272-TORTURE-APPEAL"],
+  "total_registry": 11,
+  "null_sha256": 0,
+  "still_not_found": ["1а-2232", "11а-42"]
+}

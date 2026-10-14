@@ -1,0 +1,27 @@
+{
+  "status": "global_merge_complete",
+  "manifest_version": "1.5.1",
+  "total_verified_entries": 16,
+  "null_sha256_count": 0,
+  "ids": [
+    "COVER-LETTER-2026-10-10",
+    "AVIZ-269-2026-10-01",
+    "UN-SUBMISSION-tw57lryb-2026-05-03",
+    "UDHR-JUS-COGENS-MATRIX-2026-10-14",
+    "UN-SPECIAL-PROCEDURES-NOTICE-2026-10-14",
+    "COURT-BUIUCANI-NEGRU",
+    "COURT-ECHR",
+    "COURT-APPEAL-2003",
+    "TORTURE-CLARIFICATION",
+    "TORTURE-CLARIFICATION-EN",
+    "COURT-RYSHKANOVKA-CERT",
+    "UN-OHCHR-MANIFEST-tw571ryb-JUS-COGENS",
+    "UN-NOTIFICATION-MD",
+    "MEMORANDUM-JUS-COGENS-ERGA-OMNES",
+    "COVER-LETTER-JUS-COGENS-UN-VENICE",
+    "UN-MACHERET-PDF"
+  ],
+  "index": "index.html",
+  "checkpoint": "statecheckpoint_batch4_final.json",
+  "note": "SHA-256 audit clean. All view-tunnel links present. Legal frame: UDHR/ICCPR/UN Special Procedures only."
+}

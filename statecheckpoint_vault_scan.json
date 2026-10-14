@@ -1,0 +1,8 @@
+{
+  "checkpoint": "statecheckpoint_vault_scan",
+  "timestamp": "2026-10-14T22:05:00+03:00",
+  "status": "PARTIAL_REAL_SCAN_COMPLETE",
+  "new_real_files": 6,
+  "null_sha256": 0,
+  "note": "Scanned MSign folder (3 PDFs) + pdfs_mirror (3 PDFs). apostille-mirror/objects is git pack structure. No fabrication."
+}

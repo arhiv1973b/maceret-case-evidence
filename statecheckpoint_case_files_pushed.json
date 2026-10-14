@@ -1,0 +1,8 @@
+{
+  "checkpoint": "statecheckpoint_case_files_pushed",
+  "timestamp": "2026-10-14T22:10:00+03:00",
+  "status": "CASE_1_568_VOLUMES_HASHED",
+  "confirmed": ["CASE-1-568_98-APOSTILLED", "CASE-1-568_98-APOSTILLED-7"],
+  "not_found_exact": ["1а-2232", "1-272", "11а-42", "1-658/1ра-834"],
+  "null_sha256": 0
+}
