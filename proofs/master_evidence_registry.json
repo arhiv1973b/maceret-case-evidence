@@ -1,0 +1,96 @@
+{
+  "registry_version": "1.0.0",
+  "generated_at": "2026-10-14T22:05:00+03:00",
+  "case_id": "CASE-MACHERET-1997-2026",
+  "actor_key": "# [⚖ A©tor Declaration]",
+  "principle": "ONLY real files with computed SHA-256. No fabrication.",
+  "sources_scanned": [
+    "MSign 12_3.11.2025 3 (folder_id=1ZL97YFsULO1NegM0JavVqxXY-Um0X93n)",
+    "apostille-mirror/pdfs_mirror (folder_id=1Ab2Suc1bzREPaL-2YEd0dn-hIIbMq7Cd)",
+    "apostille-mirror objects/ is git pack structure — not human PDF vault"
+  ],
+  "hub_reference": {
+    "manifest": "proofs/manifest.json v1.5.1",
+    "verified_hub_entries": 16,
+    "note": "Existing 16-doc hub remains authoritative; this registry adds newly scanned real files"
+  },
+  "files": [
+    {
+      "id": "MSIGN-20251112151802229",
+      "original_filename": "20251112151802229.подписан.pdf",
+      "sha256": "3b31a3faa760b6390b5cede4249dc4ba8179a2f27ebd6214fc74be204f1b5c02",
+      "size_bytes": 640439,
+      "google_drive_file_id": "1VXm0iHET9BO9FZGNRaS5hsICufeqcfdN",
+      "google_drive_view_link": "https://drive.google.com/file/d/1VXm0iHET9BO9FZGNRaS5hsICufeqcfdN/view",
+      "source_folder": "MSign 12_3.11.2025 3",
+      "category": "msign-apostille",
+      "mime_type": "application/pdf",
+      "tunnel_type": "google-drive-view"
+    },
+    {
+      "id": "MSIGN-20251112151930106",
+      "original_filename": "20251112151930106.подписан.pdf",
+      "sha256": "80c5993deb1437a40c96391176fc8df495b440564803b20b96f87b21c10eee0d",
+      "size_bytes": 1186944,
+      "google_drive_file_id": "1sWbMUZ1Jro9hDIlHaaFhFWZy590VW2PI",
+      "google_drive_view_link": "https://drive.google.com/file/d/1sWbMUZ1Jro9hDIlHaaFhFWZy590VW2PI/view",
+      "source_folder": "MSign 12_3.11.2025 3",
+      "category": "msign-apostille",
+      "mime_type": "application/pdf",
+      "tunnel_type": "google-drive-view"
+    },
+    {
+      "id": "MSIGN-20251112152125492",
+      "original_filename": "20251112152125492.подписан.pdf",
+      "sha256": "ba4db39b40c0b7af66b2b42ede4962e3b5d49b596e4bb508847d1a51a0459372",
+      "size_bytes": 1422260,
+      "google_drive_file_id": "15YO9ZR1CNZZlCU6NvVPRyHju8zHRmh1f",
+      "google_drive_view_link": "https://drive.google.com/file/d/15YO9ZR1CNZZlCU6NvVPRyHju8zHRmh1f/view",
+      "source_folder": "MSign 12_3.11.2025 3",
+      "category": "msign-apostille",
+      "mime_type": "application/pdf",
+      "tunnel_type": "google-drive-view"
+    },
+    {
+      "id": "APOSTILLE-REGISTRY-WORKING-SIGNED",
+      "original_filename": "apostille_registry_working.signed.pdf",
+      "sha256": "de54c36210e4df65d61475c48fd5f3e0ffe60d606041bcbf393affb71e510050",
+      "size_bytes": 304558,
+      "google_drive_file_id": "1PXZu2LURp9VGB16Dl-Zk4he4uaVr2Oue",
+      "google_drive_view_link": "https://drive.google.com/file/d/1PXZu2LURp9VGB16Dl-Zk4he4uaVr2Oue/view",
+      "source_folder": "pdfs_mirror (apostille-mirror)",
+      "category": "apostille",
+      "mime_type": "application/pdf",
+      "tunnel_type": "google-drive-view"
+    },
+    {
+      "id": "ATTACK-LUPIA-YURI-SIGNED",
+      "original_filename": "Attack_Lupia_Yuri_Signed.pdf",
+      "sha256": "14fce2fc59cc28b4c44b8df18de6b463f730c2597730d4ee2a6661a748425beb",
+      "size_bytes": 352096,
+      "google_drive_file_id": "1_F3SLCd7VeYOoDN6uQr6Wu0be0y9fCyt",
+      "google_drive_view_link": "https://drive.google.com/file/d/1_F3SLCd7VeYOoDN6uQr6Wu0be0y9fCyt/view",
+      "source_folder": "pdfs_mirror (apostille-mirror)",
+      "category": "court-signed",
+      "mime_type": "application/pdf",
+      "tunnel_type": "google-drive-view"
+    },
+    {
+      "id": "CRIMINAL-MANIFEST-FINCOMBANK-2026",
+      "original_filename": "Criminal_Manifest_FinComBank_2026.pdf",
+      "sha256": "cca59004f3f68ec6cf988194bf54597c533fc4f1e2ac6ca4087497a8374998ee",
+      "size_bytes": 159752,
+      "google_drive_file_id": "1ay-EeRjwYpwMPE-FkUGuDWcQijpMy03f",
+      "google_drive_view_link": "https://drive.google.com/file/d/1ay-EeRjwYpwMPE-FkUGuDWcQijpMy03f/view",
+      "source_folder": "pdfs_mirror (apostille-mirror)",
+      "category": "financial-forensic",
+      "mime_type": "application/pdf",
+      "tunnel_type": "google-drive-view"
+    }
+  ],
+  "stats": {
+    "new_real_files": 6,
+    "null_sha256": 0,
+    "total_size_bytes": 4066049
+  }
+}
