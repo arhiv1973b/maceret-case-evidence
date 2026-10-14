@@ -1,6 +1,6 @@
 {
-  "manifest_version": "1.0.0",
-  "generated_at": "2026-10-14T12:51:00+03:00",
+  "manifest_version": "1.1.0",
+  "generated_at": "2026-10-14T13:06:00+03:00",
   "case_id": "CASE-MACHERET-1997-2026",
   "actor_key": "# [⚖ A©tor Declaration]",
   "subject": {
@@ -20,6 +20,19 @@
     "signature_marker": "A©TOR_KEY",
     "chain_of_custody": "Local → SHA-256/GPG → GitHub DAG → (optional Google Drive view links)"
   },
+  "legal_framework": {
+    "primary_sources": [
+      "Universal Declaration of Human Rights (UDHR) 1948",
+      "International Covenant on Civil and Political Rights (ICCPR)",
+      "UN Special Procedures mandates"
+    ],
+    "excluded_systems": [
+      "European Court of Human Rights (ECtHR)",
+      "European Convention on Human Rights (ECHR)",
+      "any regional human-rights mechanism"
+    ],
+    "matrix_path": "docs/legal/UDHR_JUS_COGENS_MATRIX.md"
+  },
   "files": [
     {
       "id": "COVER-LETTER-2026-10-10",
@@ -32,6 +45,7 @@
       "date": "2026-10-10",
       "google_drive_view_link": null,
       "google_drive_file_id": null,
+      "udhr_articles": [6, 7, 17],
       "tags": ["cover-letter", "fincombank", "6647-Out", "identity-recognition"]
     },
     {
@@ -45,6 +59,7 @@
       "date": "2026-10-01",
       "google_drive_view_link": null,
       "google_drive_file_id": null,
+      "udhr_articles": [6],
       "tags": ["aviz", "philology", "name-equivalence", "idnp-2000001159655"]
     },
     {
@@ -58,12 +73,28 @@
       "date": "2026-05-03",
       "google_drive_view_link": null,
       "google_drive_file_id": null,
+      "udhr_articles": [5, 6, 7, 8, 17],
       "tags": ["un", "special-procedures", "torture", "jus-cogens", "idnp"]
+    },
+    {
+      "id": "UDHR-JUS-COGENS-MATRIX-2026-10-14",
+      "path": "docs/legal/UDHR_JUS_COGENS_MATRIX.md",
+      "original_filename": "UDHR_JUS_COGENS_MATRIX.md",
+      "description": "Матрица сопоставления фактов CASE-MACHERET-1997-2026 со статьями 5, 6, 7, 8, 17 ВДПЧ 1948 и нормами Jus Cogens / Erga Omnes",
+      "sha256": "856136804cc182c3bae41c480f095b9dc30ad0c09eef67c64d1eda0818d0a944",
+      "size_bytes": 6048,
+      "mime_type": "text/markdown",
+      "date": "2026-10-14",
+      "google_drive_view_link": null,
+      "google_drive_file_id": null,
+      "udhr_articles": [5, 6, 7, 8, 17],
+      "tags": ["legal-matrix", "udhr", "jus-cogens", "erga-omnes"]
     }
   ],
   "notes": [
     "Google Drive view links remain null until files are uploaded and links are provided.",
     "All new evidence must be added to this manifest with computed SHA-256 before commit.",
-    "Validation is enforced by scripts/validate_sha256.py and .github/workflows/verify.yml"
+    "Validation is enforced by scripts/validate_sha256.py and .github/workflows/verify.yml",
+    "Legal qualification is restricted exclusively to UDHR 1948, ICCPR and UN Special Procedures."
   ]
 }
