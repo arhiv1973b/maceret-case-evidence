@@ -1,6 +1,6 @@
 {
-  "manifest_version": "1.2.0",
-  "generated_at": "2026-10-14T13:16:00+03:00",
+  "manifest_version": "1.3.2",
+  "generated_at": "2026-10-14T18:15:53+03:00",
   "case_id": "CASE-MACHERET-1997-2026",
   "actor_key": "# [⚖ A©tor Declaration]",
   "subject": {
@@ -38,44 +38,72 @@
     {
       "id": "COVER-LETTER-2026-10-10",
       "path": "docs/soprovoditelnoe-pismo-10-10-2026.pdf",
-      "original_filename": "сопровождение для компетентности.pdf",
-      "description": "Сопроводительное письмо к Меморандуму правового статуса + ответ КБ «FinComBank» АО № 6647/Out от 26.08.2026",
-      "sha256": "560b9493bcdc96744b21689c61b771ab9e0716620b768003aa2ff503992318d9",
-      "size_bytes": 544931,
+      "original_filename": "legal_submission_fincombank_20260903.pdf",
+      "description": "Сопроводительное письмо к Меморандуму правового статуса + полный комплект доказательств (жалобы IP Centru/GP, ответ FinComBank №6647/Out, Aviz №269, Identity Chain, акт усыновления 1977 и др.)",
+      "sha256": "acca7e1792baabebde308c156bba799ba9237e7be9fc842643ff2a6dfe26f3d2",
+      "size_bytes": 113943,
       "mime_type": "application/pdf",
       "date": "2026-10-10",
       "google_drive_view_link": null,
       "google_drive_file_id": null,
-      "udhr_articles": [6, 7, 17],
-      "tags": ["cover-letter", "fincombank", "6647-Out", "identity-recognition"]
+      "udhr_articles": [
+        6,
+        7,
+        17
+      ],
+      "tags": [
+        "cover-letter",
+        "fincombank",
+        "6647-Out",
+        "identity-recognition"
+      ]
     },
     {
       "id": "AVIZ-269-2026-10-01",
       "path": "docs/aviz-269-institut-filologii-01-10-2026.pdf",
       "original_filename": "Aviza..pdf",
       "description": "Научное заключение Института филологии им. Б. П.-Хашдеу Aviz № 269 от 01.10.2026 — тождество MACERET / MACHERET",
-      "sha256": "df40edfc896420077494edad8750eb63cd22ff320e61028e849e9c4d7d027050",
-      "size_bytes": 170747,
+      "sha256": "7c34fdde86bd5742b5e29a6bba2c34007aefa54d44950a92de3ac2e5919cbf1d",
+      "size_bytes": 182738,
       "mime_type": "application/pdf",
       "date": "2026-10-01",
       "google_drive_view_link": null,
       "google_drive_file_id": null,
-      "udhr_articles": [6],
-      "tags": ["aviz", "philology", "name-equivalence", "idnp-2000001159655"]
+      "udhr_articles": [
+        6
+      ],
+      "tags": [
+        "aviz",
+        "philology",
+        "name-equivalence",
+        "idnp-2000001159655"
+      ]
     },
     {
       "id": "UN-SUBMISSION-tw57lryb-2026-05-03",
       "path": "docs/un-special-procedures-tw57lryb-03-05-2026.pdf",
       "original_filename": "UN file.pdf",
       "description": "Submission of Information to UN Special Procedures (Reference: tw57lryb) — пытки, цифровой подлог IDNP, continuing violation",
-      "sha256": "264a8e59e2fc56819fe7c65c41bb656376339a06378b5eae9a8e8e11e071814d",
-      "size_bytes": 87506,
+      "sha256": "ca88a292b85653d1f30114f1d782186caad43a4e6cb8eede28652c19b1a15d75",
+      "size_bytes": 434122,
       "mime_type": "application/pdf",
       "date": "2026-05-03",
       "google_drive_view_link": null,
       "google_drive_file_id": null,
-      "udhr_articles": [5, 6, 7, 8, 17],
-      "tags": ["un", "special-procedures", "torture", "jus-cogens", "idnp"]
+      "udhr_articles": [
+        5,
+        6,
+        7,
+        8,
+        17
+      ],
+      "tags": [
+        "un",
+        "special-procedures",
+        "torture",
+        "jus-cogens",
+        "idnp"
+      ]
     },
     {
       "id": "UDHR-JUS-COGENS-MATRIX-2026-10-14",
@@ -88,8 +116,19 @@
       "date": "2026-10-14",
       "google_drive_view_link": null,
       "google_drive_file_id": null,
-      "udhr_articles": [5, 6, 7, 8, 17],
-      "tags": ["legal-matrix", "udhr", "jus-cogens", "erga-omnes"]
+      "udhr_articles": [
+        5,
+        6,
+        7,
+        8,
+        17
+      ],
+      "tags": [
+        "legal-matrix",
+        "udhr",
+        "jus-cogens",
+        "erga-omnes"
+      ]
     },
     {
       "id": "UN-SPECIAL-PROCEDURES-NOTICE-2026-10-14",
@@ -102,8 +141,19 @@
       "date": "2026-10-14",
       "google_drive_view_link": null,
       "google_drive_file_id": null,
-      "udhr_articles": [5, 6, 7, 8, 17],
-      "tags": ["un-addendum", "notice", "special-procedures", "jus-cogens"]
+      "udhr_articles": [
+        5,
+        6,
+        7,
+        8,
+        17
+      ],
+      "tags": [
+        "un-addendum",
+        "notice",
+        "special-procedures",
+        "jus-cogens"
+      ]
     }
   ],
   "notes": [
@@ -111,6 +161,7 @@
     "All new evidence must be added to this manifest with computed SHA-256 before commit.",
     "Validation is enforced by scripts/validate_sha256.py and .github/workflows/verify.yml",
     "Legal qualification is restricted exclusively to UDHR 1948, ICCPR and UN Special Procedures.",
-    "Machine-readable packet for UN transmission is generated by scripts/export_un_packet.py → proofs/un_evidence_bundle.json"
+    "Machine-readable packet for UN transmission is generated by scripts/export_un_packet.py → proofs/un_evidence_bundle.json",
+    "v1.3.2: Integrated cover letter (legal_submission_fincombank_20260903.pdf)"
   ]
 }
