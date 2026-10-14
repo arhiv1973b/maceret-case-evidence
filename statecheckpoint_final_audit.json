@@ -16,5 +16,5 @@
     "docs/batch3_international_vsp_block.html"
   ],
   "audit_result": "PASS",
-  "notes": "All 16 objects have valid SHA-256 and view/github links. Remote empty manifest restored. Repository ready as unified evidence hub."
+  "notes": "All 16 objects have valid SHA-256 and view/github links. Hash index published. Repository ready as unified evidence hub."
 }
