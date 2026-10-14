@@ -1,6 +1,6 @@
 {
   "bundle_version": "1.0",
-  "generated_at": "2026-10-14T11:37:17.129732+00:00",
+  "generated_at": "2026-10-14T17:31:00+00:00",
   "case_id": "CASE-MACHERET-1997-2026",
   "actor_key": "# [⚖ A©tor Declaration]",
   "subject": {
@@ -39,19 +39,11 @@
       "size_bytes": 544931,
       "mime_type": "application/pdf",
       "date": "2026-10-10",
-      "udhr_articles": [
-        6,
-        7,
-        17
-      ],
-      "tags": [
-        "cover-letter",
-        "fincombank",
-        "6647-Out",
-        "identity-recognition"
-      ],
-      "google_drive_view_link": null,
-      "google_drive_file_id": null
+      "udhr_articles": [6, 7, 17],
+      "tags": ["cover-letter", "fincombank", "6647-Out", "identity-recognition"],
+      "google_drive_view_link": "https://drive.google.com/file/d/1TMj1ctQX9CzShanvFDx1F4XjRWkCMrSX/view",
+      "google_drive_file_id": "1TMj1ctQX9CzShanvFDx1F4XjRWkCMrSX",
+      "tunnel_type": "google-drive-view"
     },
     {
       "id": "AVIZ-269-2026-10-01",
@@ -61,17 +53,11 @@
       "size_bytes": 170747,
       "mime_type": "application/pdf",
       "date": "2026-10-01",
-      "udhr_articles": [
-        6
-      ],
-      "tags": [
-        "aviz",
-        "philology",
-        "name-equivalence",
-        "idnp-2000001159655"
-      ],
-      "google_drive_view_link": null,
-      "google_drive_file_id": null
+      "udhr_articles": [6],
+      "tags": ["aviz", "philology", "name-equivalence", "idnp-2000001159655"],
+      "google_drive_view_link": "https://drive.google.com/file/d/10mjGVu2x7w9AeUWbEDFDde42m5FV7TfZ/view",
+      "google_drive_file_id": "10mjGVu2x7w9AeUWbEDFDde42m5FV7TfZ",
+      "tunnel_type": "google-drive-view"
     },
     {
       "id": "UN-SUBMISSION-tw57lryb-2026-05-03",
@@ -81,22 +67,13 @@
       "size_bytes": 87506,
       "mime_type": "application/pdf",
       "date": "2026-05-03",
-      "udhr_articles": [
-        5,
-        6,
-        7,
-        8,
-        17
-      ],
-      "tags": [
-        "un",
-        "special-procedures",
-        "torture",
-        "jus-cogens",
-        "idnp"
-      ],
+      "udhr_articles": [5, 6, 7, 8, 17],
+      "tags": ["un", "special-procedures", "torture", "jus-cogens", "idnp"],
       "google_drive_view_link": null,
-      "google_drive_file_id": null
+      "google_drive_file_id": null,
+      "github_view_link": "https://github.com/arhiv1973b/maceret-case-evidence/blob/main/docs/legal/UN_SPECIAL_PROCEDURES_NOTICE_2026.md",
+      "github_raw_link": "https://raw.githubusercontent.com/arhiv1973b/maceret-case-evidence/main/docs/legal/UN_SPECIAL_PROCEDURES_NOTICE_2026.md",
+      "tunnel_type": "github-blob"
     },
     {
       "id": "UDHR-JUS-COGENS-MATRIX-2026-10-14",
@@ -106,21 +83,13 @@
       "size_bytes": 6048,
       "mime_type": "text/markdown",
       "date": "2026-10-14",
-      "udhr_articles": [
-        5,
-        6,
-        7,
-        8,
-        17
-      ],
-      "tags": [
-        "legal-matrix",
-        "udhr",
-        "jus-cogens",
-        "erga-omnes"
-      ],
+      "udhr_articles": [5, 6, 7, 8, 17],
+      "tags": ["legal-matrix", "udhr", "jus-cogens", "erga-omnes"],
       "google_drive_view_link": null,
-      "google_drive_file_id": null
+      "google_drive_file_id": null,
+      "github_view_link": "https://github.com/arhiv1973b/maceret-case-evidence/blob/main/docs/legal/UDHR_JUS_COGENS_MATRIX.md",
+      "github_raw_link": "https://raw.githubusercontent.com/arhiv1973b/maceret-case-evidence/main/docs/legal/UDHR_JUS_COGENS_MATRIX.md",
+      "tunnel_type": "github-blob"
     },
     {
       "id": "UN-SPECIAL-PROCEDURES-NOTICE-2026-10-14",
@@ -130,52 +99,20 @@
       "size_bytes": 6232,
       "mime_type": "text/markdown",
       "date": "2026-10-14",
-      "udhr_articles": [
-        5,
-        6,
-        7,
-        8,
-        17
-      ],
-      "tags": [
-        "un-addendum",
-        "notice",
-        "special-procedures",
-        "jus-cogens"
-      ],
+      "udhr_articles": [5, 6, 7, 8, 17],
+      "tags": ["un-addendum", "notice", "special-procedures", "jus-cogens"],
       "google_drive_view_link": null,
-      "google_drive_file_id": null
+      "google_drive_file_id": null,
+      "github_view_link": "https://github.com/arhiv1973b/maceret-case-evidence/blob/main/docs/legal/UN_SPECIAL_PROCEDURES_NOTICE_2026.md",
+      "github_raw_link": "https://raw.githubusercontent.com/arhiv1973b/maceret-case-evidence/main/docs/legal/UN_SPECIAL_PROCEDURES_NOTICE_2026.md",
+      "tunnel_type": "github-blob"
     }
   ],
   "udhr_summary": {
-    "5": [
-      "UN-SUBMISSION-tw57lryb-2026-05-03",
-      "UDHR-JUS-COGENS-MATRIX-2026-10-14",
-      "UN-SPECIAL-PROCEDURES-NOTICE-2026-10-14"
-    ],
-    "6": [
-      "COVER-LETTER-2026-10-10",
-      "AVIZ-269-2026-10-01",
-      "UN-SUBMISSION-tw57lryb-2026-05-03",
-      "UDHR-JUS-COGENS-MATRIX-2026-10-14",
-      "UN-SPECIAL-PROCEDURES-NOTICE-2026-10-14"
-    ],
-    "7": [
-      "COVER-LETTER-2026-10-10",
-      "UN-SUBMISSION-tw57lryb-2026-05-03",
-      "UDHR-JUS-COGENS-MATRIX-2026-10-14",
-      "UN-SPECIAL-PROCEDURES-NOTICE-2026-10-14"
-    ],
-    "8": [
-      "UN-SUBMISSION-tw57lryb-2026-05-03",
-      "UDHR-JUS-COGENS-MATRIX-2026-10-14",
-      "UN-SPECIAL-PROCEDURES-NOTICE-2026-10-14"
-    ],
-    "17": [
-      "COVER-LETTER-2026-10-10",
-      "UN-SUBMISSION-tw57lryb-2026-05-03",
-      "UDHR-JUS-COGENS-MATRIX-2026-10-14",
-      "UN-SPECIAL-PROCEDURES-NOTICE-2026-10-14"
-    ]
+    "5": ["UN-SUBMISSION-tw57lryb-2026-05-03", "UDHR-JUS-COGENS-MATRIX-2026-10-14", "UN-SPECIAL-PROCEDURES-NOTICE-2026-10-14"],
+    "6": ["COVER-LETTER-2026-10-10", "AVIZ-269-2026-10-01", "UN-SUBMISSION-tw57lryb-2026-05-03", "UDHR-JUS-COGENS-MATRIX-2026-10-14", "UN-SPECIAL-PROCEDURES-NOTICE-2026-10-14"],
+    "7": ["COVER-LETTER-2026-10-10", "UN-SUBMISSION-tw57lryb-2026-05-03", "UDHR-JUS-COGENS-MATRIX-2026-10-14", "UN-SPECIAL-PROCEDURES-NOTICE-2026-10-14"],
+    "8": ["UN-SUBMISSION-tw57lryb-2026-05-03", "UDHR-JUS-COGENS-MATRIX-2026-10-14", "UN-SPECIAL-PROCEDURES-NOTICE-2026-10-14"],
+    "17": ["COVER-LETTER-2026-10-10", "UN-SUBMISSION-tw57lryb-2026-05-03", "UDHR-JUS-COGENS-MATRIX-2026-10-14", "UN-SPECIAL-PROCEDURES-NOTICE-2026-10-14"]
   }
 }
