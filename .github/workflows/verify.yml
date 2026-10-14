@@ -1,0 +1,32 @@
+name: Evidence Integrity Check (SHA-256)
+
+on:
+  push:
+    branches: [main, evidence-2026-10]
+  pull_request:
+    branches: [main, evidence-2026-10]
+
+jobs:
+  verify-sha256:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run SHA-256 integrity validator
+        run: |
+          python scripts/validate_sha256.py
+
+      - name: Upload validation log (on failure)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sha256-validation-log
+          path: |
+            proofs/manifest.json
+            scripts/validate_sha256.py
