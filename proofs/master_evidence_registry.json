@@ -1,19 +1,9 @@
 {
-  "registry_version": "1.0.0",
-  "generated_at": "2026-10-14T22:05:00+03:00",
+  "registry_version": "1.1.0",
+  "generated_at": "2026-10-14T22:10:00+03:00",
   "case_id": "CASE-MACHERET-1997-2026",
   "actor_key": "# [⚖ A©tor Declaration]",
   "principle": "ONLY real files with computed SHA-256. No fabrication.",
-  "sources_scanned": [
-    "MSign 12_3.11.2025 3 (folder_id=1ZL97YFsULO1NegM0JavVqxXY-Um0X93n)",
-    "apostille-mirror/pdfs_mirror (folder_id=1Ab2Suc1bzREPaL-2YEd0dn-hIIbMq7Cd)",
-    "apostille-mirror objects/ is git pack structure — not human PDF vault"
-  ],
-  "hub_reference": {
-    "manifest": "proofs/manifest.json v1.5.1",
-    "verified_hub_entries": 16,
-    "note": "Existing 16-doc hub remains authoritative; this registry adds newly scanned real files"
-  },
   "files": [
     {
       "id": "MSIGN-20251112151802229",
@@ -22,9 +12,7 @@
       "size_bytes": 640439,
       "google_drive_file_id": "1VXm0iHET9BO9FZGNRaS5hsICufeqcfdN",
       "google_drive_view_link": "https://drive.google.com/file/d/1VXm0iHET9BO9FZGNRaS5hsICufeqcfdN/view",
-      "source_folder": "MSign 12_3.11.2025 3",
       "category": "msign-apostille",
-      "mime_type": "application/pdf",
       "tunnel_type": "google-drive-view"
     },
     {
@@ -34,9 +22,7 @@
       "size_bytes": 1186944,
       "google_drive_file_id": "1sWbMUZ1Jro9hDIlHaaFhFWZy590VW2PI",
       "google_drive_view_link": "https://drive.google.com/file/d/1sWbMUZ1Jro9hDIlHaaFhFWZy590VW2PI/view",
-      "source_folder": "MSign 12_3.11.2025 3",
       "category": "msign-apostille",
-      "mime_type": "application/pdf",
       "tunnel_type": "google-drive-view"
     },
     {
@@ -46,9 +32,7 @@
       "size_bytes": 1422260,
       "google_drive_file_id": "15YO9ZR1CNZZlCU6NvVPRyHju8zHRmh1f",
       "google_drive_view_link": "https://drive.google.com/file/d/15YO9ZR1CNZZlCU6NvVPRyHju8zHRmh1f/view",
-      "source_folder": "MSign 12_3.11.2025 3",
       "category": "msign-apostille",
-      "mime_type": "application/pdf",
       "tunnel_type": "google-drive-view"
     },
     {
@@ -58,9 +42,7 @@
       "size_bytes": 304558,
       "google_drive_file_id": "1PXZu2LURp9VGB16Dl-Zk4he4uaVr2Oue",
       "google_drive_view_link": "https://drive.google.com/file/d/1PXZu2LURp9VGB16Dl-Zk4he4uaVr2Oue/view",
-      "source_folder": "pdfs_mirror (apostille-mirror)",
       "category": "apostille",
-      "mime_type": "application/pdf",
       "tunnel_type": "google-drive-view"
     },
     {
@@ -70,9 +52,7 @@
       "size_bytes": 352096,
       "google_drive_file_id": "1_F3SLCd7VeYOoDN6uQr6Wu0be0y9fCyt",
       "google_drive_view_link": "https://drive.google.com/file/d/1_F3SLCd7VeYOoDN6uQr6Wu0be0y9fCyt/view",
-      "source_folder": "pdfs_mirror (apostille-mirror)",
       "category": "court-signed",
-      "mime_type": "application/pdf",
       "tunnel_type": "google-drive-view"
     },
     {
@@ -82,15 +62,35 @@
       "size_bytes": 159752,
       "google_drive_file_id": "1ay-EeRjwYpwMPE-FkUGuDWcQijpMy03f",
       "google_drive_view_link": "https://drive.google.com/file/d/1ay-EeRjwYpwMPE-FkUGuDWcQijpMy03f/view",
-      "source_folder": "pdfs_mirror (apostille-mirror)",
       "category": "financial-forensic",
-      "mime_type": "application/pdf",
+      "tunnel_type": "google-drive-view"
+    },
+    {
+      "id": "CASE-1-568_98-APOSTILLED",
+      "original_filename": "Дело № 1-568_98.апостилированное.pdf",
+      "sha256": "012e66d36dbc936fe7d2cd70b44f28a29d9ca58828ef6e54ff9f0d4f255a973e",
+      "size_bytes": 16426714,
+      "google_drive_file_id": "1wBOt-Ks11WvASMmAbkBs0HEVPmr5y4wt",
+      "google_drive_view_link": "https://drive.google.com/file/d/1wBOt-Ks11WvASMmAbkBs0HEVPmr5y4wt/view",
+      "category": "criminal-case-volume",
+      "case_ref": "1-568/98",
+      "tunnel_type": "google-drive-view"
+    },
+    {
+      "id": "CASE-1-568_98-APOSTILLED-7",
+      "original_filename": "Дело № 1-568_98.апостилированное (7).pdf",
+      "sha256": "92bbd4e0e6fd0fdae7875aae502250f0028d06e37e303637e260f03f67d81d78",
+      "size_bytes": 16132760,
+      "google_drive_file_id": "1TuSwQifRskkGcTHlMQWXrCcf1wK08HAj",
+      "google_drive_view_link": "https://drive.google.com/file/d/1TuSwQifRskkGcTHlMQWXrCcf1wK08HAj/view",
+      "category": "criminal-case-volume",
+      "case_ref": "1-568/98",
       "tunnel_type": "google-drive-view"
     }
   ],
   "stats": {
-    "new_real_files": 6,
+    "total_real_files": 8,
     "null_sha256": 0,
-    "total_size_bytes": 4066049
+    "case_volumes_1_568": 2
   }
 }
