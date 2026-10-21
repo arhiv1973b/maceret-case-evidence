@@ -1,0 +1,10 @@
+{
+  "checkpoint": "statecheckpoint_matrix_built",
+  "timestamp": "2026-10-14T22:30:00+03:00",
+  "status": "GLOBAL_MATRIX_BUILT",
+  "matrix_entries": 24,
+  "cross_ref_articles": ["5", "6", "7", "8", "17"],
+  "null_sha256": 0,
+  "not_found_exact": ["1а-2232", "1-272", "11а-42", "1-658/1ра-834"],
+  "files": ["docs/global_matrix_index.html", "docs/cross_reference_table.html", "index.html"]
+}

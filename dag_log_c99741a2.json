@@ -1,0 +1,23 @@
+{
+  "dag_log_id": "c99741a2",
+  "node_id": "0x4FA3-2026-04",
+  "status": "COMMITTED",
+  "timestamp": "2026-09-23T12:16:19Z",
+  "hash": "d47b8e1f5c3a2990b6a84c71d9e2b4f510a8d6e3c1b7f9a2d8e4c5b6a7f8e9d0",
+  "events": [
+    {
+      "step": 1,
+      "event": "Gateway redirection detected",
+      "from": "FinComBank S.A.",
+      "to": "Moldindconbank S.A.",
+      "amount": "25210256.15 MDL"
+    },
+    {
+      "step": 2,
+      "event": "Card tokenization conflict",
+      "card_5929": "BLOCKED",
+      "card_6089": "ACTIVE",
+      "auth_token": "MD-APPLEPAY-6089-20260403"
+    }
+  ]
+}

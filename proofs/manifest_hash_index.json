@@ -1,0 +1,82 @@
+{
+  "COVER-LETTER-2026-10-10": {
+    "sha256": "acca7e1792baabebde308c156bba799ba9237e7be9fc842643ff2a6dfe26f3d2",
+    "link": "https://drive.google.com/file/d/1TMj1ctQX9CzShanvFDx1F4XjRWkCMrSX/view",
+    "tunnel": "google-drive-view"
+  },
+  "AVIZ-269-2026-10-01": {
+    "sha256": "7c34fdde86bd5742b5e29a6bba2c34007aefa54d44950a92de3ac2e5919cbf1d",
+    "link": "https://drive.google.com/file/d/10mjGVu2x7w9AeUWbEDFDde42m5FV7TfZ/view",
+    "tunnel": "google-drive-view"
+  },
+  "UN-SUBMISSION-tw57lryb-2026-05-03": {
+    "sha256": "ca88a292b85653d1f30114f1d782186caad43a4e6cb8eede28652c19b1a15d75",
+    "link": "https://github.com/arhiv1973b/maceret-case-evidence/blob/main/docs/legal/UN_SPECIAL_PROCEDURES_NOTICE_2026.md",
+    "tunnel": "github-blob"
+  },
+  "UDHR-JUS-COGENS-MATRIX-2026-10-14": {
+    "sha256": "856136804cc182c3bae41c480f095b9dc30ad0c09eef67c64d1eda0818d0a944",
+    "link": "https://github.com/arhiv1973b/maceret-case-evidence/blob/main/docs/legal/UDHR_JUS_COGENS_MATRIX.md",
+    "tunnel": "github-blob"
+  },
+  "UN-SPECIAL-PROCEDURES-NOTICE-2026-10-14": {
+    "sha256": "37ea8864ee71217079ee41b770f031945980a90a6eb35068e330d191b3be1def",
+    "link": "https://github.com/arhiv1973b/maceret-case-evidence/blob/main/docs/legal/UN_SPECIAL_PROCEDURES_NOTICE_2026.md",
+    "tunnel": "github-blob"
+  },
+  "COURT-BUIUCANI-NEGRU": {
+    "sha256": "52f1a1eb73ebfda7ddd782debca4a53925e35d3899f1a8fc3c215886bdc5e146",
+    "link": "https://drive.google.com/file/d/1XaDe_cKPEJwRcNpAnBtV4UDThTLszpvo/view",
+    "tunnel": "google-drive-view"
+  },
+  "COURT-ECHR": {
+    "sha256": "be4404fcbf2a6ba8d9ba2d4a74ff64d5810ba9221c43f1b1613d267abf269135",
+    "link": "https://drive.google.com/file/d/1cW5MliTRq6uIs7ZTGRb7wleuNNofu4NS/view",
+    "tunnel": "google-drive-view"
+  },
+  "COURT-APPEAL-2003": {
+    "sha256": "37d92187d5fe1b66973f81d52bd6c9990aa1c42042f2f5e88e276319cfff7854",
+    "link": "https://drive.google.com/file/d/15nDmHIQFRUj52uP9kq8wQ4ZjZzEnAf6S/view",
+    "tunnel": "google-drive-view"
+  },
+  "TORTURE-CLARIFICATION": {
+    "sha256": "1ba03942cde54500adffb986a20ff5323a2de36b6d08a6312c45480d0e878b05",
+    "link": "https://drive.google.com/file/d/1X0Uzx7R6p8OCVdYd78tt8ypzvYL2gXnp/view",
+    "tunnel": "google-drive-view"
+  },
+  "TORTURE-CLARIFICATION-EN": {
+    "sha256": "1ba03942cde54500adffb986a20ff5323a2de36b6d08a6312c45480d0e878b05",
+    "link": "https://drive.google.com/file/d/1EBceyxC9s9M7KMXEvA_fpo43ad_13IhC/view",
+    "tunnel": "google-drive-view"
+  },
+  "COURT-RYSHKANOVKA-CERT": {
+    "sha256": "eeae917753ec3309f23ff1a3c132448cd646f549934aac4af2227625ffff9a12",
+    "link": "https://drive.google.com/file/d/1kVnslZB8-PIgcqze2_WrpfyMAPyMyLme/view",
+    "tunnel": "google-drive-view"
+  },
+  "UN-OHCHR-MANIFEST-tw571ryb-JUS-COGENS": {
+    "sha256": "152ee4c916d6c58dbb0e61c3e045d7347873b2e651abaf2f22ba709aba404464",
+    "link": "https://drive.google.com/file/d/1kY13NAyVGDTu32e5ndBNfGdkYwujenu6/view",
+    "tunnel": "google-drive-view"
+  },
+  "UN-NOTIFICATION-MD": {
+    "sha256": "d00770b93365fbbcdcc2fec06b7f7de169af59ed9c2501bed3479e67fa082596",
+    "link": "https://drive.google.com/file/d/1cSqelh35IQigo2SLNzQscTKAB2UEjZJr/view",
+    "tunnel": "google-drive-view"
+  },
+  "MEMORANDUM-JUS-COGENS-ERGA-OMNES": {
+    "sha256": "86a77fbc008cc5e57c7d0c385845d47d18301aafcc75f23338a2308864cb8b99",
+    "link": "https://drive.google.com/file/d/1bFJKx5R4OJ0y0d1dfKPwYRxvD_Re2GB9/view",
+    "tunnel": "google-drive-view"
+  },
+  "COVER-LETTER-JUS-COGENS-UN-VENICE": {
+    "sha256": "39343078f72fad87ed13ab29f02f180c33d265b85178830420fa37b56dba0d43",
+    "link": "https://drive.google.com/file/d/1CDGcj9pyFbKvNAi1vIwKfd_hi6w59uQX/view",
+    "tunnel": "google-drive-view"
+  },
+  "UN-MACHERET-PDF": {
+    "sha256": "1a3c383095437a26b5a54c93a3d9994cfe504689921062846a0f04fba676fceb",
+    "link": "https://drive.google.com/file/d/1CKaRwDs72MVoQkYvEYE2DUx5EsBBVWcH/view",
+    "tunnel": "google-drive-view"
+  }
+}

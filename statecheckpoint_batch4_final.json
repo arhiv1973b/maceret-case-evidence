@@ -1,0 +1,13 @@
+{
+  "checkpoint": "statecheckpoint_batch4_final",
+  "timestamp": "2026-10-14T20:55:00+03:00",
+  "case_id": "CASE-MACHERET-1997-2026",
+  "actor_key": "# [⚖ A©tor Declaration]",
+  "batch": 4,
+  "status": "global_merge_complete",
+  "manifest_version": "1.5.1",
+  "total_verified_entries": 16,
+  "null_sha256_count": 0,
+  "files_pushed": ["proofs/manifest.json", "proofs/un_evidence_bundle.json", "index.html", "statecheckpoint_batch4_final.json"],
+  "notes": "All Batch 1-3 consolidated. SHA-256 audit clean. index.html hub with links to all registry blocks."
+}

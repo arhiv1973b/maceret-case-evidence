@@ -1,0 +1,24 @@
+{
+  "checkpoint": "statecheckpoint_full_tunnel_blocked",
+  "timestamp": "2026-10-14T22:00:14+03:00",
+  "case_id": "CASE-MACHERET-1997-2026",
+  "actor_key": "# [⚖ A©tor Declaration]",
+  "status": "BLOCKED_NO_LOCAL_VAULT",
+  "local_pdf_count": 9,
+  "local_total_size_mb": 3.0,
+  "github_verified_entries": 16,
+  "drive_broad_search_result": "empty (0 matches for apostille/1-568/98/forensic)",
+  "blocker": "Workspace and connected Drive do not contain the 3000+ file archive. Cannot fabricate hashes or registry entries.",
+  "required_to_proceed": [
+    "Provide absolute path to local archive root (if mounted in session), OR",
+    "Provide specific Google Drive folder_id(s) that contain the full vault (apostilles, 1-568/98, medical, financial), OR",
+    "Upload / sync the archive into /home/workdir/artifacts/vault/ via external means"
+  ],
+  "pipeline_ready": {
+    "script_template": "scripts/build_master_registry.py (to be generated on file presence)",
+    "target_manifest": "proofs/master_evidence_registry.json",
+    "target_hash_index": "proofs/manifest_hash_index.json",
+    "target_html_dirs": ["docs/apostilles/", "docs/court_volumes/", "docs/medical/", "docs/financial/", "docs/un_notifications/"]
+  },
+  "current_hub": "https://github.com/arhiv1973b/maceret-case-evidence (16-doc view-tunnel hub intact)"
+}
