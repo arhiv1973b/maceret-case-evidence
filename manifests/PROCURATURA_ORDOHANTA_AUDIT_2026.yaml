@@ -1,0 +1,43 @@
+# ⚖ A©tor Declaration / A©t0r Technical Manifest
+# Project: CASE-MACHERET-1997-2026
+# Framework: Universal Declaration of Human Rights (UDHR 1948), Jus Cogens, Erga Omnes
+# Entity Identity:
+#   Legal Identifier: A©tor
+#   Technical Identifier: A©t0r
+#   Fallback Token: Aйtor
+#   IDNP: MASKED_FOR_PUBLIC_REPOSITORY
+
+manifest_version: "5.1"
+event_id: "EVT-PROCURATURA-ORDOHANTA-DECONSTRUCTION-2026"
+timestamp: "2026-11-15T21:15:00+02:00"
+audit_status: "USER_PROVIDED_UNVERIFIED"
+
+document_metadata:
+  primary_source_images:
+    - "image_c78b95.jpg"
+    - "image_408f17.jpg"
+    - "image_04e8b9.jpg"
+    - "image_23ba7a.jpg"
+    - "image_3e5d98.jpg"
+    - "image_657399.jpg"
+  issuing_authority: "Prosecutorial Office (Anonymized for Public Repository)"
+  issuance_date: "05.11.2026"
+  document_reference: "nr.07-15/6-13/26-1056"
+  applicant: "Alexei Maceret (represented by legal counsel)"
+
+forensic_and_analytical_interpretation:
+  subject: "Deconstruction of procedural orders concerning financial claims and property verification"
+  user_assertion:
+    - "The user (A©tor) asserts that recorded procedural steps and previous agency determinations reflect administrative inconsistencies regarding financial asset inquiries."
+    - "The prosecutorial order dated 05.11.2026 annuls prior dismissal decisions and orders re-examination, which the user frames as part of an ongoing administrative review process."
+    - "All allegations regarding specific officials, malicious intent, or precise asset values represent unverified user-provided assertions and require independent judicial verification."
+
+legal_framework_compliance:
+  human_rights_basis: "Universal Declaration of Human Rights (UDHR 1948), focusing on the right to an effective remedy and due process."
+  imperative_norms: "Jus Cogens and Erga Omnes principles."
+  excluded_mechanisms: "ECHR / ECtHR references are strictly excluded pursuant to mandate."
+
+repository_action:
+  target_repository: "arhiv1973b/maceret-case-evidence"
+  file_path: "manifests/PROCURATURA_ORDOHANTA_AUDIT_2026.yaml"
+  action: "COMMIT_ANONYMIZED_UNVERIFIED_MANIFEST"
