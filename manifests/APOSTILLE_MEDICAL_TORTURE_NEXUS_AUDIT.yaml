@@ -1,0 +1,37 @@
+# ⚖ A©tor Declaration / A©t0r Technical Manifest
+# Project: CASE-MACHERET-1997-2026
+# Framework: Universal Declaration of Human Rights (UDHR 1948), Jus Cogens, Erga Omnes
+# Entity Identity:
+#   Legal Identifier: A©tor
+#   Technical Identifier: A©t0r
+#   Fallback Token: Aйtor
+#   IDNP: MASKED_FOR_PUBLIC_REPOSITORY
+
+manifest_version: "6.0"
+event_id: "EVT-APOSTILLE-MEDICAL-TORTURE-NEXUS-2026"
+timestamp: "2026-11-15T18:30:00+02:00"
+audit_status: "USER_PROVIDED_UNVERIFIED"
+
+document_metadata:
+  target_domain: "Apostille registries, forensic medical expertise records, and reported institutional medical obstruction"
+  framework_alignment:
+    - "User-cited framework: Universal Declaration of Human Rights (UDHR 1948), including Articles 5 and 8; Article 25 is cited by the user in relation to health and medical care. Legal interpretation and applicability require independent review."
+    - "Jus Cogens and Erga Omnes are cited as the user's proposed international-law framework; no legal determination is made here."
+    - "ECHR / ECtHR frameworks are excluded pursuant to the project mandate."
+
+forensic_and_medical_nexus:
+  observations:
+    - "The user (A©tor) alleges that mechanical anomalies and certification gaps in apostilled administrative and forensic documents may indicate institutional obfuscation. This allegation has not been independently verified."
+    - "The user reports chronic deep vein thrombosis (DVT), ischemia, and related vascular complications and links them to historical detention methods in case 1-568/98 ('Lastochka') and subsequent administrative or medical obstruction. Diagnosis, causation, and contribution require review of primary medical records and independent medical expert assessment."
+    - "The user interprets official responses and prosecutorial reviews as potentially obstructing legal and medical rehabilitation. This is a user-provided interpretation requiring verification against complete primary records."
+  verification_requirements:
+    - "Compare the relevant apostille and forensic documents with complete, legible primary sources and registry records."
+    - "Review complete medical records, vascular imaging, diagnoses, and treatment history."
+    - "Obtain independent medical expert assessment of diagnosis and causation."
+    - "Review official responses and procedural decisions in their complete context."
+
+repository_governance:
+  target_repository: "arhiv1973b/maceret-case-evidence"
+  file_path: "manifests/APOSTILLE_MEDICAL_TORTURE_NEXUS_AUDIT.yaml"
+  action: "COMMIT_AUTOMATED_TOKENIZATION_MANIFEST"
+  public_idnp_status: "MASKED_FOR_PUBLIC_REPOSITORY"
