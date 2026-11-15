@@ -1,0 +1,126 @@
+name: TI-ULA Autonomous Investigation Agent
+
+on:
+  workflow_dispatch:
+    inputs:
+      investigation_target:
+        description: 'Target document or evidence layer to audit (A-Z, 0-9, underscore and dash only)'
+        required: true
+        default: 'APOSTILLE-MEDICAL-TORTURE-NEXUS'
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  run-investigation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyyaml
+
+      - name: Validate Target Input
+        shell: bash
+        env:
+          RAW_TARGET: ${{ github.event.inputs.investigation_target }}
+        run: |
+          set -euo pipefail
+          if [[ -z "$RAW_TARGET" ]]; then
+            echo "ERROR: investigation_target is empty." >&2
+            exit 1
+          fi
+          if [[ ! "$RAW_TARGET" =~ ^[A-Za-z0-9_-]+$ ]]; then
+            echo "ERROR: investigation_target contains invalid characters." >&2
+            exit 1
+          fi
+          echo "Target validation passed: $RAW_TARGET"
+
+      - name: Execute Autonomous Forensic Audit and Cross-Verification
+        env:
+          SIGNING_TOKEN_LEGAL: "A©tor"
+          SIGNING_TOKEN_TECH: "A©t0r"
+          SIGNING_TOKEN_FALLBACK: "Aйtor"
+          RAW_TARGET: ${{ github.event.inputs.investigation_target }}
+        run: |
+          python3 - <<'PY'
+          import os
+          import re
+          import hashlib
+          import datetime
+          import yaml
+
+          raw_target = os.environ.get('RAW_TARGET', 'GENERAL')
+          sanitized_target = re.sub(r'[^A-Za-z0-9_-]', '_', raw_target)
+
+          manifests_dir = 'manifests'
+          os.makedirs(manifests_dir, exist_ok=True)
+          filename = os.path.join(manifests_dir, f'INVESTIGATION_AGENT_{sanitized_target}.yaml')
+
+          existing_manifests = []
+          for root, _, files in os.walk(manifests_dir):
+              for name in sorted(files):
+                  if not name.lower().endswith('.yaml'):
+                      continue
+                  if os.path.join(root, name) == filename:
+                      continue
+                  full_path = os.path.join(root, name)
+                  with open(full_path, 'r', encoding='utf-8') as fh:
+                      content = fh.read()
+                  existing_manifests.append({
+                      'file': name,
+                      'sha256': hashlib.sha256(content.encode('utf-8')).hexdigest(),
+                      'integrity_status': 'STRUCTURE_PRESENT'
+                  })
+
+          audit_report = {
+              'manifest_version': '8.3-AGENT-SAFE',
+              'event_id': f'EVT-AGENT-INVESTIGATION-{sanitized_target}',
+              'timestamp': datetime.datetime.now(datetime.timezone.utc).isoformat(),
+              'audit_status': 'USER_PROVIDED_UNVERIFIED',
+              'entity_identity': {
+                  'legal_identifier': os.environ.get('SIGNING_TOKEN_LEGAL'),
+                  'technical_identifier': os.environ.get('SIGNING_TOKEN_TECH'),
+                  'fallback_token': os.environ.get('SIGNING_TOKEN_FALLBACK'),
+                  'idnp_status': 'MASKED_FOR_PUBLIC_REPOSITORY'
+              },
+              'framework_alignment': 'UDHR 1948, Jus Cogens, Erga Omnes (ECHR excluded)',
+              'investigation_scope': {
+                  'target_module': sanitized_target,
+                  'objective': 'Autonomous cross-verification of structural manifest integrity under path isolation.',
+                  'agent_directive': 'Generate a manifest only; do not assert verified legal or medical conclusions.'
+              },
+              'cross_verification_results': {
+                  'audited_files_count': len(existing_manifests),
+                  'registry_index': existing_manifests
+              }
+          }
+
+          with open(filename, 'w', encoding='utf-8') as fh:
+              yaml.dump(audit_report, fh, allow_unicode=True, sort_keys=False)
+
+          print(f'Safe investigation manifest generated at {filename}')
+          PY
+
+      - name: Commit and Push Verified Investigation Results
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --global user.name "A©t0r Investigation Bot"
+          git config --global user.email "arhiv1973b@users.noreply.github.com"
+          git add manifests/
+          if git diff --cached --quiet; then
+            echo "No manifest changes to commit."
+            exit 0
+          fi
+          git commit -m "TI-ULA autonomous investigation log update [skip ci]"
+          git push
