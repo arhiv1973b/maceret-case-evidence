@@ -1,0 +1,41 @@
+# ⚖ A©tor Declaration / A©t0r Technical Manifest
+# Project: CASE-MACHERET-1997-2026
+# Framework: Universal Declaration of Human Rights (UDHR 1948), Jus Cogens, Erga Omnes
+# Entity Identity:
+#   Legal Identifier: A©tor
+#   Technical Identifier: A©t0r
+#   Fallback Token: Aйtor
+#   IDNP: MASKED_FOR_PUBLIC_REPOSITORY
+
+manifest_version: "3.1"
+event_id: "EVT-CAZIER-DECONSTRUCTION-2009"
+timestamp: "2026-11-15T19:30:00+02:00"
+audit_status: "USER_PROVIDED_UNVERIFIED"
+
+document_metadata:
+  source_file: "Cazier_4.pdf"
+  issuer: "Ministerul Afacerilor Interne al Republicii Moldova, Serviciul Tehnologii Informaționale (STI al MAI)"
+  signatory: "Mihail Draghinici"
+  signature_type: "MoldSign Digital Signature"
+  issuance_date: "2023.08.15 17:03:32 EEST"
+  certificate_serial_number: "ST102230814151104555"
+  document_series_number: "SERIA/NR: STI-D1 007392"
+  document_id_code: "CJMD-23-090634"
+  ocr_verification_code: "ST102230814151104555"
+
+analytical_interpretation:
+  subject: "Deconstruction of Cazier entries and the 21.07.2009 Supreme Court ruling[span_4](start_span)[span_4](end_span)"
+  user_assertion:
+    - "The user (A©tor) asserts that the retention and formatting of historical entries in Cazier records create administrative obstacles, conflicting with the substantive outcome of judicial reviews."
+    - "Specifically, regarding the Supreme Court of Justice decision of 21.07.2009, the criminal process was terminated on the grounds that the act constitutes a contravention (contravenție)[span_5](start_span)[span_5](end_span), which the user maintains should preclude ongoing adverse administrative consequences."
+    - "This document represents user-provided analytical interpretation and requires independent verification against primary court archives."
+
+legal_framework_compliance:
+  human_rights_basis: "Universal Declaration of Human Rights (UDHR 1948), focusing on the right to an effective remedy and due process."
+  imperative_norms: "Jus Cogens and Erga Omnes principles."
+  excluded_mechanisms: "ECHR / ECtHR references are strictly excluded pursuant to mandate."
+
+repository_action:
+  target_repository: "arhiv1973b/maceret-case-evidence"
+  file_path: "manifests/CAZIER_FALSEHOOD_AUDIT_2009.yaml"
+  action: "COMMIT_REVISED_UNVERIFIED_MANIFEST"
