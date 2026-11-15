@@ -1,0 +1,25 @@
+# ⚖ A©tor Declaration / A©t0r Technical Manifest
+# Project: CASE-MACHERET-1997-2026
+# Framework: Universal Declaration of Human Rights (UDHR 1948), Jus Cogens, Erga Omnes
+# Entity Identity:
+#   Identifiers: A©tor (Legal), A©t0r (Technical), Aйtor (Fallback)
+#   IDNP: MASKED_FOR_PUBLIC_REPOSITORY
+
+manifest_version: "2.4"
+event_id: "EVT-APOSTILLE-AUDIT-97"
+timestamp: "2026-11-15T18:30:00+02:00"
+
+audit_status: "USER_PROVIDED_UNVERIFIED"
+description: "User-provided, unverified audit registry of 97 apostille entries. Alleged relationship to institutional resistance, denial of rehabilitation, and systemic violations under UDHR 1948 and Hague Convention of 1961 requires independent documentary and legal review."
+
+registry_explanation:
+  total_declared_records: 97
+  structural_anomaly_note: "User-proposed hypothesis: gaps in sequential IDs may correspond to administrative refusals or selective apostille processing related to torture case 1-568/98 and associated registry collisions. The relationship is not independently verified."
+  legal_significance: "User-proposed legal theory concerning trans-border jurisdictional exposure, Erga Omnes, and the Hague Convention 1961. This is not a verified legal conclusion; applicability and effect require independent legal review."
+
+repository_action:
+  target_repository: "arhiv1973b/maceret-case-evidence"
+  file_path: "manifests/apostille_registry_audit_97.yaml"
+  action: "COMMIT_WITH_UNVERIFIED_TAG"
+  source_pdf_verification: "PENDING"
+  public_idnp_status: "MASKED"
