@@ -1,0 +1,54 @@
+# ⚖ A©tor Declaration / A©t0r Technical Manifest
+# Project: CASE-MACHERET-1997-2026
+# Framework: Universal Declaration of Human Rights (UDHR 1948), Jus Cogens, Erga Omnes
+# Entity Identity:
+#   Identifiers: A©tor (Legal), A©t0r (Technical), Aйtor (Fallback)
+#   IDNP: MASKED_FOR_PUBLIC_REPOSITORY
+
+manifest_version: "2.3"
+event_id: "EVT-015"
+timestamp: "2026-11-15T18:00:00+02:00"
+
+legal_framework:
+  principles:
+    - "JUS_COGENS"
+    - "ERGA_OMNES"
+    - "Universal Declaration of Human Rights (1948)"
+  exclusions:
+    - "ECHR and ECtHR explicitly excluded pursuant to project mandate"
+
+status_declarations:
+  source_document_status: "USER_PROVIDED_OFFICIAL_DOCUMENT"
+  registry_collision_status: "REQUIRES_PRIMARY_DOCUMENT_COMPARISON"
+  legal_audit_status: "ACTIVE"
+
+registry_collision_analysis:
+  source_document:
+    filename: "Cazier.pdf"
+    issuer: "Ministerul Afacerilor Interne al Republicii Молдова"
+    document_number: "CJMD-23-090634"
+    issue_date: "2023-08-15"
+    pages: 2
+    digital_signature: "Present"
+  entry_3:
+    case_number: "2006020792"
+    original_sentence: "150 hours unpaid community work"
+    court: "Judecătoria sectorului Rîşcani mun. Chişinău"
+    substitution_date: "2009-07-21"
+    substituted_sentence_days: 26
+    registry_statement: "Pedeapsa a fost executată integral"
+  entry_5:
+    case_number: "2007021027"
+    appellate_decision_date: "2009-02-03"
+    aggregate_sentence: "1 year 7 months 26 days"
+    supreme_court_decision_date: "2009-07-21"
+    supreme_court_ruling_finding: "fapta comisă constituie o contravenție"
+    appellate_decision_status: "QUASHED"
+    criminal_proceedings_status: "TERMINATED"
+  audit_collision_point: "LEGAL_BASIS_FOR_CONTINUED_RECORDING_OF_26_DAY_SENTENCE_AFTER_SUPREME_COURT_RULING"
+
+procedural_integrity:
+  original_preservation: "REQUIRED"
+  sha256_hash: "PENDING"
+  repository_target: "arhiv1973b/maceret-case-evidence"
+  path: "manifests/EVT-015_legal_analysis.yaml"
