@@ -1,0 +1,50 @@
+# ⚖ A©tor Declaration / A©t0r Technical Manifest
+# Project: CASE-MACHERET-1997-2026
+# Framework: Universal Declaration of Human Rights (UDHR 1948), Jus Cogens, Erga Omnes
+# Entity Identity:
+#   Legal Identifier: A©tor
+#   Technical Identifier: A©t0r
+#   Fallback Token: Aйtor
+#   IDNP: MASKED_FOR_PUBLIC_REPOSITORY
+
+manifest_version: "4.0"
+event_id: "EVT-AVIZ-HASDEU-ANTHROPONYMIC-EVALUATION"
+timestamp: "2026-11-15T20:00:00+02:00"
+audit_status: "USER_PROVIDED_UNVERIFIED"
+
+document_metadata:
+  primary_source: "Aviza.pdf"
+  issuing_institution: "Universitatea de Stat din Moldova, Institutul de Filologie Română „Bogdan Petriceicu-Hasdeu”"
+  address: "Str. Academiei, 3/2, Chişinău, MD-2028"
+  document_number: "Nr. 269"
+  issuance_date: "01.10.2026"
+  signatory: "Lidia Vieru (Secretar al Comisiei pentru reglementarea onomasticii şi terminologiei naţionale, cercetător ştiinţific)"
+  institutional_idno: "1006600064263"
+  associated_civil_status_extract:
+    source_file: "Macheret Alexei _2.pdf"
+    record_number: "SN2026003728"
+    issuance_date: "09.11.2026"
+    issuer: "Agenția Servicii Publice, Republica Moldova"
+  source_verification: "PRIMARY_DOCUMENT_NOT_PROVIDED_FOR_INDEPENDENT_REVIEW"
+
+scientific_and_legal_evaluation:
+  subject: "User-provided account of a scientific linguistic evaluation concerning surname and forename variants"
+  user_reported_findings:
+    - "The user reports that the surname MACERET (ALEXEI), in Moldovan official documents, is recognized as a variant of the Hebrew-origin surname МАЧЕРЕТ, transcribed in Russian during the Soviet period pursuant to language function norms (Law of 31 August 1989)."
+    - "The user reports that the surname MACHERET (ARTUR), in documents issued by United States authorities, is phonetically and etymologically equivalent to MACERET / МАЧЕРЕТ and adapted to English orthographic rules."
+    - "The user reports that the conclusion in Aviz Nr. 269 declares the variants MACERET and MACHERET, registered across jurisdictions and languages for the dossier holder, to be anthroponymic equivalents. This reported conclusion has not been independently verified against the primary document."
+  verification_requirements:
+    - "Review the complete, legible primary Aviz Nr. 269, including signature and attachments."
+    - "Compare the civil-status extract and relevant United States records."
+    - "Confirm the exact wording, scope, and legal effect of the reported conclusion with qualified counsel or the issuing institution."
+
+human_rights_and_framework_alignment:
+  human_rights_basis: "User-proposed framework: Universal Declaration of Human Rights (UDHR 1948), identity recognition, legal certainty, and protection against administrative erasure. Legal applicability is not independently assessed here."
+  imperative_norms: "Jus Cogens and Erga Omnes are cited as the user's proposed legal framework; no legal determination is made in this manifest."
+  excluded_mechanisms: "ECHR / ECtHR references are excluded pursuant to the project mandate."
+
+repository_action:
+  target_repository: "arhiv1973b/maceret-case-evidence"
+  file_path: "manifests/AVIZ_ANTHROPONYMIC_EXPERT_EVALUATION.yaml"
+  action: "COMMIT_AVIZ_MANIFEST"
+  public_idnp_status: "MASKED"
